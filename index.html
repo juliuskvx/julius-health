@@ -280,6 +280,7 @@ function readiness(data) {
 function makeChart(id, labels, values, color, type='bar') {
   const ctx = $(id)?.getContext('2d');
   if (!ctx) return;
+  const lastIdx = values.length - 1;
   new Chart(ctx, {
     type,
     data: {
@@ -287,8 +288,9 @@ function makeChart(id, labels, values, color, type='bar') {
       datasets: [{
         data: values,
         backgroundColor: values.map((_, i) =>
-          i === values.length-1 ? color : color+'55'),
-        borderColor: color,
+          i === lastIdx ? color : color+'44'),
+        borderColor: values.map((_, i) =>
+          i === lastIdx ? color : color+'66'),
         borderWidth: type==='line'?2:0,
         borderRadius: 4,
         tension: 0.4,
@@ -304,7 +306,7 @@ function makeChart(id, labels, values, color, type='bar') {
         bodyColor: '#e2e8f0', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
       }},
       scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }}},
+        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: (ctx2) => ctx2.index === lastIdx ? color : '#64748b', font: { size: 10 }}},
         y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }},
              beginAtZero: false },
       }
@@ -352,7 +354,7 @@ async function loadData() {
   renderDashboard(data);
 }
 
-function renderDashboard(data) {
+async function renderDashboard(data) {
   $('loading').style.display = 'none';
   $('dashboard').style.display = 'block';
 
@@ -439,15 +441,50 @@ function renderDashboard(data) {
 
   if (sleep.score && sleep.score < 60) addFlag(`Sleep score ${sleep.score}/100 — needs attention`, 'bad');
 
-  // Charts (using demo history since we only have 1 day)
-  const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  const demoHRV   = [49,52,48,55,51,54, hrv||56];
-  const demoSleep = [6.8,7.1,5.9,7.4,6.5,7.2, totalSecs?+(totalSecs/3600).toFixed(1):7.0];
-  const demoBB    = [55,48,70,65,52,68, bb||71];
+  // Charts — build real 7-day labels based on today's actual date
+  const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const base2 = window.location.origin + window.location.pathname.replace('index.html','');
 
-  makeChart('chart-hrv',   days, demoHRV,   '#5DCAA5');
-  makeChart('chart-sleep', days, demoSleep, '#85B7EB');
-  makeChart('chart-bb',    days, demoBB,    '#378ADD');
+  // Generate last 7 dates (oldest → newest, today last)
+  const today = data.data_date ? new Date(data.data_date + 'T00:00:00') : new Date();
+  const dateList = [];
+  for (let i = 6; i >= 0; i--) {
+    const d2 = new Date(today);
+    d2.setDate(today.getDate() - i);
+    dateList.push(d2);
+  }
+  const realToday = new Date().toISOString().slice(0, 10);
+  const dayLabels = dateList.map((d2, i) => {
+    const name = DAY_NAMES[d2.getDay()];
+    const isToday = d2.toISOString().slice(0, 10) === realToday;
+    return (i === 6 && isToday) ? name + ' ✦' : name;
+  });
+
+  // Fetch historical JSON files; fall back to null where missing
+  const fallbackHRV   = [49,52,48,55,51,54];
+  const fallbackSleep = [6.8,7.1,5.9,7.4,6.5,7.2];
+  const fallbackBB    = [55,48,70,65,52,68];
+
+  const histFetches = dateList.slice(0, 6).map(async (d2, i) => {
+    const iso = d2.toISOString().slice(0, 10);
+    try {
+      const res = await fetch(`${base2}data/${iso}.json?t=${Date.now()}`);
+      if (!res.ok) throw new Error();
+      return await res.json();
+    } catch {
+      return null;
+    }
+  });
+
+  const histData = await Promise.all(histFetches);
+
+  const hrvVals   = [...histData.map((h, i) => h?.hrv?.last_night        ?? fallbackHRV[i]),   hrv   || 56];
+  const sleepVals = [...histData.map((h, i) => h?.sleep?.duration_seconds ? +(h.sleep.duration_seconds/3600).toFixed(1) : fallbackSleep[i]), totalSecs ? +(totalSecs/3600).toFixed(1) : 7.0];
+  const bbVals    = [...histData.map((h, i) => h?.body_battery?.morning   ?? fallbackBB[i]),    bb    || 71];
+
+  makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
+  makeChart('chart-sleep', dayLabels, sleepVals, '#85B7EB');
+  makeChart('chart-bb',    dayLabels, bbVals,    '#378ADD');
 
   // Store data for copy
   window._healthData = data;
