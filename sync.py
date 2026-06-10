@@ -193,6 +193,75 @@ def sync():
     except Exception:
         repo.create_file(latest_path, f"Latest health data {date_str}", content)
 
+    # ── Update history.csv ────────────────────────────────────────────────────
+    CSV_HEADERS = [
+        "date",
+        "sleep_score", "sleep_hours", "deep_min", "rem_min", "light_min", "awake_min",
+        "hrv_last_night", "hrv_weekly_avg", "hrv_status",
+        "body_battery_morning",
+        "resting_hr",
+        "vo2_max",
+        "stress_avg",
+        "spo2_avg",
+        "steps", "active_calories", "total_calories",
+        "activity_type", "activity_name", "activity_distance_km",
+        "activity_duration_min", "activity_avg_hr", "activity_max_hr",
+        "activity_calories", "activity_training_load",
+    ]
+
+    def csv_val(val, decimals=None):
+        if val is None:
+            return ""
+        if decimals is not None:
+            return str(round(float(val), decimals))
+        return str(val)
+
+    sl  = payload["sleep"]
+    act = payload["last_activity"]
+    new_row = ",".join([
+        csv_val(date_str),
+        csv_val(sl.get("score")),
+        csv_val(sl["duration_seconds"] / 3600 if sl.get("duration_seconds") else None, 2),
+        csv_val(round(sl["deep_seconds"]  / 60) if sl.get("deep_seconds")  else None),
+        csv_val(round(sl["rem_seconds"]   / 60) if sl.get("rem_seconds")   else None),
+        csv_val(round(sl["light_seconds"] / 60) if sl.get("light_seconds") else None),
+        csv_val(round(sl["awake_seconds"] / 60) if sl.get("awake_seconds") else None),
+        csv_val(payload["hrv"].get("last_night")),
+        csv_val(payload["hrv"].get("weekly_avg")),
+        csv_val(payload["hrv"].get("status")),
+        csv_val(payload["body_battery"].get("morning")),
+        csv_val(payload["resting_hr"]),
+        csv_val(payload["vo2_max"], 1),
+        csv_val(payload["stress"].get("avg")),
+        csv_val(payload["spo2_avg"]),
+        csv_val(payload["steps"]),
+        csv_val(payload["active_calories"]),
+        csv_val(payload["total_calories"]),
+        csv_val(act.get("type")),
+        csv_val(act.get("name")),
+        csv_val(round(act["distance_meters"] / 1000, 2) if act.get("distance_meters") else None),
+        csv_val(round(act["duration_seconds"] / 60, 1) if act.get("duration_seconds") else None),
+        csv_val(act.get("avg_hr")),
+        csv_val(act.get("max_hr")),
+        csv_val(act.get("calories")),
+        csv_val(act.get("training_load")),
+    ])
+
+    csv_path = "data/history.csv"
+    try:
+        existing_csv = repo.get_contents(csv_path)
+        old_content  = existing_csv.decoded_content.decode("utf-8")
+        lines = old_content.strip().splitlines()
+        # Keep all data rows, drop old header and any existing row for today
+        data_lines = [l for l in lines if l and not l.startswith("date,") and not l.startswith(date_str + ",")]
+        new_content = "\n".join([",".join(CSV_HEADERS)] + data_lines + [new_row]) + "\n"
+        repo.update_file(csv_path, f"History update {date_str}", new_content, existing_csv.sha)
+        print(f"Updated {csv_path}")
+    except Exception:
+        new_content = ",".join(CSV_HEADERS) + "\n" + new_row + "\n"
+        repo.create_file(csv_path, f"Create history.csv {date_str}", new_content)
+        print(f"Created {csv_path}")
+
     print(f"Done. Data saved for {yest_str}.")
     return payload
 
