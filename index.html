@@ -122,6 +122,12 @@
   </div>
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
     <div class="sync-pill"><div class="sync-dot"></div><span id="sync-time">Syncing...</span></div>
+    <a id="csv-btn" href="data/history.csv" download="julius-health-history.csv"
+       style="background:var(--bg3);color:var(--subtle);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;transition:border-color .15s;"
+       onmouseover="this.style.borderColor='var(--green-d)'" onmouseout="this.style.borderColor='var(--border)'">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Export CSV
+    </a>
     <button class="copy-btn" id="copy-btn" onclick="copyForClaude()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
       Copy for Claude
