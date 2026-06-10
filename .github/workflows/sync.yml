@@ -1,34 +1,168 @@
-name: Daily Garmin Sync
+#!/usr/bin/env python3
+"""
+Julius Health — Garmin sync script
+Runs at 9am daily, pulls data from Garmin Connect, saves to GitHub
+"""
 
-on:
-  schedule:
-    # Runs at 9:00am Lithuania time (UTC+3) = 06:00 UTC
-    - cron: '0 6 * * *'
-  workflow_dispatch: # Allow manual trigger from GitHub UI
+import os
+import json
+import datetime
+import traceback
+from garminconnect import Garmin
+from github import Github
 
-jobs:
-  sync:
-    runs-on: ubuntu-latest
+# ── Credentials from environment variables ──────────────────────────────────
+GARMIN_EMAIL    = os.environ.get("GARMIN_EMAIL")
+GARMIN_PASSWORD = os.environ.get("GARMIN_PASSWORD")
+GITHUB_TOKEN    = os.environ.get("GITHUB_TOKEN")
+GITHUB_REPO     = os.environ.get("GITHUB_REPO", "juliuskvx/julius-health")
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+def safe_get(fn, default=None):
+    try:
+        return fn()
+    except Exception:
+        return default
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+def sync():
+    today = datetime.date.today()
+    yesterday = today - datetime.timedelta(days=1)
+    date_str  = today.isoformat()
+    yest_str  = yesterday.isoformat()
 
-      - name: Install dependencies
-        run: pip install garminconnect PyGithub
+    print(f"[{date_str}] Connecting to Garmin Connect...")
+    client = Garmin(GARMIN_EMAIL, GARMIN_PASSWORD)
+    client.login()
+    print("Connected.")
 
-      - name: Run Garmin sync
-        env:
-          GARMIN_EMAIL:    ${{ secrets.GARMIN_EMAIL }}
-          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
-          GITHUB_TOKEN:    ${{ secrets.PAT_TOKEN }}
-          GITHUB_REPO:     juliuskvx/julius-health
-        run: python sync.py
+    # ── Sleep ─────────────────────────────────────────────────────────────────
+    sleep_raw  = safe_get(lambda: client.get_sleep_data(yest_str), {})
+    sleep_data = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
 
-      - name: Confirm sync completed
-        run: echo "Sync completed at $(date)"
+    sleep = {
+        "date":             yest_str,
+        "score":            sleep_data.get("sleepScores", {}).get("overall", {}).get("value"),
+        "duration_seconds": sleep_data.get("sleepTimeSeconds"),
+        "deep_seconds":     sleep_data.get("deepSleepSeconds"),
+        "light_seconds":    sleep_data.get("lightSleepSeconds"),
+        "rem_seconds":      sleep_data.get("remSleepSeconds"),
+        "awake_seconds":    sleep_data.get("awakeSleepSeconds"),
+        "stages":           sleep_data.get("sleepLevels", []),
+    }
+
+    # ── HRV ───────────────────────────────────────────────────────────────────
+    hrv_raw = safe_get(lambda: client.get_hrv_data(yest_str), {})
+    hrv = {
+        "weekly_avg":    hrv_raw.get("hrvSummary", {}).get("weeklyAvg") if hrv_raw else None,
+        "last_night":    hrv_raw.get("hrvSummary", {}).get("lastNight") if hrv_raw else None,
+        "last_night_5min": hrv_raw.get("hrvSummary", {}).get("lastNight5MinHigh") if hrv_raw else None,
+        "status":        hrv_raw.get("hrvSummary", {}).get("status") if hrv_raw else None,
+    }
+
+    # ── Body Battery & Stress ─────────────────────────────────────────────────
+    bb_raw = safe_get(lambda: client.get_body_battery(date_str), [])
+    bb_values = []
+    if isinstance(bb_raw, list):
+        for item in bb_raw:
+            if isinstance(item, dict) and "bodyBatteryValuesArray" in item:
+                bb_values = item["bodyBatteryValuesArray"]
+                break
+    bb_morning = bb_values[0][1] if bb_values else None
+
+    stress_raw = safe_get(lambda: client.get_stress_data(yest_str), {})
+    stress_avg = stress_raw.get("avgStressLevel") if stress_raw else None
+
+    # ── Resting Heart Rate ────────────────────────────────────────────────────
+    rhr_raw = safe_get(lambda: client.get_rhr_day(yest_str), {})
+    rhr = rhr_raw.get("allMetrics", {}).get("metricsMap", {}).get("WELLNESS_RESTING_HEART_RATE", [{}])[0].get("value") if rhr_raw else None
+
+    # ── VO2 Max ───────────────────────────────────────────────────────────────
+    vo2_raw = safe_get(lambda: client.get_max_metrics(yest_str), {})
+    vo2 = None
+    if isinstance(vo2_raw, list) and vo2_raw:
+        vo2 = vo2_raw[0].get("generic", {}).get("vo2MaxPreciseValue")
+
+    # ── Steps & Active Calories ───────────────────────────────────────────────
+    steps_raw = safe_get(lambda: client.get_steps_data(yest_str), [])
+    total_steps = 0
+    if isinstance(steps_raw, list):
+        for s in steps_raw:
+            if isinstance(s, dict):
+                total_steps += s.get("steps", 0)
+
+    stats_raw = safe_get(lambda: client.get_stats(yest_str), {})
+    active_calories = stats_raw.get("activeKilocalories") if stats_raw else None
+    total_calories  = stats_raw.get("totalKilocalories") if stats_raw else None
+
+    # ── SpO2 ──────────────────────────────────────────────────────────────────
+    spo2_raw = safe_get(lambda: client.get_spo2_data(yest_str), {})
+    spo2_avg = spo2_raw.get("averageSpO2") if spo2_raw else None
+
+    # ── Last Activity ─────────────────────────────────────────────────────────
+    activities = safe_get(lambda: client.get_activities_by_date(yest_str, yest_str), [])
+    last_activity = {}
+    if activities:
+        a = activities[0]
+        last_activity = {
+            "type":             a.get("activityType", {}).get("typeKey"),
+            "name":             a.get("activityName"),
+            "duration_seconds": a.get("duration"),
+            "distance_meters":  a.get("distance"),
+            "avg_hr":           a.get("averageHR"),
+            "max_hr":           a.get("maxHR"),
+            "calories":         a.get("calories"),
+            "training_load":    a.get("activityTrainingLoad"),
+            "avg_pace":         a.get("averageSpeed"),
+            "hr_zones":         a.get("heartRateZones", []),
+        }
+
+    # ── Assemble payload ──────────────────────────────────────────────────────
+    payload = {
+        "sync_date":       date_str,
+        "data_date":       yest_str,
+        "sleep":           sleep,
+        "hrv":             hrv,
+        "body_battery":    {"morning": bb_morning, "values": bb_values[:48]},
+        "stress":          {"avg": stress_avg},
+        "resting_hr":      rhr,
+        "vo2_max":         vo2,
+        "steps":           total_steps,
+        "active_calories": active_calories,
+        "total_calories":  total_calories,
+        "spo2_avg":        spo2_avg,
+        "last_activity":   last_activity,
+    }
+
+    # ── Push to GitHub ────────────────────────────────────────────────────────
+    print(f"Pushing data to GitHub ({GITHUB_REPO})...")
+    gh   = Github(GITHUB_TOKEN)
+    repo = gh.get_repo(GITHUB_REPO)
+
+    file_path = f"data/{date_str}.json"
+    content   = json.dumps(payload, indent=2, ensure_ascii=False)
+
+    try:
+        existing = repo.get_contents(file_path)
+        repo.update_file(file_path, f"Health data {date_str}", content, existing.sha)
+        print(f"Updated {file_path}")
+    except Exception:
+        repo.create_file(file_path, f"Health data {date_str}", content)
+        print(f"Created {file_path}")
+
+    # Also update latest.json for the dashboard
+    latest_path = "data/latest.json"
+    try:
+        existing = repo.get_contents(latest_path)
+        repo.update_file(latest_path, f"Latest health data {date_str}", content, existing.sha)
+    except Exception:
+        repo.create_file(latest_path, f"Latest health data {date_str}", content)
+
+    print(f"Done. Data saved for {yest_str}.")
+    return payload
+
+if __name__ == "__main__":
+    try:
+        sync()
+    except Exception as e:
+        print(f"ERROR: {e}")
+        traceback.print_exc()
+        exit(1)
