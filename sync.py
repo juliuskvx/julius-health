@@ -34,31 +34,44 @@ def sync():
     client.login()
     print("Connected.")
 
-    # ── Sleep ─────────────────────────────────────────────────────────────────
-    sleep_raw  = safe_get(lambda: client.get_sleep_data(yest_str), {})
+    # ── Sleep — pull TODAY (last night's sleep syncs under today's date) ──────
+    sleep_raw  = safe_get(lambda: client.get_sleep_data(date_str), {})
+    # fallback to yesterday if today has no data yet
+    if not sleep_raw or not sleep_raw.get("dailySleepDTO", {}).get("sleepTimeSeconds"):
+        sleep_raw = safe_get(lambda: client.get_sleep_data(yest_str), {})
     sleep_data = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
 
+    # Sleep score: try multiple field paths Garmin uses
+    sleep_score = (
+        sleep_data.get("sleepScores", {}).get("overall", {}).get("value")
+        or sleep_data.get("sleepScore")
+        or sleep_data.get("averageSleepScore")
+    )
+
     sleep = {
-        "date":             yest_str,
-        "score":            sleep_data.get("sleepScores", {}).get("overall", {}).get("value"),
+        "date":             date_str,
+        "score":            sleep_score,
         "duration_seconds": sleep_data.get("sleepTimeSeconds"),
         "deep_seconds":     sleep_data.get("deepSleepSeconds"),
         "light_seconds":    sleep_data.get("lightSleepSeconds"),
         "rem_seconds":      sleep_data.get("remSleepSeconds"),
         "awake_seconds":    sleep_data.get("awakeSleepSeconds"),
-        "stages":           sleep_data.get("sleepLevels", []),
+        "stages":           sleep_data.get("sleepLevels") or [],
     }
 
-    # ── HRV ───────────────────────────────────────────────────────────────────
-    hrv_raw = safe_get(lambda: client.get_hrv_data(yest_str), {})
+    # ── HRV — pull TODAY ──────────────────────────────────────────────────────
+    hrv_raw = safe_get(lambda: client.get_hrv_data(date_str), {})
+    if not hrv_raw:
+        hrv_raw = safe_get(lambda: client.get_hrv_data(yest_str), {})
+    hrv_summary = hrv_raw.get("hrvSummary", {}) if hrv_raw else {}
     hrv = {
-        "weekly_avg":    hrv_raw.get("hrvSummary", {}).get("weeklyAvg") if hrv_raw else None,
-        "last_night":    hrv_raw.get("hrvSummary", {}).get("lastNight") if hrv_raw else None,
-        "last_night_5min": hrv_raw.get("hrvSummary", {}).get("lastNight5MinHigh") if hrv_raw else None,
-        "status":        hrv_raw.get("hrvSummary", {}).get("status") if hrv_raw else None,
+        "weekly_avg":      hrv_summary.get("weeklyAvg"),
+        "last_night":      hrv_summary.get("lastNight"),
+        "last_night_5min": hrv_summary.get("lastNight5MinHigh"),
+        "status":          hrv_summary.get("status"),
     }
 
-    # ── Body Battery & Stress ─────────────────────────────────────────────────
+    # ── Body Battery — most recent non-null value ─────────────────────────────
     bb_raw = safe_get(lambda: client.get_body_battery(date_str), [])
     bb_values = []
     if isinstance(bb_raw, list):
@@ -66,39 +79,63 @@ def sync():
             if isinstance(item, dict) and "bodyBatteryValuesArray" in item:
                 bb_values = item["bodyBatteryValuesArray"]
                 break
-    bb_morning = bb_values[0][1] if bb_values else None
+    # Get most recent non-null value (not first — that's midnight which is stale)
+    bb_current = None
+    for entry in reversed(bb_values):
+        if isinstance(entry, list) and len(entry) > 1 and entry[1] is not None:
+            bb_current = entry[1]
+            break
 
-    stress_raw = safe_get(lambda: client.get_stress_data(yest_str), {})
+    # ── Stress — pull TODAY ───────────────────────────────────────────────────
+    stress_raw = safe_get(lambda: client.get_stress_data(date_str), {})
+    if not stress_raw or stress_raw.get("avgStressLevel", -1) == -1:
+        stress_raw = safe_get(lambda: client.get_stress_data(yest_str), {})
     stress_avg = stress_raw.get("avgStressLevel") if stress_raw else None
+    if stress_avg == -1:
+        stress_avg = None
 
-    # ── Resting Heart Rate ────────────────────────────────────────────────────
-    rhr_raw = safe_get(lambda: client.get_rhr_day(yest_str), {})
-    rhr = rhr_raw.get("allMetrics", {}).get("metricsMap", {}).get("WELLNESS_RESTING_HEART_RATE", [{}])[0].get("value") if rhr_raw else None
+    # ── Resting Heart Rate — pull TODAY then fallback ─────────────────────────
+    rhr_raw = safe_get(lambda: client.get_rhr_day(date_str), {})
+    rhr = rhr_raw.get("allMetrics", {}).get("metricsMap", {}).get(
+        "WELLNESS_RESTING_HEART_RATE", [{}])[0].get("value") if rhr_raw else None
+    if not rhr:
+        rhr_raw = safe_get(lambda: client.get_rhr_day(yest_str), {})
+        rhr = rhr_raw.get("allMetrics", {}).get("metricsMap", {}).get(
+            "WELLNESS_RESTING_HEART_RATE", [{}])[0].get("value") if rhr_raw else None
+    # Also try restingHeartRate directly from stats
+    if not rhr:
+        stats_today = safe_get(lambda: client.get_stats(date_str), {})
+        rhr = stats_today.get("restingHeartRate") if stats_today else None
 
     # ── VO2 Max ───────────────────────────────────────────────────────────────
     vo2_raw = safe_get(lambda: client.get_max_metrics(yest_str), {})
     vo2 = None
     if isinstance(vo2_raw, list) and vo2_raw:
-        vo2 = vo2_raw[0].get("generic", {}).get("vo2MaxPreciseValue")
+        vo2 = (vo2_raw[0].get("generic", {}) or {}).get("vo2MaxPreciseValue")
+    # Fallback: try user stats
+    if not vo2:
+        user_stats = safe_get(lambda: client.get_user_summary(yest_str), {})
+        vo2 = (user_stats or {}).get("vo2Max")
 
-    # ── Steps & Active Calories ───────────────────────────────────────────────
-    steps_raw = safe_get(lambda: client.get_steps_data(yest_str), [])
+    # ── Steps & Calories — pull TODAY ────────────────────────────────────────
+    steps_raw = safe_get(lambda: client.get_steps_data(date_str), [])
     total_steps = 0
     if isinstance(steps_raw, list):
         for s in steps_raw:
             if isinstance(s, dict):
                 total_steps += s.get("steps", 0)
 
-    stats_raw = safe_get(lambda: client.get_stats(yest_str), {})
+    stats_raw = safe_get(lambda: client.get_stats(date_str), {})
     active_calories = stats_raw.get("activeKilocalories") if stats_raw else None
     total_calories  = stats_raw.get("totalKilocalories") if stats_raw else None
 
-    # ── SpO2 ──────────────────────────────────────────────────────────────────
-    spo2_raw = safe_get(lambda: client.get_spo2_data(yest_str), {})
-    spo2_avg = spo2_raw.get("averageSpO2") if spo2_raw else None
+    # ── SpO2 — pull TODAY ─────────────────────────────────────────────────────
+    spo2_raw = safe_get(lambda: client.get_spo2_data(date_str), {})
+    spo2_avg = (spo2_raw.get("averageSpO2") or spo2_raw.get("avgSleepSpO2")
+                or spo2_raw.get("lastSevenDaysAvgSpO2")) if spo2_raw else None
 
-    # ── Last Activity ─────────────────────────────────────────────────────────
-    activities = safe_get(lambda: client.get_activities_by_date(yest_str, yest_str), [])
+    # ── Last Activity — yesterday or today ────────────────────────────────────
+    activities = safe_get(lambda: client.get_activities_by_date(yest_str, date_str), [])
     last_activity = {}
     if activities:
         a = activities[0]
@@ -118,10 +155,10 @@ def sync():
     # ── Assemble payload ──────────────────────────────────────────────────────
     payload = {
         "sync_date":       date_str,
-        "data_date":       yest_str,
+        "data_date":       date_str,
         "sleep":           sleep,
         "hrv":             hrv,
-        "body_battery":    {"morning": bb_morning, "values": bb_values[:48]},
+        "body_battery":    {"morning": bb_current, "values": bb_values[:48]},
         "stress":          {"avg": stress_avg},
         "resting_hr":      rhr,
         "vo2_max":         vo2,
