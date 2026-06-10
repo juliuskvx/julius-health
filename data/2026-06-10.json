@@ -1,0 +1,70 @@
+{
+  "sync_date": "2026-06-10",
+  "data_date": "2026-06-09",
+  "sleep": {
+    "date": "2026-06-09",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
+    "stages": []
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null
+  },
+  "body_battery": {
+    "morning": 7,
+    "values": [
+      [
+        1781038800000,
+        7
+      ],
+      [
+        1781050860000,
+        33
+      ],
+      [
+        1781051040000,
+        34
+      ],
+      [
+        1781063100000,
+        80
+      ],
+      [
+        1781063280000,
+        80
+      ],
+      [
+        1781072460000,
+        99
+      ]
+    ]
+  },
+  "stress": {
+    "avg": 41
+  },
+  "resting_hr": 66.0,
+  "vo2_max": 46.1,
+  "steps": 15240,
+  "active_calories": 884.0,
+  "total_calories": 3223.0,
+  "spo2_avg": 95.0,
+  "last_activity": {
+    "type": "running",
+    "name": "Klaipeda Running",
+    "duration_seconds": 2436.825927734375,
+    "distance_meters": 6795.02978515625,
+    "avg_hr": 158.0,
+    "max_hr": 174.0,
+    "calories": 595.0,
+    "training_load": 123.07754516601562,
+    "avg_pace": 2.7880001068115234,
+    "hr_zones": []
+  }
+}
