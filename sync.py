@@ -104,13 +104,19 @@ def sync():
         rhr = stats_today.get("restingHeartRate") if stats_today else None
 
     # ── VO2 Max ───────────────────────────────────────────────────────────────
-    vo2_raw = safe_get(lambda: client.get_max_metrics(yest_str), {})
     vo2 = None
-    if isinstance(vo2_raw, list) and vo2_raw:
-        vo2 = (vo2_raw[0].get("generic", {}) or {}).get("vo2MaxPreciseValue")
-    if not vo2:
-        user_stats = safe_get(lambda: client.get_user_summary(yest_str), {})
-        vo2 = (user_stats or {}).get("vo2Max")
+    # Scan back up to 30 days to find last known VO2 max (only updates after outdoor runs)
+    for days_back in range(1, 31):
+        check_date = (today - datetime.timedelta(days=days_back)).isoformat()
+        vo2_raw = safe_get(lambda d=check_date: client.get_max_metrics(d), {})
+        if isinstance(vo2_raw, list) and vo2_raw:
+            vo2 = (vo2_raw[0].get("generic", {}) or {}).get("vo2MaxPreciseValue")
+        if not vo2:
+            user_stats = safe_get(lambda d=check_date: client.get_user_summary(d), {})
+            vo2 = (user_stats or {}).get("vo2Max")
+        if vo2:
+            print(f"VO2 max found from {check_date}: {vo2}")
+            break
 
     # ── Steps & Calories ──────────────────────────────────────────────────────
     steps_raw = safe_get(lambda: client.get_steps_data(date_str), [])
