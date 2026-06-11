@@ -18,42 +18,42 @@
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 98,
+    "morning": 81,
     "values": [
       [
         1781127360000,
         14
       ],
       [
-        1781136360000,
-        31
+        1781140860000,
+        48
       ],
       [
-        1781136900000,
-        32
+        1781141040000,
+        48
       ],
       [
-        1781148420000,
-        73
-      ],
-      [
-        1781148600000,
-        73
+        1781156520000,
+        93
       ],
       [
         1781159220000,
         98
+      ],
+      [
+        1781172180000,
+        81
       ]
     ]
   },
   "stress": {
-    "avg": 12
+    "avg": 16
   },
   "resting_hr": 53.0,
-  "vo2_max": null,
-  "steps": 68,
-  "active_calories": 0.0,
-  "total_calories": 950.0,
+  "vo2_max": 46.1,
+  "steps": 657,
+  "active_calories": 9.0,
+  "total_calories": 1290.0,
   "spo2_avg": 95.0,
   "last_activity": {
     "type": "lap_swimming",
