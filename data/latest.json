@@ -1,70 +1,70 @@
 {
-  "sync_date": "2026-06-10",
-  "data_date": "2026-06-10",
+  "sync_date": "2026-06-11",
+  "data_date": "2026-06-11",
   "sleep": {
-    "date": "2026-06-10",
-    "score": 93,
-    "duration_seconds": 30360,
-    "deep_seconds": 5280,
-    "light_seconds": 18960,
-    "rem_seconds": 6120,
-    "awake_seconds": 0,
+    "date": "2026-06-11",
+    "score": 87,
+    "duration_seconds": 30180,
+    "deep_seconds": 4080,
+    "light_seconds": 21600,
+    "rem_seconds": 4500,
+    "awake_seconds": 60,
     "stages": []
   },
   "hrv": {
     "weekly_avg": null,
     "last_night": null,
-    "last_night_5min": 75,
+    "last_night_5min": 79,
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 99,
+    "morning": 98,
     "values": [
       [
-        1781038800000,
-        7
+        1781127360000,
+        14
       ],
       [
-        1781050860000,
-        33
+        1781136360000,
+        31
       ],
       [
-        1781051040000,
-        34
+        1781136900000,
+        32
       ],
       [
-        1781063100000,
-        80
+        1781148420000,
+        73
       ],
       [
-        1781063280000,
-        80
+        1781148600000,
+        73
       ],
       [
-        1781072460000,
-        99
+        1781159220000,
+        98
       ]
     ]
   },
   "stress": {
-    "avg": 11
+    "avg": 12
   },
-  "resting_hr": 50.0,
-  "vo2_max": 46.1,
-  "steps": 453,
-  "active_calories": 8.0,
-  "total_calories": 989.0,
-  "spo2_avg": 96.0,
+  "resting_hr": 53.0,
+  "vo2_max": null,
+  "steps": 68,
+  "active_calories": 0.0,
+  "total_calories": 950.0,
+  "spo2_avg": 95.0,
   "last_activity": {
-    "type": "running",
-    "name": "Klaipeda Running",
-    "duration_seconds": 2436.825927734375,
-    "distance_meters": 6795.02978515625,
-    "avg_hr": 158.0,
-    "max_hr": 174.0,
-    "calories": 595.0,
-    "training_load": 123.07754516601562,
-    "avg_pace": 2.7880001068115234,
+    "type": "lap_swimming",
+    "name": "Pool Swim",
+    "duration_seconds": 2020.2120361328125,
+    "distance_meters": 1650.0,
+    "avg_hr": 139.0,
+    "max_hr": 162.0,
+    "calories": 431.0,
+    "training_load": 63.22441101074219,
+    "avg_pace": 0.8169999718666077,
     "hr_zones": []
   }
 }
