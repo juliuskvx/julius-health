@@ -58,6 +58,7 @@
   "last_activity": {
     "type": "lap_swimming",
     "name": "Pool Swim",
+    "start_time": "2026-06-10 19:52:25",
     "duration_seconds": 2020.2120361328125,
     "distance_meters": 1650.0,
     "avg_hr": 139.0,
@@ -66,5 +67,33 @@
     "training_load": 63.22441101074219,
     "avg_pace": 0.8169999718666077,
     "hr_zones": []
-  }
+  },
+  "activities": [
+    {
+      "type": "lap_swimming",
+      "name": "Pool Swim",
+      "start_time": "2026-06-10 19:52:25",
+      "duration_seconds": 2020.2120361328125,
+      "distance_meters": 1650.0,
+      "avg_hr": 139.0,
+      "max_hr": 162.0,
+      "calories": 431.0,
+      "training_load": 63.22441101074219,
+      "avg_pace": 0.8169999718666077,
+      "hr_zones": []
+    },
+    {
+      "type": "road_biking",
+      "name": "Klaipeda Road Cycling",
+      "start_time": "2026-06-10 17:44:09",
+      "duration_seconds": 2719.0419921875,
+      "distance_meters": 20461.55078125,
+      "avg_hr": 138.0,
+      "max_hr": 169.0,
+      "calories": 533.0,
+      "training_load": 59.75086975097656,
+      "avg_pace": 7.525000095367432,
+      "hr_zones": []
+    }
+  ]
 }
