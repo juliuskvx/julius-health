@@ -440,36 +440,50 @@ async function renderDashboard(data) {
   const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const base2 = window.location.origin + window.location.pathname.replace('index.html','');
   const today = data.data_date ? new Date(data.data_date + 'T00:00:00') : new Date();
+
+  // Build last 7 dates oldest to newest
   const dateList = [];
   for (let i = 6; i >= 0; i--) {
     const d2 = new Date(today);
     d2.setDate(today.getDate() - i);
-    dateList.push(d2);
+    dateList.push(d2.toISOString().slice(0, 10));
   }
   const realToday = new Date().toISOString().slice(0, 10);
-  const dayLabels = dateList.map((d2, i) => {
+  const dayLabels = dateList.map((iso, i) => {
+    const d2 = new Date(iso + 'T00:00:00');
     const name = DAY_NAMES[d2.getDay()];
-    const isToday = d2.toISOString().slice(0, 10) === realToday;
-    return (i === 6 && isToday) ? name + ' ✦' : name;
+    return (i === 6 && iso === realToday) ? name + ' ✦' : name;
   });
 
-  const fallbackHRV   = [49,52,48,55,51,54];
-  const fallbackSleep = [6.8,7.1,5.9,7.4,6.5,7.2];
-  const fallbackBB    = [55,48,70,65,52,68];
+  // Load history.csv for real historical data
+  const csvByDate = {};
+  try {
+    const csvRes = await fetch(`${base2}data/history.csv?t=${Date.now()}`);
+    if (csvRes.ok) {
+      const csvText = await csvRes.text();
+      const lines = csvText.trim().split('\n');
+      const headers = lines[0].split(',');
+      const idx = {
+        date:  headers.indexOf('date'),
+        hrv:   headers.indexOf('hrv_last_night'),
+        sleep: headers.indexOf('sleep_hours'),
+        bb:    headers.indexOf('body_battery_morning'),
+      };
+      for (let i = 1; i < lines.length; i++) {
+        const cols = lines[i].split(',');
+        const d = cols[idx.date] && cols[idx.date].trim();
+        if (d) csvByDate[d] = {
+          hrv:   cols[idx.hrv]   && cols[idx.hrv].trim()   ? +cols[idx.hrv]   : null,
+          sleep: cols[idx.sleep] && cols[idx.sleep].trim() ? +cols[idx.sleep] : null,
+          bb:    cols[idx.bb]    && cols[idx.bb].trim()    ? +cols[idx.bb]    : null,
+        };
+      }
+    }
+  } catch(e) { console.warn('CSV load failed', e); }
 
-  const histFetches = dateList.slice(0, 6).map(async (d2, i) => {
-    const iso = d2.toISOString().slice(0, 10);
-    try {
-      const res = await fetch(`${base2}data/${iso}.json?t=${Date.now()}`);
-      if (!res.ok) throw new Error();
-      return await res.json();
-    } catch { return null; }
-  });
-
-  const histData = await Promise.all(histFetches);
-  const hrvVals   = [...histData.map((h,i) => h?.hrv?.last_night        ?? fallbackHRV[i]),   hrv   || 56];
-  const sleepVals = [...histData.map((h,i) => h?.sleep?.duration_seconds ? +(h.sleep.duration_seconds/3600).toFixed(1) : fallbackSleep[i]), totalSecs ? +(totalSecs/3600).toFixed(1) : 7.0];
-  const bbVals    = [...histData.map((h,i) => h?.body_battery?.morning   ?? fallbackBB[i]),    bb    || 71];
+  const hrvVals   = dateList.map(iso => csvByDate[iso]?.hrv   ?? null);
+  const sleepVals = dateList.map(iso => csvByDate[iso]?.sleep ?? null);
+  const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);
 
   makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
   makeChart('chart-sleep', dayLabels, sleepVals, '#85B7EB');
