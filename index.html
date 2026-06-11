@@ -439,7 +439,8 @@ async function renderDashboard(data) {
   // Charts
   const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const base2 = window.location.origin + window.location.pathname.replace('index.html','');
-  const today = data.data_date ? new Date(data.data_date + 'T00:00:00') : new Date();
+  // Parse date as local noon to avoid UTC timezone shift causing wrong day
+  const today = data.data_date ? new Date(data.data_date + 'T12:00:00') : new Date();
 
   // Build last 7 dates oldest to newest
   const dateList = [];
@@ -462,7 +463,8 @@ async function renderDashboard(data) {
     if (csvRes.ok) {
       const csvText = await csvRes.text();
       const lines = csvText.trim().split('\n');
-      const headers = lines[0].split(',');
+      const sep = lines[0].includes('\t') ? '\t' : ',';
+      const headers = lines[0].split(sep);
       const idx = {
         date:  headers.indexOf('date'),
         hrv:   headers.indexOf('hrv_last_night'),
@@ -470,7 +472,7 @@ async function renderDashboard(data) {
         bb:    headers.indexOf('body_battery_morning'),
       };
       for (let i = 1; i < lines.length; i++) {
-        const cols = lines[i].split(',');
+        const cols = lines[i].split(sep);
         const d = cols[idx.date] && cols[idx.date].trim();
         if (d) csvByDate[d] = {
           hrv:   cols[idx.hrv]   && cols[idx.hrv].trim()   ? +cols[idx.hrv]   : null,
