@@ -301,7 +301,7 @@ function makeChart(id, labels, values, color, type='bar') {
       }},
       scales: {
         x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: (ctx2) => ctx2.index === lastIdx ? color : '#64748b', font: { size: 10 }}},
-        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }}, beginAtZero: false },
+        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }}, beginAtZero: true },
       }
     }
   });
@@ -483,17 +483,10 @@ async function renderDashboard(data) {
     }
   } catch(e) { console.warn('CSV load failed', e); }
 
-  // Sleep is stored under sync_date (the morning AFTER the sleep)
-  // So to show sleep for Wed night, we need Thursday's CSV row
-  // Shift: for each display date, get sleep from the NEXT day's row
-  const nextDateList = dateList.map(iso => {
-    const d = new Date(iso + 'T00:00:00');
-    d.setDate(d.getDate() + 1);
-    return d.toISOString().slice(0, 10);
-  });
-
+  // Each CSV row date = the morning after the sleep, which is correct for display
+  // No shifting needed - row dated Thu = Thu morning data = Wed night sleep
   const hrvVals   = dateList.map(iso => csvByDate[iso]?.hrv   ?? null);
-  const sleepVals = nextDateList.map(iso => csvByDate[iso]?.sleep ?? null);
+  const sleepVals = dateList.map(iso => csvByDate[iso]?.sleep ?? null);
   const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);
 
   makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
