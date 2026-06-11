@@ -481,8 +481,17 @@ async function renderDashboard(data) {
     }
   } catch(e) { console.warn('CSV load failed', e); }
 
+  // Sleep is stored under sync_date (the morning AFTER the sleep)
+  // So to show sleep for Wed night, we need Thursday's CSV row
+  // Shift: for each display date, get sleep from the NEXT day's row
+  const nextDateList = dateList.map(iso => {
+    const d = new Date(iso + 'T00:00:00');
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().slice(0, 10);
+  });
+
   const hrvVals   = dateList.map(iso => csvByDate[iso]?.hrv   ?? null);
-  const sleepVals = dateList.map(iso => csvByDate[iso]?.sleep ?? null);
+  const sleepVals = nextDateList.map(iso => csvByDate[iso]?.sleep ?? null);
   const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);
 
   makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
