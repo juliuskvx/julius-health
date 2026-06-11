@@ -482,14 +482,11 @@ async function renderDashboard(data) {
       }
     }
   } catch(e) { console.warn('CSV load failed', e); }
-
   // Each CSV row date = the morning after the sleep, which is correct for display
   // No shifting needed - row dated Thu = Thu morning data = Wed night sleep
   const hrvVals   = dateList.map(iso => csvByDate[iso]?.hrv   ?? null);
   const sleepVals = dateList.map(iso => csvByDate[iso]?.sleep ?? null);
-  const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);
-
-  makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
+  const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);  makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
   makeChart('chart-sleep', dayLabels, sleepVals, '#85B7EB');
   makeChart('chart-bb',    dayLabels, bbVals,    '#378ADD');
 
