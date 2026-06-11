@@ -31,7 +31,6 @@
   }
   html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.5; }
 
-  /* Layout */
   .topbar { background: var(--bg2); border-bottom: 0.5px solid var(--border); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
   .topbar-left { display: flex; align-items: center; gap: 12px; }
   .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--green-bg); border: 1px solid var(--green-d); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--green); flex-shrink: 0; }
@@ -46,14 +45,12 @@
 
   .main { max-width: 1100px; margin: 0 auto; padding: 24px; }
 
-  /* Status bar */
   .status-bar { background: var(--green-bg); border: 0.5px solid var(--green-d); border-radius: var(--radius); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
   .status-label { font-size: 10px; color: var(--green); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
   .status-text  { font-size: 15px; font-weight: 600; }
   .readiness-score { font-size: 42px; font-weight: 700; color: var(--green); line-height: 1; }
   .readiness-label { font-size: 11px; color: var(--muted); }
 
-  /* Metric cards */
   .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
   .metric { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
   .metric-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
@@ -65,20 +62,17 @@
   .flat { color: var(--muted); }
   .warn { color: var(--amber); }
 
-  /* Charts */
   .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
   .chart-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
   .chart-title { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
   .chart-wrap  { height: 120px; position: relative; }
 
-  /* Sleep stages */
   .stages-bar { height: 14px; border-radius: 4px; overflow: hidden; display: flex; margin-bottom: 10px; }
   .stage-seg  { height: 100%; transition: flex .3s; }
   .stage-legend { display: flex; gap: 14px; flex-wrap: wrap; }
   .stage-item   { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
   .stage-dot    { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
 
-  /* Bottom row */
   .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
   .info-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
   .card-title { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
@@ -87,7 +81,12 @@
   .data-label { color: var(--muted); }
   .data-val   { font-weight: 500; }
 
-  /* Flags */
+  /* Activity block — one per session */
+  .activity-block { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 10px; }
+  .activity-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .activity-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .activity-type-pill { font-size: 10px; font-weight: 500; background: var(--bg3); border: 0.5px solid var(--border); border-radius: 20px; padding: 2px 8px; color: var(--subtle); text-transform: uppercase; letter-spacing: .05em; }
+
   .flag { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid var(--border); font-size: 12px; color: var(--subtle); line-height: 1.5; }
   .flag:last-child { border-bottom: none; }
   .flag-icon { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; }
@@ -95,11 +94,9 @@
   .flag-warn { background: var(--amber-bg); color: var(--amber); border: 0.5px solid var(--amber-d); }
   .flag-bad  { background: var(--red-bg);   color: var(--red); }
 
-  /* Loading / error */
   .loading { text-align: center; padding: 60px; color: var(--muted); }
   .error-box { background: var(--red-bg); border: 0.5px solid var(--red); border-radius: var(--radius); padding: 16px; color: var(--red); margin-bottom: 20px; font-size: 13px; }
 
-  /* Responsive */
   @media (max-width: 700px) {
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
     .charts-grid  { grid-template-columns: 1fr; }
@@ -140,7 +137,6 @@
   <div id="loading" class="loading">Loading your health data...</div>
   <div id="dashboard" style="display:none">
 
-    <!-- Status -->
     <div class="status-bar">
       <div>
         <div class="status-label">Recovery status</div>
@@ -152,7 +148,6 @@
       </div>
     </div>
 
-    <!-- Key metrics -->
     <div class="metrics-grid">
       <div class="metric">
         <div class="metric-label">HRV</div>
@@ -180,7 +175,6 @@
       </div>
     </div>
 
-    <!-- Charts row 1 -->
     <div class="charts-grid">
       <div class="chart-card">
         <div class="chart-title">HRV — 7 day trend</div>
@@ -192,7 +186,6 @@
       </div>
     </div>
 
-    <!-- Charts row 2 -->
     <div class="charts-grid">
       <div class="chart-card">
         <div class="chart-title">Last night — sleep stages</div>
@@ -211,10 +204,9 @@
       </div>
     </div>
 
-    <!-- Bottom row -->
     <div class="bottom-grid">
       <div class="info-card">
-        <div class="card-title">Yesterday's activity</div>
+        <div class="card-title">Yesterday's activities</div>
         <div id="activity-rows"></div>
       </div>
       <div class="info-card">
@@ -223,7 +215,6 @@
       </div>
     </div>
 
-    <!-- Extra stats -->
     <div class="bottom-grid">
       <div class="info-card">
         <div class="card-title">Daily stats</div>
@@ -241,11 +232,10 @@
       </div>
     </div>
 
-  </div><!-- end #dashboard -->
-</div><!-- end .main -->
+  </div>
+</div>
 
 <script>
-// ── Helpers ──────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const fmt = (v, unit='') => v != null ? `${Math.round(v)}${unit}` : '—';
 const fmtDec = (v, d=1) => v != null ? Number(v).toFixed(d) : '—';
@@ -256,15 +246,15 @@ function secsToHM(s) {
   return `${h}h ${m}m`;
 }
 
-function trendArrow(val, avg, higherBetter=true) {
-  if (!val || !avg) return '';
-  const diff = val - avg;
-  const pct  = Math.abs(diff/avg*100).toFixed(0);
-  const up   = diff > 0;
-  const good = higherBetter ? up : !up;
-  const cls  = good ? 'up' : 'down';
-  const arrow = up ? '↑' : '↓';
-  return `<span class="${cls}">${arrow} ${pct}% vs 7d avg</span>`;
+function activityTypeLabel(type) {
+  const map = {
+    'cycling': '🚴 Cycling', 'road_biking': '🚴 Cycling', 'mountain_biking': '🚵 MTB',
+    'running': '🏃 Running', 'trail_running': '🏃 Trail Run',
+    'swimming': '🏊 Swimming', 'pool_swimming': '🏊 Pool Swim', 'open_water_swimming': '🏊 Open Water',
+    'strength_training': '🏋️ Strength', 'yoga': '🧘 Yoga',
+    'walking': '🚶 Walking', 'hiking': '🥾 Hiking',
+  };
+  return map[type] || (type ? type.replace(/_/g,' ') : 'Activity');
 }
 
 function readiness(data) {
@@ -293,10 +283,8 @@ function makeChart(id, labels, values, color, type='bar') {
       labels,
       datasets: [{
         data: values,
-        backgroundColor: values.map((_, i) =>
-          i === lastIdx ? color : color+'44'),
-        borderColor: values.map((_, i) =>
-          i === lastIdx ? color : color+'66'),
+        backgroundColor: values.map((_, i) => i === lastIdx ? color : color+'44'),
+        borderColor: values.map((_, i) => i === lastIdx ? color : color+'66'),
         borderWidth: type==='line'?2:0,
         borderRadius: 4,
         tension: 0.4,
@@ -313,8 +301,7 @@ function makeChart(id, labels, values, color, type='bar') {
       }},
       scales: {
         x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: (ctx2) => ctx2.index === lastIdx ? color : '#64748b', font: { size: 10 }}},
-        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }},
-             beginAtZero: false },
+        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }}, beginAtZero: false },
       }
     }
   });
@@ -329,19 +316,42 @@ function addFlag(text, type='ok') {
   $('flags-list').appendChild(d);
 }
 
-function addActivityRow(label, val) {
-  if (!val && val!==0) return;
-  const d = document.createElement('div');
-  d.className = 'data-row';
-  d.innerHTML = `<span class="data-label">${label}</span><span class="data-val">${val}</span>`;
-  $('activity-rows').appendChild(d);
+function renderActivities(activities) {
+  const container = $('activity-rows');
+  if (!activities || activities.length === 0) {
+    container.innerHTML = '<div style="color:var(--muted);font-size:13px;padding:8px 0">No activity recorded yesterday</div>';
+    return;
+  }
+
+  activities.forEach((act, idx) => {
+    const block = document.createElement('div');
+    block.className = 'activity-block';
+
+    const rows = [];
+    if (act.distance_meters) rows.push(['Distance', `${(act.distance_meters/1000).toFixed(1)} km`]);
+    if (act.duration_seconds) rows.push(['Duration', secsToHM(act.duration_seconds)]);
+    if (act.avg_hr) rows.push(['Avg HR', `${Math.round(act.avg_hr)} bpm`]);
+    if (act.calories) rows.push(['Calories', `${Math.round(act.calories)} kcal`]);
+    if (act.training_load) rows.push(['Training load', Math.round(act.training_load)]);
+
+    block.innerHTML = `
+      <div class="activity-name">
+        ${act.name || activityTypeLabel(act.type)}
+        <span class="activity-type-pill">${activityTypeLabel(act.type)}</span>
+      </div>
+      ${rows.map(([label, val]) => `
+        <div class="data-row">
+          <span class="data-label">${label}</span>
+          <span class="data-val">${val}</span>
+        </div>`).join('')}
+    `;
+    container.appendChild(block);
+  });
 }
 
-// ── Main render ──────────────────────────────────────────────────────────────
 async function loadData() {
   const base = window.location.origin + window.location.pathname.replace('index.html','');
   const url  = `${base}data/latest.json?t=${Date.now()}`;
-
   let data;
   try {
     const res = await fetch(url);
@@ -349,14 +359,9 @@ async function loadData() {
     data = await res.json();
   } catch(e) {
     $('loading').style.display = 'none';
-    $('error-area').innerHTML = `<div class="error-box">
-      No data found yet. The sync script hasn't run yet, or you need to run it manually first.
-      <br><br><strong>To test right now:</strong> run <code>python3 sync.py</code> in your terminal.
-    </div>`;
-    // Show demo data so dashboard isn't empty
+    $('error-area').innerHTML = `<div class="error-box">No data found yet. Run the sync script or trigger GitHub Actions manually.</div>`;
     data = getDemoData();
   }
-
   renderDashboard(data);
 }
 
@@ -364,16 +369,13 @@ async function renderDashboard(data) {
   $('loading').style.display = 'none';
   $('dashboard').style.display = 'block';
 
-  // Topbar
   $('topbar-date').textContent = `${data.data_date || 'yesterday'} · Garmin Fenix 7 + HRM-Pro`;
   $('sync-time').textContent = data.sync_date ? `Synced ${data.sync_date}` : 'Demo data';
 
-  // Readiness
   const { score, label } = readiness(data);
   $('readiness-score').textContent = score;
   $('status-text').textContent = label;
 
-  // Key metrics
   const hrv = data.hrv?.last_night;
   const bb  = data.body_battery?.morning;
   const rhr = data.resting_hr;
@@ -384,7 +386,6 @@ async function renderDashboard(data) {
   $('m-rhr').textContent  = fmt(rhr, ' bpm');
   $('m-vo2').textContent  = vo2 ? fmtDec(vo2) : '—';
 
-  // Sleep
   const sleep = data.sleep || {};
   const totalSecs = sleep.duration_seconds || 0;
   const deepSecs  = sleep.deep_seconds  || 0;
@@ -410,48 +411,34 @@ async function renderDashboard(data) {
   $('light-pct').textContent = lightSecs ? `${Math.round(lightSecs/sleepTotal*100)}%` : '';
   $('deep-pct').textContent  = deepSecs  ? `${Math.round(deepSecs/sleepTotal*100)}%`  : '';
 
-  // Stats
   $('stat-steps').textContent  = data.steps ? Number(data.steps).toLocaleString() : '—';
   $('stat-cals').textContent   = fmt(data.active_calories, ' kcal');
   $('stat-stress').textContent = data.stress?.avg ? `${Math.round(data.stress.avg)} / 100` : '—';
   $('stat-spo2').textContent   = data.spo2_avg ? `${Math.round(data.spo2_avg)}%` : '—';
 
-  // Fitness snapshot
   $('snap-vo2').textContent        = vo2 ? `${fmtDec(vo2)} ml/kg/min` : '—';
   $('snap-rhr').textContent        = fmt(rhr, ' bpm');
   $('snap-hrv-status').textContent = data.hrv?.status || '—';
   $('snap-date').textContent       = data.data_date || '—';
 
-  // Activity
-  const act = data.last_activity || {};
-  if (act.type) {
-    addActivityRow('Type', act.name || act.type);
-    if (act.distance_meters) addActivityRow('Distance', `${(act.distance_meters/1000).toFixed(1)} km`);
-    if (act.duration_seconds) addActivityRow('Duration', secsToHM(act.duration_seconds));
-    if (act.avg_hr) addActivityRow('Avg HR', `${Math.round(act.avg_hr)} bpm`);
-    if (act.calories) addActivityRow('Calories', `${Math.round(act.calories)} kcal`);
-    if (act.training_load) addActivityRow('Training load', Math.round(act.training_load));
-  } else {
-    $('activity-rows').innerHTML = '<div style="color:var(--muted);font-size:13px;padding:8px 0">No activity recorded yesterday</div>';
-  }
+  // Render all activities (use activities[] array, fall back to last_activity for old data)
+  const activities = data.activities && data.activities.length > 0
+    ? data.activities
+    : (data.last_activity?.type ? [data.last_activity] : []);
+  renderActivities(activities);
 
   // Flags
   if (hrv && hrv > 55) addFlag('HRV above 55ms — nervous system well recovered', 'ok');
   else if (hrv && hrv < 45) addFlag('HRV below 45ms — consider easy day', 'warn');
-
   if (bb && bb >= 70) addFlag(`Body Battery at ${Math.round(bb)} — fully charged`, 'ok');
   else if (bb && bb < 50) addFlag(`Body Battery at ${Math.round(bb)} — incomplete recovery`, 'warn');
-
   if (deepSecs && deepSecs < 3600) addFlag(`Deep sleep ${secsToHM(deepSecs)} — below 1hr target`, 'warn');
   else if (deepSecs >= 3600) addFlag(`Deep sleep ${secsToHM(deepSecs)} — solid`, 'ok');
-
   if (sleep.score && sleep.score < 60) addFlag(`Sleep score ${sleep.score}/100 — needs attention`, 'bad');
 
-  // Charts — build real 7-day labels based on today's actual date
+  // Charts
   const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const base2 = window.location.origin + window.location.pathname.replace('index.html','');
-
-  // Generate last 7 dates (oldest → newest, today last)
   const today = data.data_date ? new Date(data.data_date + 'T00:00:00') : new Date();
   const dateList = [];
   for (let i = 6; i >= 0; i--) {
@@ -466,7 +453,6 @@ async function renderDashboard(data) {
     return (i === 6 && isToday) ? name + ' ✦' : name;
   });
 
-  // Fetch historical JSON files; fall back to null where missing
   const fallbackHRV   = [49,52,48,55,51,54];
   const fallbackSleep = [6.8,7.1,5.9,7.4,6.5,7.2];
   const fallbackBB    = [55,48,70,65,52,68];
@@ -477,22 +463,18 @@ async function renderDashboard(data) {
       const res = await fetch(`${base2}data/${iso}.json?t=${Date.now()}`);
       if (!res.ok) throw new Error();
       return await res.json();
-    } catch {
-      return null;
-    }
+    } catch { return null; }
   });
 
   const histData = await Promise.all(histFetches);
-
-  const hrvVals   = [...histData.map((h, i) => h?.hrv?.last_night        ?? fallbackHRV[i]),   hrv   || 56];
-  const sleepVals = [...histData.map((h, i) => h?.sleep?.duration_seconds ? +(h.sleep.duration_seconds/3600).toFixed(1) : fallbackSleep[i]), totalSecs ? +(totalSecs/3600).toFixed(1) : 7.0];
-  const bbVals    = [...histData.map((h, i) => h?.body_battery?.morning   ?? fallbackBB[i]),    bb    || 71];
+  const hrvVals   = [...histData.map((h,i) => h?.hrv?.last_night        ?? fallbackHRV[i]),   hrv   || 56];
+  const sleepVals = [...histData.map((h,i) => h?.sleep?.duration_seconds ? +(h.sleep.duration_seconds/3600).toFixed(1) : fallbackSleep[i]), totalSecs ? +(totalSecs/3600).toFixed(1) : 7.0];
+  const bbVals    = [...histData.map((h,i) => h?.body_battery?.morning   ?? fallbackBB[i]),    bb    || 71];
 
   makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
   makeChart('chart-sleep', dayLabels, sleepVals, '#85B7EB');
   makeChart('chart-bb',    dayLabels, bbVals,    '#378ADD');
 
-  // Store data for copy
   window._healthData = data;
 }
 
@@ -502,8 +484,38 @@ function copyForClaude() {
   if (!d) return;
 
   const sleep = d.sleep || {};
-  const act   = d.last_activity || {};
   const totalH = sleep.duration_seconds ? (sleep.duration_seconds/3600).toFixed(1) : '—';
+
+  // Build activities section — all sessions
+  const activities = d.activities && d.activities.length > 0
+    ? d.activities
+    : (d.last_activity?.type ? [d.last_activity] : []);
+
+  let activitiesText = '';
+  if (activities.length === 0) {
+    activitiesText = '- No activity recorded yesterday';
+  } else {
+    activities.forEach((act, i) => {
+      activitiesText += `\n### Session ${i+1}: ${act.name || activityTypeLabel(act.type)}`;
+      activitiesText += `\n- Type: ${activityTypeLabel(act.type)}`;
+      if (act.distance_meters) activitiesText += `\n- Distance: ${(act.distance_meters/1000).toFixed(1)} km`;
+      if (act.duration_seconds) activitiesText += `\n- Duration: ${secsToHM(act.duration_seconds)}`;
+      if (act.avg_hr) activitiesText += `\n- Avg HR: ${Math.round(act.avg_hr)} bpm`;
+      if (act.max_hr) activitiesText += `\n- Max HR: ${Math.round(act.max_hr)} bpm`;
+      if (act.calories) activitiesText += `\n- Calories: ${Math.round(act.calories)} kcal`;
+      if (act.training_load) activitiesText += `\n- Training load: ${Math.round(act.training_load)}`;
+      activitiesText += '\n';
+    });
+  }
+
+  function activityTypeLabel(type) {
+    const map = {
+      'cycling':'Cycling','road_biking':'Cycling','swimming':'Swimming',
+      'pool_swimming':'Pool Swim','open_water_swimming':'Open Water Swim',
+      'running':'Running','trail_running':'Trail Run','strength_training':'Strength',
+    };
+    return map[type] || (type ? type.replace(/_/g,' ') : 'Activity');
+  }
 
   const text = `# Julius — Daily Health Data
 Date: ${d.data_date || 'yesterday'} | Synced: ${d.sync_date || 'today'}
@@ -529,14 +541,8 @@ Device: Garmin Fenix 7 + HRM-Pro belt
 - VO2 Max: ${d.vo2_max ? Number(d.vo2_max).toFixed(1) : '—'} ml/kg/min
 - SpO2: ${d.spo2_avg ? Math.round(d.spo2_avg)+'%' : '—'}
 
-## Activity (yesterday)
-- Type: ${act.name || act.type || 'None'}
-- Distance: ${act.distance_meters ? (act.distance_meters/1000).toFixed(1)+' km' : '—'}
-- Duration: ${secsToHM(act.duration_seconds)}
-- Avg HR: ${act.avg_hr ? Math.round(act.avg_hr)+' bpm' : '—'}
-- Calories: ${act.calories ? Math.round(act.calories) : '—'} kcal
-- Training load: ${act.training_load ? Math.round(act.training_load) : '—'}
-
+## Activities yesterday (${activities.length} session${activities.length !== 1 ? 's' : ''})
+${activitiesText}
 ## Daily Stats
 - Steps: ${d.steps ? Number(d.steps).toLocaleString() : '—'}
 - Active calories: ${d.active_calories ? Math.round(d.active_calories) : '—'} kcal
@@ -554,7 +560,6 @@ Please give me my full morning health report and coaching analysis.`;
   });
 }
 
-// ── Demo data (shown before first sync) ──────────────────────────────────────
 function getDemoData() {
   return {
     sync_date: 'demo', data_date: new Date().toISOString().slice(0,10),
@@ -564,7 +569,11 @@ function getDemoData() {
     resting_hr: 52, vo2_max: 51.2,
     stress: { avg:28 }, spo2_avg: 97,
     steps: 9840, active_calories: 520, total_calories: 2340,
-    last_activity: { type:'running', name:'Morning Run', distance_meters:8400, duration_seconds:2880, avg_hr:148, calories:620, training_load:62 }
+    last_activity: { type:'running', name:'Morning Run', distance_meters:8400, duration_seconds:2880, avg_hr:148, calories:620, training_load:62 },
+    activities: [
+      { type:'cycling', name:'Zone 2 Bike', distance_meters:30000, duration_seconds:5400, avg_hr:133, calories:620, training_load:45 },
+      { type:'pool_swimming', name:'Pool Swim', distance_meters:1600, duration_seconds:1980, avg_hr:139, calories:431, training_load:63 },
+    ]
   };
 }
 
