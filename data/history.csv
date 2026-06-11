@@ -1,3 +1,3 @@
 date,sleep_score,sleep_hours,deep_min,rem_min,light_min,awake_min,hrv_last_night,hrv_weekly_avg,hrv_status,body_battery_morning,resting_hr,vo2_max,stress_avg,spo2_avg,steps,active_calories,total_calories,activity_type,activity_name,activity_distance_km,activity_duration_min,activity_avg_hr,activity_max_hr,activity_calories,activity_training_load
 2026-06-10,93,8.43,88,102,316,,,,NONE,99,50.0,46.1,11,96.0,453,8.0,989.0,running,Klaipeda Running,6.8,40.6,158.0,174.0,595.0,123.07754516601562
-2026-06-11,87,8.38,68,75,360,1,,,NONE,98,53.0,,12,95.0,68,0.0,950.0,lap_swimming,Pool Swim,1.65,33.7,139.0,162.0,431.0,63.22441101074219
+2026-06-11,87,8.38,68,75,360,1,,,NONE,81,53.0,46.1,16,95.0,657,9.0,1290.0,lap_swimming,Pool Swim,1.65,33.7,139.0,162.0,431.0,63.22441101074219
