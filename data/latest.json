@@ -1,59 +1,59 @@
 {
-  "sync_date": "2026-06-11",
-  "data_date": "2026-06-11",
+  "sync_date": "2026-06-12",
+  "data_date": "2026-06-12",
   "sleep": {
-    "date": "2026-06-11",
+    "date": "2026-06-12",
     "score": 87,
-    "duration_seconds": 30180,
-    "deep_seconds": 4080,
-    "light_seconds": 21600,
-    "rem_seconds": 4500,
-    "awake_seconds": 60,
+    "duration_seconds": 25980,
+    "deep_seconds": 5400,
+    "light_seconds": 15000,
+    "rem_seconds": 5580,
+    "awake_seconds": 0,
     "stages": []
   },
   "hrv": {
     "weekly_avg": null,
     "last_night": null,
-    "last_night_5min": 79,
+    "last_night_5min": 82,
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 46,
+    "morning": 100,
     "values": [
       [
-        1781127360000,
-        14
+        1781214300000,
+        20
       ],
       [
-        1781146440000,
-        65
+        1781222220000,
+        36
       ],
       [
-        1781146620000,
-        66
+        1781222580000,
+        38
       ],
       [
-        1781159220000,
-        98
+        1781233380000,
+        79
       ],
       [
-        1781168040000,
-        87
+        1781233560000,
+        80
       ],
       [
-        1781188740000,
-        46
+        1781241660000,
+        100
       ]
     ]
   },
   "stress": {
-    "avg": 21
+    "avg": 10
   },
-  "resting_hr": 53.0,
+  "resting_hr": 50.0,
   "vo2_max": 46.1,
-  "steps": 4872,
-  "active_calories": 523.0,
-  "total_calories": 2259.0,
+  "steps": 222,
+  "active_calories": 4.0,
+  "total_calories": 884.0,
   "spo2_avg": 95.0,
   "last_activity": {
     "type": "lap_swimming",
@@ -80,32 +80,6 @@
       "calories": 309.0,
       "training_load": 43.419403076171875,
       "avg_pace": 0.7670000195503235,
-      "hr_zones": []
-    },
-    {
-      "type": "lap_swimming",
-      "name": "Pool Swim",
-      "start_time": "2026-06-10 19:52:25",
-      "duration_seconds": 2020.2120361328125,
-      "distance_meters": 1650.0,
-      "avg_hr": 139.0,
-      "max_hr": 162.0,
-      "calories": 431.0,
-      "training_load": 63.22441101074219,
-      "avg_pace": 0.8169999718666077,
-      "hr_zones": []
-    },
-    {
-      "type": "road_biking",
-      "name": "Klaipeda Road Cycling",
-      "start_time": "2026-06-10 17:44:09",
-      "duration_seconds": 2719.0419921875,
-      "distance_meters": 20461.55078125,
-      "avg_hr": 138.0,
-      "max_hr": 169.0,
-      "calories": 533.0,
-      "training_load": 59.75086975097656,
-      "avg_pace": 7.525000095367432,
       "hr_zones": []
     }
   ]
