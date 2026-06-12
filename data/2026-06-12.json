@@ -1,0 +1,86 @@
+{
+  "sync_date": "2026-06-12",
+  "data_date": "2026-06-12",
+  "sleep": {
+    "date": "2026-06-12",
+    "score": 87,
+    "duration_seconds": 25980,
+    "deep_seconds": 5400,
+    "light_seconds": 15000,
+    "rem_seconds": 5580,
+    "awake_seconds": 0,
+    "stages": []
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": 82,
+    "status": "NONE"
+  },
+  "body_battery": {
+    "morning": 100,
+    "values": [
+      [
+        1781214300000,
+        20
+      ],
+      [
+        1781222220000,
+        36
+      ],
+      [
+        1781222580000,
+        38
+      ],
+      [
+        1781233380000,
+        79
+      ],
+      [
+        1781233560000,
+        80
+      ],
+      [
+        1781241660000,
+        100
+      ]
+    ]
+  },
+  "stress": {
+    "avg": 10
+  },
+  "resting_hr": 50.0,
+  "vo2_max": 46.1,
+  "steps": 222,
+  "active_calories": 4.0,
+  "total_calories": 884.0,
+  "spo2_avg": 95.0,
+  "last_activity": {
+    "type": "lap_swimming",
+    "name": "Pool Swim",
+    "start_time": "2026-06-11 14:53:17",
+    "duration_seconds": 1563.842041015625,
+    "distance_meters": 1200.0,
+    "avg_hr": 133.0,
+    "max_hr": 172.0,
+    "calories": 309.0,
+    "training_load": 43.419403076171875,
+    "avg_pace": 0.7670000195503235,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "lap_swimming",
+      "name": "Pool Swim",
+      "start_time": "2026-06-11 14:53:17",
+      "duration_seconds": 1563.842041015625,
+      "distance_meters": 1200.0,
+      "avg_hr": 133.0,
+      "max_hr": 172.0,
+      "calories": 309.0,
+      "training_load": 43.419403076171875,
+      "avg_pace": 0.7670000195503235,
+      "hr_zones": []
+    }
+  ]
+}
