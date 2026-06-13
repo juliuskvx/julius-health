@@ -77,13 +77,14 @@ def sync():
             if isinstance(item, dict) and "bodyBatteryValuesArray" in item:
                 bb_values = item["bodyBatteryValuesArray"]
                 break
-    # Use the FIRST non-null value of the day (true morning level),
-    # not the last (which is the depleted end-of-day value)
+    # Use the MAX value reached so far today (overnight recharge peak,
+    # typically reached around 5-7am) — this matches the "morning" Body
+    # Battery number shown on Garmin Connect, not first or last reading.
     bb_current = None
     for entry in bb_values:
         if isinstance(entry, list) and len(entry) > 1 and entry[1] is not None:
-            bb_current = entry[1]
-            break
+            if bb_current is None or entry[1] > bb_current:
+                bb_current = entry[1]
 
     # ── Stress ────────────────────────────────────────────────────────────────
     stress_raw = safe_get(lambda: client.get_stress_data(date_str), {})
