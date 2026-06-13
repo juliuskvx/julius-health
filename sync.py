@@ -77,8 +77,10 @@ def sync():
             if isinstance(item, dict) and "bodyBatteryValuesArray" in item:
                 bb_values = item["bodyBatteryValuesArray"]
                 break
+    # Use the FIRST non-null value of the day (true morning level),
+    # not the last (which is the depleted end-of-day value)
     bb_current = None
-    for entry in reversed(bb_values):
+    for entry in bb_values:
         if isinstance(entry, list) and len(entry) > 1 and entry[1] is not None:
             bb_current = entry[1]
             break
