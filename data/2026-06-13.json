@@ -25,20 +25,20 @@
         21
       ],
       [
-        1781310420000,
-        40
+        1781310780000,
+        41
       ],
       [
-        1781310600000,
-        40
+        1781310960000,
+        42
       ],
       [
-        1781322660000,
-        83
+        1781323740000,
+        85
       ],
       [
-        1781323200000,
-        83
+        1781323920000,
+        86
       ],
       [
         1781330760000,
@@ -46,14 +46,24 @@
       ]
     ]
   },
+  "training_readiness": {
+    "score": 41,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_MOD_ACWR_NEG",
+    "sleep_score": 79,
+    "hrv_factor": 0,
+    "recovery_time_factor": 66,
+    "acwr_factor": null,
+    "sleep_history_factor": 84
+  },
   "stress": {
     "avg": 12
   },
   "resting_hr": 48.0,
   "vo2_max": 46.1,
-  "steps": 2111,
+  "steps": 2158,
   "active_calories": 51.0,
-  "total_calories": 1069.0,
+  "total_calories": 1090.0,
   "spo2_avg": 95.0,
   "last_activity": {
     "type": "road_biking",
