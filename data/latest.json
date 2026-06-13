@@ -18,27 +18,27 @@
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 21,
+    "morning": 99,
     "values": [
       [
         1781298000000,
         21
       ],
       [
-        1781309160000,
-        37
+        1781310420000,
+        40
       ],
       [
-        1781309520000,
-        38
+        1781310600000,
+        40
       ],
       [
-        1781320680000,
-        77
+        1781322660000,
+        83
       ],
       [
-        1781321040000,
-        77
+        1781323200000,
+        83
       ],
       [
         1781330760000,
@@ -47,13 +47,13 @@
     ]
   },
   "stress": {
-    "avg": 11
+    "avg": 12
   },
   "resting_hr": 48.0,
   "vo2_max": 46.1,
-  "steps": 72,
-  "active_calories": 0.0,
-  "total_calories": 930.0,
+  "steps": 2111,
+  "active_calories": 51.0,
+  "total_calories": 1069.0,
   "spo2_avg": 95.0,
   "last_activity": {
     "type": "road_biking",
