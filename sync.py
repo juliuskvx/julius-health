@@ -86,6 +86,22 @@ def sync():
             if bb_current is None or entry[1] > bb_current:
                 bb_current = entry[1]
 
+    # ── Training Readiness (Garmin's official score) ──────────────────────────
+    tr_raw = safe_get(lambda: client.get_training_readiness(date_str), [])
+    if not tr_raw:
+        tr_raw = safe_get(lambda: client.get_training_readiness(yest_str), [])
+    tr_entry = tr_raw[0] if isinstance(tr_raw, list) and tr_raw else {}
+    training_readiness = {
+        "score": tr_entry.get("score"),
+        "level": tr_entry.get("level"),
+        "feedback_long": tr_entry.get("feedbackLong"),
+        "sleep_score": tr_entry.get("sleepScore"),
+        "hrv_factor": tr_entry.get("hrvFactorPercent"),
+        "recovery_time_factor": tr_entry.get("recoveryTimeFactorPercent"),
+        "acwr_factor": tr_entry.get("acuteLoadFactorPercent"),
+        "sleep_history_factor": tr_entry.get("sleepHistoryFactorPercent"),
+    }
+
     # ── Stress ────────────────────────────────────────────────────────────────
     stress_raw = safe_get(lambda: client.get_stress_data(date_str), {})
     if not stress_raw or stress_raw.get("avgStressLevel", -1) == -1:
@@ -167,6 +183,7 @@ def sync():
         "sleep":           sleep,
         "hrv":             hrv,
         "body_battery":    {"morning": bb_current, "values": bb_values[:48]},
+        "training_readiness": training_readiness,
         "stress":          {"avg": stress_avg},
         "resting_hr":      rhr,
         "vo2_max":         vo2,
@@ -207,6 +224,7 @@ def sync():
         "sleep_score", "sleep_hours", "deep_min", "rem_min", "light_min", "awake_min",
         "hrv_last_night", "hrv_weekly_avg", "hrv_status",
         "body_battery_morning",
+        "training_readiness_score", "training_readiness_level",
         "resting_hr",
         "vo2_max",
         "stress_avg",
@@ -238,6 +256,8 @@ def sync():
         csv_val(payload["hrv"].get("weekly_avg")),
         csv_val(payload["hrv"].get("status")),
         csv_val(payload["body_battery"].get("morning")),
+        csv_val(payload["training_readiness"].get("score")),
+        csv_val(payload["training_readiness"].get("level")),
         csv_val(payload["resting_hr"]),
         csv_val(payload["vo2_max"], 1),
         csv_val(payload["stress"].get("avg")),
