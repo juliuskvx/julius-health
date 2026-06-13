@@ -258,14 +258,20 @@ function activityTypeLabel(type) {
 }
 
 function readiness(data) {
-  let score = 70;
-  const hrv = data.hrv?.last_night;
-  const bb  = data.body_battery?.morning;
-  const sl  = data.sleep?.score;
-  if (hrv) score += Math.min(15, Math.max(-15, (hrv-50)*0.5));
-  if (bb)  score += Math.min(10, Math.max(-10, (bb-60)*0.3));
-  if (sl)  score += Math.min(10, Math.max(-10, (sl-70)*0.3));
-  score = Math.round(Math.min(100, Math.max(0, score)));
+  const tr = data.training_readiness?.score;
+  let score;
+  if (tr != null) {
+    score = Math.round(tr);
+  } else {
+    score = 70;
+    const hrv = data.hrv?.last_night;
+    const bb  = data.body_battery?.morning;
+    const sl  = data.sleep?.score;
+    if (hrv) score += Math.min(15, Math.max(-15, (hrv-50)*0.5));
+    if (bb)  score += Math.min(10, Math.max(-10, (bb-60)*0.3));
+    if (sl)  score += Math.min(10, Math.max(-10, (sl-70)*0.3));
+    score = Math.round(Math.min(100, Math.max(0, score)));
+  }
   let label = 'Poor recovery';
   if (score >= 80) label = 'Excellent — ready for hard training';
   else if (score >= 65) label = 'Good — ready for moderate training';
@@ -486,7 +492,8 @@ async function renderDashboard(data) {
   // No shifting needed - row dated Thu = Thu morning data = Wed night sleep
   const hrvVals   = dateList.map(iso => csvByDate[iso]?.hrv   ?? null);
   const sleepVals = dateList.map(iso => csvByDate[iso]?.sleep ?? null);
-  const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);  makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
+  const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);
+  makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
   makeChart('chart-sleep', dayLabels, sleepVals, '#85B7EB');
   makeChart('chart-bb',    dayLabels, bbVals,    '#378ADD');
 
@@ -587,7 +594,7 @@ function getDemoData() {
     last_activity: { type:'running', name:'Morning Run', distance_meters:8400, duration_seconds:2880, avg_hr:148, calories:620, training_load:62 },
     activities: [
       { type:'cycling', name:'Zone 2 Bike', distance_meters:30000, duration_seconds:5400, avg_hr:133, calories:620, training_load:45 },
-      { type:'pool_swimming', name:'Pool Swim', distance_meters:1600, duration_seconds:1980, avg_hr:139, calories:431, training_load:81 },
+      { type:'pool_swimming', name:'Pool Swim', distance_meters:1600, duration_seconds:1980, avg_hr:139, calories:431, training_load:63 },
     ]
   };
 }
