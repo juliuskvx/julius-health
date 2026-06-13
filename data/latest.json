@@ -1,59 +1,59 @@
 {
-  "sync_date": "2026-06-12",
-  "data_date": "2026-06-12",
+  "sync_date": "2026-06-13",
+  "data_date": "2026-06-13",
   "sleep": {
-    "date": "2026-06-12",
-    "score": 87,
-    "duration_seconds": 25980,
-    "deep_seconds": 5400,
-    "light_seconds": 15000,
-    "rem_seconds": 5580,
-    "awake_seconds": 0,
+    "date": "2026-06-13",
+    "score": 79,
+    "duration_seconds": 25200,
+    "deep_seconds": 7200,
+    "light_seconds": 12720,
+    "rem_seconds": 5280,
+    "awake_seconds": 540,
     "stages": []
   },
   "hrv": {
-    "weekly_avg": null,
+    "weekly_avg": 58,
     "last_night": null,
-    "last_night_5min": 82,
+    "last_night_5min": 90,
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 47,
+    "morning": 99,
     "values": [
       [
-        1781214300000,
-        20
+        1781298000000,
+        21
       ],
       [
-        1781230680000,
-        72
+        1781309160000,
+        37
       ],
       [
-        1781231040000,
-        73
+        1781309520000,
+        38
       ],
       [
-        1781241660000,
-        100
+        1781320680000,
+        77
       ],
       [
-        1781250480000,
-        84
+        1781321040000,
+        77
       ],
       [
-        1781269200000,
-        47
+        1781330760000,
+        99
       ]
     ]
   },
   "stress": {
-    "avg": 21
+    "avg": 11
   },
-  "resting_hr": 50.0,
+  "resting_hr": 48.0,
   "vo2_max": 46.1,
-  "steps": 4698,
-  "active_calories": 764.0,
-  "total_calories": 2342.0,
+  "steps": 72,
+  "active_calories": 0.0,
+  "total_calories": 930.0,
   "spo2_avg": 95.0,
   "last_activity": {
     "type": "road_biking",
@@ -80,19 +80,6 @@
       "calories": 886.0,
       "training_load": 122.46366882324219,
       "avg_pace": 7.7220001220703125,
-      "hr_zones": []
-    },
-    {
-      "type": "lap_swimming",
-      "name": "Pool Swim",
-      "start_time": "2026-06-11 14:53:17",
-      "duration_seconds": 1563.842041015625,
-      "distance_meters": 1200.0,
-      "avg_hr": 133.0,
-      "max_hr": 172.0,
-      "calories": 309.0,
-      "training_load": 43.419403076171875,
-      "avg_pace": 0.7670000195503235,
       "hr_zones": []
     }
   ]
