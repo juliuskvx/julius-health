@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-06-13",
-  "data_date": "2026-06-13",
+  "sync_date": "2026-06-14",
+  "data_date": "2026-06-14",
   "sleep": {
-    "date": "2026-06-13",
+    "date": "2026-06-14",
     "score": 79,
     "duration_seconds": 25200,
     "deep_seconds": 7200,
@@ -14,35 +14,35 @@
   "hrv": {
     "weekly_avg": 58,
     "last_night": null,
-    "last_night_5min": 90,
+    "last_night_5min": null,
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 99,
+    "morning": 5,
     "values": [
       [
-        1781298000000,
-        21
+        1781384400000,
+        5
       ],
       [
-        1781312040000,
-        46
+        1781384400000,
+        5
       ],
       [
-        1781312400000,
-        47
+        1781389440000,
+        5
       ],
       [
-        1781326440000,
-        92
+        1781389440000,
+        5
       ],
       [
-        1781330760000,
-        99
+        1781394480000,
+        5
       ],
       [
-        1781340300000,
-        77
+        1781394480000,
+        5
       ]
     ]
   },
@@ -57,14 +57,14 @@
     "sleep_history_factor": 84
   },
   "stress": {
-    "avg": 16
+    "avg": 93
   },
-  "resting_hr": 48.0,
-  "vo2_max": 46.1,
-  "steps": 2252,
-  "active_calories": 54.0,
-  "total_calories": 1212.0,
-  "spo2_avg": 95.0,
+  "resting_hr": 57.0,
+  "vo2_max": 46.0,
+  "steps": 3286,
+  "active_calories": 578.0,
+  "total_calories": 987.0,
+  "spo2_avg": 91.0,
   "last_activity": {
     "type": "running",
     "name": "Vilnius Running",
@@ -90,19 +90,6 @@
       "calories": 443.0,
       "training_load": 96.56072998046875,
       "avg_pace": 2.811000108718872,
-      "hr_zones": []
-    },
-    {
-      "type": "road_biking",
-      "name": "Klaipeda Road Cycling",
-      "start_time": "2026-06-12 10:44:13",
-      "duration_seconds": 4232.44287109375,
-      "distance_meters": 32683.650390625,
-      "avg_hr": 146.0,
-      "max_hr": 171.0,
-      "calories": 886.0,
-      "training_load": 122.46366882324219,
-      "avg_pace": 7.7220001220703125,
       "hr_zones": []
     }
   ]
