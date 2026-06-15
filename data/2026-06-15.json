@@ -3,68 +3,94 @@
   "data_date": "2026-06-15",
   "sleep": {
     "date": "2026-06-15",
-    "score": 31,
-    "duration_seconds": 14580,
-    "deep_seconds": 3720,
-    "light_seconds": 10860,
-    "rem_seconds": 0,
-    "awake_seconds": 1920,
+    "score": 87,
+    "duration_seconds": 27540,
+    "deep_seconds": 3480,
+    "light_seconds": 17880,
+    "rem_seconds": 6180,
+    "awake_seconds": 540,
     "stages": []
   },
   "hrv": {
-    "weekly_avg": 45,
+    "weekly_avg": 47,
     "last_night": null,
-    "last_night_5min": 21,
+    "last_night_5min": 91,
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 87,
+    "morning": 96,
     "values": [
       [
         1781470800000,
         13
       ],
       [
-        1781480160000,
-        32
+        1781488800000,
+        60
       ],
       [
-        1781480700000,
-        32
+        1781489160000,
+        61
       ],
       [
-        1781489880000,
-        63
+        1781507160000,
+        95
       ],
       [
-        1781490600000,
-        64
+        1781508060000,
+        96
       ],
       [
-        1781500320000,
-        87
+        1781525160000,
+        61
       ]
     ]
   },
   "training_readiness": {
-    "score": 25,
-    "level": "LOW",
-    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_UNKNOWN_SLEEP_HISTORY_NEG",
-    "sleep_score": null,
+    "score": 19,
+    "level": "POOR",
+    "feedback_long": "POOR_RT_MOD_OR_LOW_SS_GOOD_SLEEP_HISTORY_NEG",
+    "sleep_score": 87,
     "hrv_factor": 0,
-    "recovery_time_factor": 68,
+    "recovery_time_factor": 41,
     "acwr_factor": null,
     "sleep_history_factor": 33
   },
   "stress": {
-    "avg": 8
+    "avg": 14
   },
   "resting_hr": 47.0,
   "vo2_max": 46.0,
-  "steps": 179,
-  "active_calories": 3.0,
-  "total_calories": 807.0,
+  "steps": 1104,
+  "active_calories": 18.0,
+  "total_calories": 1509.0,
   "spo2_avg": 95.0,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "running",
+    "name": "Vilnius Running",
+    "start_time": "2026-06-15 20:37:49",
+    "duration_seconds": 1880.6180419921875,
+    "distance_meters": 5235.52978515625,
+    "avg_hr": 153.0,
+    "max_hr": 167.0,
+    "calories": 454.0,
+    "training_load": 91.05137634277344,
+    "avg_pace": 2.783999919891357,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "running",
+      "name": "Vilnius Running",
+      "start_time": "2026-06-15 20:37:49",
+      "duration_seconds": 1880.6180419921875,
+      "distance_meters": 5235.52978515625,
+      "avg_hr": 153.0,
+      "max_hr": 167.0,
+      "calories": 454.0,
+      "training_load": 91.05137634277344,
+      "avg_pace": 2.783999919891357,
+      "hr_zones": []
+    }
+  ]
 }
