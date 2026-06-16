@@ -1,70 +1,70 @@
 {
-  "sync_date": "2026-06-15",
-  "data_date": "2026-06-15",
+  "sync_date": "2026-06-16",
+  "data_date": "2026-06-16",
   "sleep": {
-    "date": "2026-06-15",
-    "score": 87,
-    "duration_seconds": 27540,
-    "deep_seconds": 3480,
-    "light_seconds": 17880,
-    "rem_seconds": 6180,
-    "awake_seconds": 540,
+    "date": "2026-06-16",
+    "score": 84,
+    "duration_seconds": 26312,
+    "deep_seconds": 3000,
+    "light_seconds": 18240,
+    "rem_seconds": 5100,
+    "awake_seconds": 180,
     "stages": []
   },
   "hrv": {
-    "weekly_avg": 47,
+    "weekly_avg": 50,
     "last_night": null,
-    "last_night_5min": 91,
+    "last_night_5min": 100,
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 96,
+    "morning": 99,
     "values": [
       [
-        1781470800000,
-        13
+        1781557200000,
+        30
       ],
       [
-        1781488800000,
-        60
+        1781568540000,
+        46
       ],
       [
-        1781489160000,
-        61
+        1781569260000,
+        46
       ],
       [
-        1781507160000,
-        95
+        1781580780000,
+        84
       ],
       [
-        1781508060000,
-        96
+        1781581320000,
+        84
       ],
       [
-        1781525160000,
-        61
+        1781592480000,
+        99
       ]
     ]
   },
   "training_readiness": {
-    "score": 19,
-    "level": "POOR",
-    "feedback_long": "POOR_RT_MOD_OR_LOW_SS_GOOD_SLEEP_HISTORY_NEG",
-    "sleep_score": 87,
+    "score": 41,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_GOOD_ACWR_NEG",
+    "sleep_score": 84,
     "hrv_factor": 0,
-    "recovery_time_factor": 41,
+    "recovery_time_factor": 62,
     "acwr_factor": null,
-    "sleep_history_factor": 33
+    "sleep_history_factor": 52
   },
   "stress": {
-    "avg": 14
+    "avg": 9
   },
   "resting_hr": 47.0,
-  "vo2_max": 46.0,
-  "steps": 1104,
-  "active_calories": 18.0,
-  "total_calories": 1509.0,
-  "spo2_avg": 95.0,
+  "vo2_max": 46.2,
+  "steps": 311,
+  "active_calories": 6.0,
+  "total_calories": 977.0,
+  "spo2_avg": 94.0,
   "last_activity": {
     "type": "running",
     "name": "Vilnius Running",
