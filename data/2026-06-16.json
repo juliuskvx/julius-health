@@ -25,45 +25,45 @@
         30
       ],
       [
-        1781574660000,
-        66
-      ],
-      [
-        1781574840000,
-        67
-      ],
-      [
-        1781591040000,
-        98
+        1781584020000,
+        90
       ],
       [
         1781592480000,
         99
       ],
       [
-        1781609220000,
-        69
+        1781610480000,
+        67
+      ],
+      [
+        1781611560000,
+        66
+      ],
+      [
+        1781638200000,
+        22
       ]
     ]
   },
   "training_readiness": {
-    "score": 41,
-    "level": "LOW",
-    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_GOOD_ACWR_NEG",
+    "score": 50,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_GOOD_ACWR_NEG",
     "sleep_score": 84,
     "hrv_factor": 0,
-    "recovery_time_factor": 62,
+    "recovery_time_factor": 82,
     "acwr_factor": null,
     "sleep_history_factor": 52
   },
   "stress": {
-    "avg": 16
+    "avg": 27
   },
   "resting_hr": 47.0,
   "vo2_max": 46.2,
-  "steps": 1455,
-  "active_calories": 42.0,
-  "total_calories": 1466.0,
+  "steps": 7388,
+  "active_calories": 303.0,
+  "total_calories": 2507.0,
   "spo2_avg": 94.0,
   "last_activity": {
     "type": "running",
