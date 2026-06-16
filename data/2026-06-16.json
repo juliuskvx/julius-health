@@ -1,0 +1,96 @@
+{
+  "sync_date": "2026-06-16",
+  "data_date": "2026-06-16",
+  "sleep": {
+    "date": "2026-06-16",
+    "score": 84,
+    "duration_seconds": 26312,
+    "deep_seconds": 3000,
+    "light_seconds": 18240,
+    "rem_seconds": 5100,
+    "awake_seconds": 180,
+    "stages": []
+  },
+  "hrv": {
+    "weekly_avg": 50,
+    "last_night": null,
+    "last_night_5min": 100,
+    "status": "NONE"
+  },
+  "body_battery": {
+    "morning": 99,
+    "values": [
+      [
+        1781557200000,
+        30
+      ],
+      [
+        1781568540000,
+        46
+      ],
+      [
+        1781569260000,
+        46
+      ],
+      [
+        1781580780000,
+        84
+      ],
+      [
+        1781581320000,
+        84
+      ],
+      [
+        1781592480000,
+        99
+      ]
+    ]
+  },
+  "training_readiness": {
+    "score": 41,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_GOOD_ACWR_NEG",
+    "sleep_score": 84,
+    "hrv_factor": 0,
+    "recovery_time_factor": 62,
+    "acwr_factor": null,
+    "sleep_history_factor": 52
+  },
+  "stress": {
+    "avg": 9
+  },
+  "resting_hr": 47.0,
+  "vo2_max": 46.2,
+  "steps": 311,
+  "active_calories": 6.0,
+  "total_calories": 977.0,
+  "spo2_avg": 94.0,
+  "last_activity": {
+    "type": "running",
+    "name": "Vilnius Running",
+    "start_time": "2026-06-15 20:37:49",
+    "duration_seconds": 1880.6180419921875,
+    "distance_meters": 5235.52978515625,
+    "avg_hr": 153.0,
+    "max_hr": 167.0,
+    "calories": 454.0,
+    "training_load": 91.05137634277344,
+    "avg_pace": 2.783999919891357,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "running",
+      "name": "Vilnius Running",
+      "start_time": "2026-06-15 20:37:49",
+      "duration_seconds": 1880.6180419921875,
+      "distance_meters": 5235.52978515625,
+      "avg_hr": 153.0,
+      "max_hr": 167.0,
+      "calories": 454.0,
+      "training_load": 91.05137634277344,
+      "avg_pace": 2.783999919891357,
+      "hr_zones": []
+    }
+  ]
+}
