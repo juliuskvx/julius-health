@@ -62,9 +62,16 @@ def sync():
     if not hrv_raw:
         hrv_raw = safe_get(lambda: client.get_hrv_data(yest_str), {})
     hrv_summary = hrv_raw.get("hrvSummary", {}) if hrv_raw else {}
+
+    # Debug: print all available HRV fields to identify correct key name
+    print(f"HRV raw summary: {json.dumps(hrv_summary, indent=2)}")
+
     hrv = {
         "weekly_avg":      hrv_summary.get("weeklyAvg"),
-        "last_night":      hrv_summary.get("lastNight"),
+        "last_night":      (hrv_summary.get("lastNight")
+                            or hrv_summary.get("lastNight5MinAvg")
+                            or hrv_summary.get("lastNightAvg")
+                            or hrv_summary.get("lastNight5MinHigh")),
         "last_night_5min": hrv_summary.get("lastNight5MinHigh"),
         "status":          hrv_summary.get("status"),
     }
@@ -77,9 +84,6 @@ def sync():
             if isinstance(item, dict) and "bodyBatteryValuesArray" in item:
                 bb_values = item["bodyBatteryValuesArray"]
                 break
-    # Use the MAX value reached so far today (overnight recharge peak,
-    # typically reached around 5-7am) — this matches the "morning" Body
-    # Battery number shown on Garmin Connect, not first or last reading.
     bb_current = None
     for entry in bb_values:
         if isinstance(entry, list) and len(entry) > 1 and entry[1] is not None:
@@ -124,7 +128,6 @@ def sync():
 
     # ── VO2 Max ───────────────────────────────────────────────────────────────
     vo2 = None
-    # Scan back up to 30 days to find last known VO2 max (only updates after outdoor runs)
     for days_back in range(1, 31):
         check_date = (today - datetime.timedelta(days=days_back)).isoformat()
         vo2_raw = safe_get(lambda d=check_date: client.get_max_metrics(d), {})
@@ -173,26 +176,25 @@ def sync():
                 "hr_zones":         a.get("heartRateZones", []),
             })
 
-    # Keep last_activity as first entry for backwards compatibility with CSV
     last_activity = activities[0] if activities else {}
 
     # ── Assemble payload ──────────────────────────────────────────────────────
     payload = {
-        "sync_date":       date_str,
-        "data_date":       date_str,
-        "sleep":           sleep,
-        "hrv":             hrv,
-        "body_battery":    {"morning": bb_current, "values": bb_values[:48]},
+        "sync_date":          date_str,
+        "data_date":          date_str,
+        "sleep":              sleep,
+        "hrv":                hrv,
+        "body_battery":       {"morning": bb_current, "values": bb_values[:48]},
         "training_readiness": training_readiness,
-        "stress":          {"avg": stress_avg},
-        "resting_hr":      rhr,
-        "vo2_max":         vo2,
-        "steps":           total_steps,
-        "active_calories": active_calories,
-        "total_calories":  total_calories,
-        "spo2_avg":        spo2_avg,
-        "last_activity":   last_activity,
-        "activities":      activities,
+        "stress":             {"avg": stress_avg},
+        "resting_hr":         rhr,
+        "vo2_max":            vo2,
+        "steps":              total_steps,
+        "active_calories":    active_calories,
+        "total_calories":     total_calories,
+        "spo2_avg":           spo2_avg,
+        "last_activity":      last_activity,
+        "activities":         activities,
     }
 
     # ── Push to GitHub ────────────────────────────────────────────────────────
@@ -289,7 +291,7 @@ def sync():
         repo.create_file(csv_path, f"Create history.csv {date_str}", new_content)
         print(f"Created {csv_path}")
 
-    print(f"Done. Data saved for {yest_str}.")
+    print(f"Done. Data saved for {date_str}.")
     return payload
 
 if __name__ == "__main__":
