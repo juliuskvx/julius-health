@@ -13,7 +13,7 @@
   },
   "hrv": {
     "weekly_avg": 50,
-    "last_night": null,
+    "last_night": 69,
     "last_night_5min": 100,
     "status": "NONE"
   },
@@ -25,24 +25,24 @@
         30
       ],
       [
-        1781568540000,
-        46
+        1781574660000,
+        66
       ],
       [
-        1781569260000,
-        46
+        1781574840000,
+        67
       ],
       [
-        1781580780000,
-        84
-      ],
-      [
-        1781581320000,
-        84
+        1781591040000,
+        98
       ],
       [
         1781592480000,
         99
+      ],
+      [
+        1781609220000,
+        69
       ]
     ]
   },
@@ -57,13 +57,13 @@
     "sleep_history_factor": 52
   },
   "stress": {
-    "avg": 9
+    "avg": 16
   },
   "resting_hr": 47.0,
   "vo2_max": 46.2,
-  "steps": 311,
-  "active_calories": 6.0,
-  "total_calories": 977.0,
+  "steps": 1455,
+  "active_calories": 42.0,
+  "total_calories": 1466.0,
   "spo2_avg": 94.0,
   "last_activity": {
     "type": "running",
