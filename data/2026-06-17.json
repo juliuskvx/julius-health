@@ -1,0 +1,70 @@
+{
+  "sync_date": "2026-06-17",
+  "data_date": "2026-06-17",
+  "sleep": {
+    "date": "2026-06-17",
+    "score": 74,
+    "duration_seconds": 24000,
+    "deep_seconds": 4800,
+    "light_seconds": 16140,
+    "rem_seconds": 3060,
+    "awake_seconds": 1320,
+    "stages": []
+  },
+  "hrv": {
+    "weekly_avg": 50,
+    "last_night": 52,
+    "last_night_5min": 78,
+    "status": "NONE"
+  },
+  "body_battery": {
+    "morning": 72,
+    "values": [
+      [
+        1781643600000,
+        16
+      ],
+      [
+        1781649000000,
+        11
+      ],
+      [
+        1781655300000,
+        16
+      ],
+      [
+        1781666640000,
+        48
+      ],
+      [
+        1781667000000,
+        48
+      ],
+      [
+        1781676000000,
+        72
+      ]
+    ]
+  },
+  "training_readiness": {
+    "score": 56,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_MOD_ACWR_NEG",
+    "sleep_score": 74,
+    "hrv_factor": 0,
+    "recovery_time_factor": 97,
+    "acwr_factor": null,
+    "sleep_history_factor": 80
+  },
+  "stress": {
+    "avg": 24
+  },
+  "resting_hr": 47.0,
+  "vo2_max": 46.2,
+  "steps": 386,
+  "active_calories": 6.0,
+  "total_calories": 956.0,
+  "spo2_avg": 94.0,
+  "last_activity": {},
+  "activities": []
+}
