@@ -1,0 +1,109 @@
+{
+  "sync_date": "2026-06-18",
+  "data_date": "2026-06-18",
+  "sleep": {
+    "date": "2026-06-18",
+    "score": 72,
+    "duration_seconds": 21360,
+    "deep_seconds": 3300,
+    "light_seconds": 15060,
+    "rem_seconds": 3000,
+    "awake_seconds": 360,
+    "stages": []
+  },
+  "hrv": {
+    "weekly_avg": 50,
+    "last_night": 57,
+    "last_night_5min": 88,
+    "status": "NONE"
+  },
+  "body_battery": {
+    "morning": 72,
+    "values": [
+      [
+        1781733060000,
+        5
+      ],
+      [
+        1781739720000,
+        11
+      ],
+      [
+        1781740080000,
+        11
+      ],
+      [
+        1781749980000,
+        42
+      ],
+      [
+        1781750160000,
+        43
+      ],
+      [
+        1781759160000,
+        72
+      ]
+    ]
+  },
+  "training_readiness": {
+    "score": 32,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_MOD_ACWR_NEG",
+    "sleep_score": 72,
+    "hrv_factor": 0,
+    "recovery_time_factor": 59,
+    "acwr_factor": null,
+    "sleep_history_factor": 66
+  },
+  "stress": {
+    "avg": 18
+  },
+  "resting_hr": 51.0,
+  "vo2_max": 46.2,
+  "steps": 322,
+  "active_calories": 14.0,
+  "total_calories": 827.0,
+  "spo2_avg": 97.0,
+  "last_activity": {
+    "type": "running",
+    "name": "Vilnius Running",
+    "start_time": "2026-06-17 22:03:11",
+    "duration_seconds": 1899.552001953125,
+    "distance_meters": 5227.259765625,
+    "avg_hr": 158.0,
+    "max_hr": 175.0,
+    "calories": 464.0,
+    "training_load": 117.40560913085938,
+    "avg_pace": 2.752000093460083,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "running",
+      "name": "Vilnius Running",
+      "start_time": "2026-06-17 22:03:11",
+      "duration_seconds": 1899.552001953125,
+      "distance_meters": 5227.259765625,
+      "avg_hr": 158.0,
+      "max_hr": 175.0,
+      "calories": 464.0,
+      "training_load": 117.40560913085938,
+      "avg_pace": 2.752000093460083,
+      "hr_zones": []
+    },
+    {
+      "type": "bouldering",
+      "name": "Bouldering",
+      "start_time": "2026-06-17 19:28:50",
+      "duration_seconds": 5095.69384765625,
+      "distance_meters": null,
+      "avg_hr": 97.0,
+      "max_hr": 163.0,
+      "calories": 409.0,
+      "training_load": 23.0823974609375,
+      "avg_pace": null,
+      "hr_zones": []
+    }
+  ]
+}
