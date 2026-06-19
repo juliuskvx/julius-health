@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-06-18",
-  "data_date": "2026-06-18",
+  "sync_date": "2026-06-19",
+  "data_date": "2026-06-19",
   "sleep": {
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "score": 72,
     "duration_seconds": 21360,
     "deep_seconds": 3300,
@@ -18,33 +18,8 @@
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 72,
-    "values": [
-      [
-        1781733060000,
-        5
-      ],
-      [
-        1781751240000,
-        47
-      ],
-      [
-        1781751420000,
-        48
-      ],
-      [
-        1781759160000,
-        72
-      ],
-      [
-        1781772840000,
-        52
-      ],
-      [
-        1781792280000,
-        31
-      ]
-    ]
+    "morning": null,
+    "values": []
   },
   "training_readiness": {
     "score": 32,
@@ -57,53 +32,14 @@
     "sleep_history_factor": 66
   },
   "stress": {
-    "avg": 28
+    "avg": null
   },
   "resting_hr": 51.0,
   "vo2_max": 46.2,
-  "steps": 4500,
-  "active_calories": 200.0,
-  "total_calories": 1931.0,
-  "spo2_avg": 97.0,
-  "last_activity": {
-    "type": "running",
-    "name": "Vilnius Running",
-    "start_time": "2026-06-17 22:03:11",
-    "duration_seconds": 1899.552001953125,
-    "distance_meters": 5227.259765625,
-    "avg_hr": 158.0,
-    "max_hr": 175.0,
-    "calories": 464.0,
-    "training_load": 117.40560913085938,
-    "avg_pace": 2.752000093460083,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "running",
-      "name": "Vilnius Running",
-      "start_time": "2026-06-17 22:03:11",
-      "duration_seconds": 1899.552001953125,
-      "distance_meters": 5227.259765625,
-      "avg_hr": 158.0,
-      "max_hr": 175.0,
-      "calories": 464.0,
-      "training_load": 117.40560913085938,
-      "avg_pace": 2.752000093460083,
-      "hr_zones": []
-    },
-    {
-      "type": "bouldering",
-      "name": "Bouldering",
-      "start_time": "2026-06-17 19:28:50",
-      "duration_seconds": 5095.69384765625,
-      "distance_meters": null,
-      "avg_hr": 97.0,
-      "max_hr": 163.0,
-      "calories": 409.0,
-      "training_load": 23.0823974609375,
-      "avg_pace": null,
-      "hr_zones": []
-    }
-  ]
+  "steps": 0,
+  "active_calories": null,
+  "total_calories": null,
+  "spo2_avg": null,
+  "last_activity": {},
+  "activities": []
 }
