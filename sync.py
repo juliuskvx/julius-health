@@ -141,16 +141,36 @@ def sync():
             break
 
     # ── Steps & Calories ──────────────────────────────────────────────────────
-    steps_raw = safe_get(lambda: client.get_steps_data(date_str), [])
-    total_steps = 0
-    if isinstance(steps_raw, list):
-        for s in steps_raw:
-            if isinstance(s, dict):
-                total_steps += s.get("steps", 0)
+    def sum_steps(raw):
+        total = 0
+        if isinstance(raw, list):
+            for s in raw:
+                if isinstance(s, dict):
+                    total += s.get("steps", 0)
+        return total
+
+    steps_raw   = safe_get(lambda: client.get_steps_data(date_str), [])
+    total_steps = sum_steps(steps_raw)
+    # Today's data is often incomplete at 10am sync time — fall back to
+    # yesterday's (fully settled) total if today's looks suspiciously empty
+    if total_steps < 500:
+        steps_raw_yest = safe_get(lambda: client.get_steps_data(yest_str), [])
+        steps_yest     = sum_steps(steps_raw_yest)
+        if steps_yest > total_steps:
+            total_steps = steps_yest
 
     stats_raw = safe_get(lambda: client.get_stats(date_str), {})
     active_calories = stats_raw.get("activeKilocalories") if stats_raw else None
     total_calories  = stats_raw.get("totalKilocalories") if stats_raw else None
+    # Same incomplete-day issue as steps — fall back to yesterday if suspiciously low
+    if not active_calories or active_calories < 100:
+        stats_raw_yest = safe_get(lambda: client.get_stats(yest_str), {})
+        if stats_raw_yest:
+            ac_yest = stats_raw_yest.get("activeKilocalories")
+            tc_yest = stats_raw_yest.get("totalKilocalories")
+            if ac_yest and (not active_calories or ac_yest > active_calories):
+                active_calories = ac_yest
+                total_calories  = tc_yest
 
     # ── SpO2 ──────────────────────────────────────────────────────────────────
     spo2_raw = safe_get(lambda: client.get_spo2_data(date_str), {})
