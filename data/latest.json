@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-06-20",
-  "data_date": "2026-06-20",
+  "sync_date": "2026-06-21",
+  "data_date": "2026-06-21",
   "sleep": {
-    "date": "2026-06-20",
+    "date": "2026-06-21",
     "score": 80,
     "duration_seconds": 24660,
     "deep_seconds": 4680,
@@ -18,78 +18,78 @@
     "status": "NONE"
   },
   "body_battery": {
-    "morning": 78,
+    "morning": 14,
     "values": [
       [
-        1781902800000,
-        5
+        1781989200000,
+        12
       ],
       [
-        1781918460000,
-        22
+        1781989200000,
+        12
       ],
       [
-        1781918640000,
-        22
+        1781990640000,
+        12
       ],
       [
-        1781934120000,
-        73
+        1781991540000,
+        13
       ],
       [
-        1781936460000,
-        78
+        1781992080000,
+        13
       ],
       [
-        1781949600000,
-        48
+        1781992260000,
+        14
       ]
     ]
   },
   "training_readiness": {
-    "score": 61,
+    "score": 56,
     "level": "MODERATE",
-    "feedback_long": "MOD_RT_MOD_OR_LOW_SS_GOOD_STRESS_HISTORY_NEG",
-    "sleep_score": 80,
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN_STRESS_HISTORY_NEG",
+    "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 73,
     "acwr_factor": null,
-    "sleep_history_factor": 58
+    "sleep_history_factor": 70
   },
   "stress": {
-    "avg": 28
+    "avg": 18
   },
-  "resting_hr": 49.0,
-  "vo2_max": 46.2,
-  "steps": 3481,
-  "active_calories": 123.0,
-  "total_calories": 1399.0,
-  "spo2_avg": 93.0,
+  "resting_hr": 53.0,
+  "vo2_max": 46.6,
+  "steps": 13588,
+  "active_calories": 710.0,
+  "total_calories": 3049.0,
+  "spo2_avg": 95.0,
   "last_activity": {
-    "type": "lap_swimming",
-    "name": "Pool Swim",
-    "start_time": "2026-06-19 15:19:16",
-    "duration_seconds": 1654.1920166015625,
-    "distance_meters": 1300.0,
-    "avg_hr": 123.0,
-    "max_hr": 157.0,
-    "calories": 332.0,
-    "training_load": 27.065216064453125,
-    "avg_pace": 0.7860000133514405,
+    "type": "running",
+    "name": "Klaipeda Running",
+    "start_time": "2026-06-20 20:50:53",
+    "duration_seconds": 2428.968994140625,
+    "distance_meters": 6030.97998046875,
+    "avg_hr": 142.0,
+    "max_hr": 154.0,
+    "calories": 528.0,
+    "training_load": 66.7091064453125,
+    "avg_pace": 2.4830000400543213,
     "hr_zones": []
   },
   "activities": [
     {
-      "type": "lap_swimming",
-      "name": "Pool Swim",
-      "start_time": "2026-06-19 15:19:16",
-      "duration_seconds": 1654.1920166015625,
-      "distance_meters": 1300.0,
-      "avg_hr": 123.0,
-      "max_hr": 157.0,
-      "calories": 332.0,
-      "training_load": 27.065216064453125,
-      "avg_pace": 0.7860000133514405,
+      "type": "running",
+      "name": "Klaipeda Running",
+      "start_time": "2026-06-20 20:50:53",
+      "duration_seconds": 2428.968994140625,
+      "distance_meters": 6030.97998046875,
+      "avg_hr": 142.0,
+      "max_hr": 154.0,
+      "calories": 528.0,
+      "training_load": 66.7091064453125,
+      "avg_pace": 2.4830000400543213,
       "hr_zones": []
     }
   ]
