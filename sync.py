@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Julius Health — Garmin sync script
-Runs at 9am daily, pulls data from Garmin Connect, saves to GitHub
+Runs at 10am daily, pulls data from Garmin Connect, saves to GitHub
 """
 
 import os
@@ -35,10 +35,22 @@ def sync():
     print("Connected.")
 
     # ── Sleep — pull TODAY (last night's sleep syncs under today's date) ──────
-    sleep_raw  = safe_get(lambda: client.get_sleep_data(date_str), {})
-    if not sleep_raw or not sleep_raw.get("dailySleepDTO", {}).get("sleepTimeSeconds"):
-        sleep_raw = safe_get(lambda: client.get_sleep_data(yest_str), {})
-    sleep_data = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
+    # Garmin sometimes hasn't finished processing today's sleep yet when this
+    # runs (10am). If so, it can silently return an older day's data without
+    # erroring. We check dailySleepDTO.calendarDate to catch that instead of
+    # blindly trusting whatever comes back.
+    sleep_raw    = safe_get(lambda: client.get_sleep_data(date_str), {})
+    sleep_data   = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
+    sleep_cal_dt = sleep_data.get("calendarDate")
+
+    if not sleep_data.get("sleepTimeSeconds") or (sleep_cal_dt and sleep_cal_dt != date_str):
+        print(f"Sleep data for {date_str} missing or stale (got calendarDate={sleep_cal_dt}). Retrying with {yest_str}...")
+        sleep_raw    = safe_get(lambda: client.get_sleep_data(yest_str), {})
+        sleep_data   = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
+        sleep_cal_dt = sleep_data.get("calendarDate")
+
+    print(f"Sleep raw (requested {date_str}, got calendarDate={sleep_cal_dt}): "
+          f"duration={sleep_data.get('sleepTimeSeconds')}, score_block={sleep_data.get('sleepScores')}")
 
     sleep_score = (
         sleep_data.get("sleepScores", {}).get("overall", {}).get("value")
@@ -55,16 +67,24 @@ def sync():
         "rem_seconds":      sleep_data.get("remSleepSeconds"),
         "awake_seconds":    sleep_data.get("awakeSleepSeconds"),
         "stages":           sleep_data.get("sleepLevels") or [],
+        "source_date":      sleep_cal_dt,
+        "is_stale":         bool(sleep_cal_dt and sleep_cal_dt != date_str),
     }
 
     # ── HRV ───────────────────────────────────────────────────────────────────
-    hrv_raw = safe_get(lambda: client.get_hrv_data(date_str), {})
-    if not hrv_raw:
-        hrv_raw = safe_get(lambda: client.get_hrv_data(yest_str), {})
+    # Same stale-data issue as sleep: Garmin can return yesterday's HRV summary
+    # tagged with today's request but yesterday's calendarDate. Validate it.
+    hrv_raw     = safe_get(lambda: client.get_hrv_data(date_str), {})
     hrv_summary = hrv_raw.get("hrvSummary", {}) if hrv_raw else {}
+    hrv_cal_dt  = hrv_summary.get("calendarDate")
 
-    # Debug: print all available HRV fields to identify correct key name
-    print(f"HRV raw summary: {json.dumps(hrv_summary, indent=2)}")
+    if not hrv_summary or (hrv_cal_dt and hrv_cal_dt != date_str):
+        print(f"HRV data for {date_str} missing or stale (got calendarDate={hrv_cal_dt}). Retrying with {yest_str}...")
+        hrv_raw     = safe_get(lambda: client.get_hrv_data(yest_str), {})
+        hrv_summary = hrv_raw.get("hrvSummary", {}) if hrv_raw else {}
+        hrv_cal_dt  = hrv_summary.get("calendarDate")
+
+    print(f"HRV raw summary (requested {date_str}, got calendarDate={hrv_cal_dt}): {json.dumps(hrv_summary, indent=2)}")
 
     hrv = {
         "weekly_avg":      hrv_summary.get("weeklyAvg"),
@@ -74,21 +94,32 @@ def sync():
                             or hrv_summary.get("lastNight5MinHigh")),
         "last_night_5min": hrv_summary.get("lastNight5MinHigh"),
         "status":          hrv_summary.get("status"),
+        "source_date":     hrv_cal_dt,
+        "is_stale":        bool(hrv_cal_dt and hrv_cal_dt != date_str),
     }
 
     # ── Body Battery ──────────────────────────────────────────────────────────
+    # No confirmed calendarDate-equivalent key yet for this endpoint — logging
+    # the raw item shape here so the next run's Action log tells us the exact
+    # field name to validate against, instead of guessing it.
     bb_raw = safe_get(lambda: client.get_body_battery(date_str), [])
     bb_values = []
+    bb_source_date = None
     if isinstance(bb_raw, list):
         for item in bb_raw:
             if isinstance(item, dict) and "bodyBatteryValuesArray" in item:
                 bb_values = item["bodyBatteryValuesArray"]
+                bb_source_date = item.get("date") or item.get("calendarDate")
+                print(f"Body Battery raw item keys: {list(item.keys())}, date-like field: {bb_source_date}, points: {len(bb_values)}")
                 break
     bb_current = None
     for entry in bb_values:
         if isinstance(entry, list) and len(entry) > 1 and entry[1] is not None:
             if bb_current is None or entry[1] > bb_current:
                 bb_current = entry[1]
+
+    if bb_source_date and bb_source_date != date_str:
+        print(f"WARNING: Body Battery data tagged {bb_source_date}, not {date_str} — may be stale.")
 
     # ── Training Readiness (Garmin's official score) ──────────────────────────
     tr_raw = safe_get(lambda: client.get_training_readiness(date_str), [])
@@ -141,36 +172,16 @@ def sync():
             break
 
     # ── Steps & Calories ──────────────────────────────────────────────────────
-    def sum_steps(raw):
-        total = 0
-        if isinstance(raw, list):
-            for s in raw:
-                if isinstance(s, dict):
-                    total += s.get("steps", 0)
-        return total
-
-    steps_raw   = safe_get(lambda: client.get_steps_data(date_str), [])
-    total_steps = sum_steps(steps_raw)
-    # Today's data is often incomplete at 10am sync time — fall back to
-    # yesterday's (fully settled) total if today's looks suspiciously empty
-    if total_steps < 500:
-        steps_raw_yest = safe_get(lambda: client.get_steps_data(yest_str), [])
-        steps_yest     = sum_steps(steps_raw_yest)
-        if steps_yest > total_steps:
-            total_steps = steps_yest
+    steps_raw = safe_get(lambda: client.get_steps_data(date_str), [])
+    total_steps = 0
+    if isinstance(steps_raw, list):
+        for s in steps_raw:
+            if isinstance(s, dict):
+                total_steps += s.get("steps", 0)
 
     stats_raw = safe_get(lambda: client.get_stats(date_str), {})
     active_calories = stats_raw.get("activeKilocalories") if stats_raw else None
     total_calories  = stats_raw.get("totalKilocalories") if stats_raw else None
-    # Same incomplete-day issue as steps — fall back to yesterday if suspiciously low
-    if not active_calories or active_calories < 100:
-        stats_raw_yest = safe_get(lambda: client.get_stats(yest_str), {})
-        if stats_raw_yest:
-            ac_yest = stats_raw_yest.get("activeKilocalories")
-            tc_yest = stats_raw_yest.get("totalKilocalories")
-            if ac_yest and (not active_calories or ac_yest > active_calories):
-                active_calories = ac_yest
-                total_calories  = tc_yest
 
     # ── SpO2 ──────────────────────────────────────────────────────────────────
     spo2_raw = safe_get(lambda: client.get_spo2_data(date_str), {})
@@ -204,7 +215,7 @@ def sync():
         "data_date":          date_str,
         "sleep":              sleep,
         "hrv":                hrv,
-        "body_battery":       {"morning": bb_current, "values": bb_values[:48]},
+        "body_battery":       {"morning": bb_current, "values": bb_values[:48], "source_date": bb_source_date},
         "training_readiness": training_readiness,
         "stress":             {"avg": stress_avg},
         "resting_hr":         rhr,
@@ -216,6 +227,11 @@ def sync():
         "last_activity":      last_activity,
         "activities":         activities,
     }
+
+    if sleep.get("is_stale") or hrv.get("is_stale"):
+        print(f"DATA FRESHNESS WARNING: sleep_stale={sleep.get('is_stale')} hrv_stale={hrv.get('is_stale')} "
+              f"— some fields in today's payload are sourced from a previous day because Garmin hadn't "
+              f"finished processing {date_str} yet at sync time.")
 
     # ── Push to GitHub ────────────────────────────────────────────────────────
     print(f"Pushing data to GitHub ({GITHUB_REPO})...")
