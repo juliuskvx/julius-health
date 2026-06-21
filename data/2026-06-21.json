@@ -1,0 +1,96 @@
+{
+  "sync_date": "2026-06-21",
+  "data_date": "2026-06-21",
+  "sleep": {
+    "date": "2026-06-21",
+    "score": 80,
+    "duration_seconds": 24660,
+    "deep_seconds": 4680,
+    "light_seconds": 14760,
+    "rem_seconds": 5220,
+    "awake_seconds": 1020,
+    "stages": []
+  },
+  "hrv": {
+    "weekly_avg": 48,
+    "last_night": 58,
+    "last_night_5min": 81,
+    "status": "NONE"
+  },
+  "body_battery": {
+    "morning": 14,
+    "values": [
+      [
+        1781989200000,
+        12
+      ],
+      [
+        1781989200000,
+        12
+      ],
+      [
+        1781990640000,
+        12
+      ],
+      [
+        1781991540000,
+        13
+      ],
+      [
+        1781992080000,
+        13
+      ],
+      [
+        1781992260000,
+        14
+      ]
+    ]
+  },
+  "training_readiness": {
+    "score": 56,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN_STRESS_HISTORY_NEG",
+    "sleep_score": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 73,
+    "acwr_factor": null,
+    "sleep_history_factor": 70
+  },
+  "stress": {
+    "avg": 18
+  },
+  "resting_hr": 53.0,
+  "vo2_max": 46.6,
+  "steps": 13588,
+  "active_calories": 710.0,
+  "total_calories": 3049.0,
+  "spo2_avg": 95.0,
+  "last_activity": {
+    "type": "running",
+    "name": "Klaipeda Running",
+    "start_time": "2026-06-20 20:50:53",
+    "duration_seconds": 2428.968994140625,
+    "distance_meters": 6030.97998046875,
+    "avg_hr": 142.0,
+    "max_hr": 154.0,
+    "calories": 528.0,
+    "training_load": 66.7091064453125,
+    "avg_pace": 2.4830000400543213,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "running",
+      "name": "Klaipeda Running",
+      "start_time": "2026-06-20 20:50:53",
+      "duration_seconds": 2428.968994140625,
+      "distance_meters": 6030.97998046875,
+      "avg_hr": 142.0,
+      "max_hr": 154.0,
+      "calories": 528.0,
+      "training_load": 66.7091064453125,
+      "avg_pace": 2.4830000400543213,
+      "hr_zones": []
+    }
+  ]
+}
