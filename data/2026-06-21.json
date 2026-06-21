@@ -3,67 +3,72 @@
   "data_date": "2026-06-21",
   "sleep": {
     "date": "2026-06-21",
-    "score": 80,
-    "duration_seconds": 24660,
-    "deep_seconds": 4680,
-    "light_seconds": 14760,
-    "rem_seconds": 5220,
-    "awake_seconds": 1020,
-    "stages": []
+    "score": 68,
+    "duration_seconds": 19260,
+    "deep_seconds": 3000,
+    "light_seconds": 13080,
+    "rem_seconds": 3180,
+    "awake_seconds": 300,
+    "stages": [],
+    "source_date": "2026-06-21",
+    "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 48,
-    "last_night": 58,
-    "last_night_5min": 81,
-    "status": "NONE"
+    "weekly_avg": 58,
+    "last_night": 55,
+    "last_night_5min": 85,
+    "status": "NONE",
+    "source_date": "2026-06-21",
+    "is_stale": false
   },
   "body_battery": {
-    "morning": 14,
+    "morning": 82,
     "values": [
       [
         1781989200000,
         12
       ],
       [
-        1781989200000,
-        12
+        1782003420000,
+        26
       ],
       [
-        1781990640000,
-        12
+        1782003600000,
+        26
       ],
       [
-        1781991540000,
-        13
+        1782016920000,
+        63
       ],
       [
-        1781992080000,
-        13
+        1782018000000,
+        64
       ],
       [
-        1781992260000,
-        14
+        1782027540000,
+        82
       ]
-    ]
+    ],
+    "source_date": "2026-06-21"
   },
   "training_readiness": {
-    "score": 56,
-    "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN_STRESS_HISTORY_NEG",
-    "sleep_score": null,
+    "score": 44,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_MOD_AWAKE_NEG",
+    "sleep_score": 68,
     "hrv_factor": 0,
-    "recovery_time_factor": 73,
+    "recovery_time_factor": 89,
     "acwr_factor": null,
     "sleep_history_factor": 70
   },
   "stress": {
-    "avg": 18
+    "avg": 16
   },
-  "resting_hr": 53.0,
+  "resting_hr": 50.0,
   "vo2_max": 46.6,
-  "steps": 13588,
-  "active_calories": 710.0,
-  "total_calories": 3049.0,
+  "steps": 513,
+  "active_calories": 13.0,
+  "total_calories": 1176.0,
   "spo2_avg": 95.0,
   "last_activity": {
     "type": "running",
