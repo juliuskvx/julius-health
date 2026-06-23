@@ -29,61 +29,74 @@
         9
       ],
       [
-        1782173340000,
-        16
+        1782183060000,
+        44
       ],
       [
-        1782173700000,
-        16
-      ],
-      [
-        1782185220000,
-        49
-      ],
-      [
-        1782185400000,
-        49
+        1782183240000,
+        44
       ],
       [
         1782195300000,
         66
+      ],
+      [
+        1782204480000,
+        54
+      ],
+      [
+        1782224460000,
+        29
       ]
     ],
     "source_date": "2026-06-23"
   },
   "training_readiness": {
-    "score": 50,
-    "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_MOD_ACWR_NEG",
+    "score": 44,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_MOD_ACWR_NEG",
     "sleep_score": 69,
     "hrv_factor": 0,
-    "recovery_time_factor": 90,
+    "recovery_time_factor": 76,
     "acwr_factor": null,
     "sleep_history_factor": 74
   },
   "stress": {
-    "avg": 21
+    "avg": 29
   },
   "resting_hr": 51.0,
   "vo2_max": 46.7,
-  "steps": 57,
-  "active_calories": 1.0,
-  "total_calories": 977.0,
+  "steps": 5689,
+  "active_calories": 735.0,
+  "total_calories": 2523.0,
   "spo2_avg": 96.0,
   "last_activity": {
-    "type": "road_biking",
-    "name": "Preila Road Cycling",
-    "start_time": "2026-06-22 12:01:44",
-    "duration_seconds": 6224.3759765625,
-    "distance_meters": 50612.23828125,
-    "avg_hr": null,
-    "max_hr": null,
-    "calories": 2079.0,
-    "training_load": 0.5142669677734375,
-    "avg_pace": 8.130999565124512,
+    "type": "lap_swimming",
+    "name": "Pool Swim",
+    "start_time": "2026-06-23 11:53:55",
+    "duration_seconds": 2105.364990234375,
+    "distance_meters": 1600.0,
+    "avg_hr": 131.0,
+    "max_hr": 149.0,
+    "calories": 443.0,
+    "training_load": 37.532958984375,
+    "avg_pace": 0.7599999904632568,
     "hr_zones": []
   },
   "activities": [
+    {
+      "type": "lap_swimming",
+      "name": "Pool Swim",
+      "start_time": "2026-06-23 11:53:55",
+      "duration_seconds": 2105.364990234375,
+      "distance_meters": 1600.0,
+      "avg_hr": 131.0,
+      "max_hr": 149.0,
+      "calories": 443.0,
+      "training_load": 37.532958984375,
+      "avg_pace": 0.7599999904632568,
+      "hr_zones": []
+    },
     {
       "type": "road_biking",
       "name": "Preila Road Cycling",
