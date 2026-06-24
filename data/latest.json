@@ -14,61 +14,61 @@
     "is_stale": true
   },
   "hrv": {
-    "weekly_avg": 55,
-    "last_night": 48,
-    "last_night_5min": 63,
+    "weekly_avg": 56,
+    "last_night": null,
+    "last_night_5min": null,
     "status": "NONE",
-    "source_date": "2026-06-23",
-    "is_stale": true
+    "source_date": "2026-06-24",
+    "is_stale": false
   },
   "body_battery": {
-    "morning": 5,
+    "morning": 14,
     "values": [
       [
         1782248400000,
         5
       ],
       [
-        1782248400000,
+        1782269460000,
+        12
+      ],
+      [
+        1782269640000,
+        13
+      ],
+      [
+        1782269820000,
+        14
+      ],
+      [
+        1782298260000,
         5
       ],
       [
-        1782250380000,
-        5
-      ],
-      [
-        1782250380000,
-        5
-      ],
-      [
-        1782252360000,
-        5
-      ],
-      [
-        1782252360000,
+        1782298260000,
         5
       ]
     ],
     "source_date": "2026-06-24"
   },
   "training_readiness": {
-    "score": 50,
+    "score": 54,
     "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_MOD_ACWR_NEG",
-    "sleep_score": 69,
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN_STRESS_HISTORY_NEG",
+    "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 90,
+    "recovery_time_factor": 77,
     "acwr_factor": null,
-    "sleep_history_factor": 74
+    "sleep_history_factor": 63
   },
   "stress": {
-    "avg": 92
+    "avg": 61
   },
   "resting_hr": 55.0,
   "vo2_max": 46.7,
-  "steps": 1068,
-  "active_calories": 207.0,
-  "total_calories": 371.0,
+  "steps": 4231,
+  "active_calories": 387.0,
+  "total_calories": 2175.0,
   "spo2_avg": 93.0,
   "last_activity": {
     "type": "lap_swimming",
