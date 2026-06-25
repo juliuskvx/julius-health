@@ -35,10 +35,8 @@ def sync():
     print("Connected.")
 
     # ── Sleep — pull TODAY (last night's sleep syncs under today's date) ──────
-    # Garmin sometimes hasn't finished processing today's sleep yet when this
-    # runs (10am). If so, it can silently return an older day's data without
-    # erroring. We check dailySleepDTO.calendarDate to catch that instead of
-    # blindly trusting whatever comes back.
+    # If Garmin returns data for a different date, treat as no data (null).
+    # We never recycle stale sleep — missing data is shown as missing.
     sleep_raw    = safe_get(lambda: client.get_sleep_data(date_str), {})
     sleep_data   = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
     sleep_cal_dt = sleep_data.get("calendarDate")
@@ -49,6 +47,13 @@ def sync():
         sleep_data   = sleep_raw.get("dailySleepDTO", {}) if sleep_raw else {}
         sleep_cal_dt = sleep_data.get("calendarDate")
 
+    # If the data we got is still not for today or yesterday, discard it entirely.
+    valid_sleep_dates = {date_str, yest_str}
+    if sleep_cal_dt not in valid_sleep_dates:
+        print(f"Sleep data calendarDate={sleep_cal_dt} is neither today nor yesterday — discarding as stale.")
+        sleep_data   = {}
+        sleep_cal_dt = None
+
     print(f"Sleep raw (requested {date_str}, got calendarDate={sleep_cal_dt}): "
           f"duration={sleep_data.get('sleepTimeSeconds')}, score_block={sleep_data.get('sleepScores')}")
 
@@ -56,7 +61,7 @@ def sync():
         sleep_data.get("sleepScores", {}).get("overall", {}).get("value")
         or sleep_data.get("sleepScore")
         or sleep_data.get("averageSleepScore")
-    )
+    ) if sleep_data else None
 
     sleep = {
         "date":             date_str,
@@ -72,8 +77,7 @@ def sync():
     }
 
     # ── HRV ───────────────────────────────────────────────────────────────────
-    # Same stale-data issue as sleep: Garmin can return yesterday's HRV summary
-    # tagged with today's request but yesterday's calendarDate. Validate it.
+    # Same stale-data issue as sleep. If calendarDate doesn't match, discard.
     hrv_raw     = safe_get(lambda: client.get_hrv_data(date_str), {})
     hrv_summary = hrv_raw.get("hrvSummary", {}) if hrv_raw else {}
     hrv_cal_dt  = hrv_summary.get("calendarDate")
@@ -83,6 +87,12 @@ def sync():
         hrv_raw     = safe_get(lambda: client.get_hrv_data(yest_str), {})
         hrv_summary = hrv_raw.get("hrvSummary", {}) if hrv_raw else {}
         hrv_cal_dt  = hrv_summary.get("calendarDate")
+
+    # If still not a valid date, discard entirely.
+    if hrv_cal_dt not in valid_sleep_dates:
+        print(f"HRV data calendarDate={hrv_cal_dt} is neither today nor yesterday — discarding as stale.")
+        hrv_summary = {}
+        hrv_cal_dt  = None
 
     print(f"HRV raw summary (requested {date_str}, got calendarDate={hrv_cal_dt}): {json.dumps(hrv_summary, indent=2)}")
 
@@ -99,9 +109,6 @@ def sync():
     }
 
     # ── Body Battery ──────────────────────────────────────────────────────────
-    # No confirmed calendarDate-equivalent key yet for this endpoint — logging
-    # the raw item shape here so the next run's Action log tells us the exact
-    # field name to validate against, instead of guessing it.
     bb_raw = safe_get(lambda: client.get_body_battery(date_str), [])
     bb_values = []
     bb_source_date = None
