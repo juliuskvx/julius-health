@@ -29,61 +29,74 @@
         15
       ],
       [
-        1782432000000,
-        21
+        1782439560000,
+        47
       ],
       [
-        1782432540000,
-        22
-      ],
-      [
-        1782443700000,
-        64
-      ],
-      [
-        1782443880000,
-        64
+        1782439740000,
+        48
       ],
       [
         1782454320000,
         93
+      ],
+      [
+        1782458280000,
+        91
+      ],
+      [
+        1782476100000,
+        50
       ]
     ],
     "source_date": "2026-06-26"
   },
   "training_readiness": {
-    "score": 89,
+    "score": 87,
     "level": "HIGH",
     "feedback_long": "HIGH_RT_HIGHEST_SS_AVAILABLE_SLEEP_HISTORY_POS",
     "sleep_score": 78,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 93,
     "acwr_factor": null,
     "sleep_history_factor": 94
   },
   "stress": {
-    "avg": 12
+    "avg": 19
   },
   "resting_hr": 49.0,
   "vo2_max": 47.0,
-  "steps": 187,
-  "active_calories": 10.0,
-  "total_calories": 961.0,
+  "steps": 4307,
+  "active_calories": 314.0,
+  "total_calories": 1874.0,
   "spo2_avg": 96.0,
   "last_activity": {
-    "type": "running",
-    "name": "Vilnius Running",
-    "start_time": "2026-06-25 13:53:59",
-    "duration_seconds": 1915.3189697265625,
-    "distance_meters": 5040.77978515625,
-    "avg_hr": 145.0,
-    "max_hr": 156.0,
-    "calories": 475.0,
-    "training_load": 67.11360168457031,
-    "avg_pace": 2.631999969482422,
+    "type": "open_water_swimming",
+    "name": "Vilnius Open Water Swimming",
+    "start_time": "2026-06-26 14:41:53",
+    "duration_seconds": 886.5159912109375,
+    "distance_meters": 691.1300048828125,
+    "avg_hr": 125.0,
+    "max_hr": 136.0,
+    "calories": 171.0,
+    "training_load": 15.328720092773438,
+    "avg_pace": 0.7799999713897705,
     "hr_zones": []
   },
   "activities": [
+    {
+      "type": "open_water_swimming",
+      "name": "Vilnius Open Water Swimming",
+      "start_time": "2026-06-26 14:41:53",
+      "duration_seconds": 886.5159912109375,
+      "distance_meters": 691.1300048828125,
+      "avg_hr": 125.0,
+      "max_hr": 136.0,
+      "calories": 171.0,
+      "training_load": 15.328720092773438,
+      "avg_pace": 0.7799999713897705,
+      "hr_zones": []
+    },
     {
       "type": "running",
       "name": "Vilnius Running",
