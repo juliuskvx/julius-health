@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-06-27",
+  "data_date": "2026-06-27",
+  "sleep": {
+    "date": "2026-06-27",
+    "score": 95,
+    "duration_seconds": 30000,
+    "deep_seconds": 7500,
+    "light_seconds": 16920,
+    "rem_seconds": 5580,
+    "awake_seconds": 360,
+    "stages": [],
+    "source_date": "2026-06-27",
+    "is_stale": false
+  },
+  "hrv": {
+    "weekly_avg": 59,
+    "last_night": 67,
+    "last_night_5min": 87,
+    "status": "NONE",
+    "source_date": "2026-06-27",
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": 100,
+    "values": [
+      [
+        1782507600000,
+        23
+      ],
+      [
+        1782518940000,
+        54
+      ],
+      [
+        1782519120000,
+        55
+      ],
+      [
+        1782530100000,
+        93
+      ],
+      [
+        1782530640000,
+        93
+      ],
+      [
+        1782536940000,
+        100
+      ]
+    ],
+    "source_date": "2026-06-27"
+  },
+  "training_readiness": {
+    "score": 88,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_HIGHEST",
+    "sleep_score": 95,
+    "hrv_factor": 0,
+    "recovery_time_factor": 100,
+    "acwr_factor": null,
+    "sleep_history_factor": 76
+  },
+  "stress": {
+    "avg": 7
+  },
+  "resting_hr": 45.0,
+  "vo2_max": 47.0,
+  "steps": 95,
+  "active_calories": 3.0,
+  "total_calories": 964.0,
+  "spo2_avg": 97.0,
+  "last_activity": {
+    "type": "open_water_swimming",
+    "name": "Vilnius Open Water Swimming",
+    "start_time": "2026-06-26 14:41:53",
+    "duration_seconds": 886.5159912109375,
+    "distance_meters": 691.1300048828125,
+    "avg_hr": 125.0,
+    "max_hr": 136.0,
+    "calories": 171.0,
+    "training_load": 15.328720092773438,
+    "avg_pace": 0.7799999713897705,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "open_water_swimming",
+      "name": "Vilnius Open Water Swimming",
+      "start_time": "2026-06-26 14:41:53",
+      "duration_seconds": 886.5159912109375,
+      "distance_meters": 691.1300048828125,
+      "avg_hr": 125.0,
+      "max_hr": 136.0,
+      "calories": 171.0,
+      "training_load": 15.328720092773438,
+      "avg_pace": 0.7799999713897705,
+      "hr_zones": []
+    }
+  ]
+}
