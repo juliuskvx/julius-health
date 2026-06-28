@@ -1,101 +1,75 @@
 {
-  "sync_date": "2026-06-27",
-  "data_date": "2026-06-27",
+  "sync_date": "2026-06-28",
+  "data_date": "2026-06-28",
   "sleep": {
-    "date": "2026-06-27",
-    "score": 95,
-    "duration_seconds": 30000,
-    "deep_seconds": 7500,
-    "light_seconds": 16920,
-    "rem_seconds": 5580,
-    "awake_seconds": 360,
+    "date": "2026-06-28",
+    "score": 63,
+    "duration_seconds": 17700,
+    "deep_seconds": 4740,
+    "light_seconds": 10380,
+    "rem_seconds": 2580,
+    "awake_seconds": 480,
     "stages": [],
-    "source_date": "2026-06-27",
+    "source_date": "2026-06-28",
     "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 59,
-    "last_night": 67,
-    "last_night_5min": 87,
+    "weekly_avg": 58,
+    "last_night": 51,
+    "last_night_5min": 68,
     "status": "NONE",
-    "source_date": "2026-06-27",
+    "source_date": "2026-06-28",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 100,
+    "morning": 78,
     "values": [
       [
-        1782507600000,
-        23
+        1782594000000,
+        31
       ],
       [
-        1782518940000,
-        54
+        1782601380000,
+        38
       ],
       [
-        1782519120000,
-        55
+        1782601740000,
+        38
       ],
       [
-        1782530100000,
-        93
+        1782609120000,
+        60
       ],
       [
-        1782530640000,
-        93
+        1782609480000,
+        61
       ],
       [
-        1782536940000,
-        100
+        1782615780000,
+        78
       ]
     ],
-    "source_date": "2026-06-27"
+    "source_date": "2026-06-28"
   },
   "training_readiness": {
-    "score": 88,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_HIGHEST",
-    "sleep_score": 95,
+    "score": 70,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_MOD",
+    "sleep_score": 63,
     "hrv_factor": 0,
-    "recovery_time_factor": 100,
+    "recovery_time_factor": 99,
     "acwr_factor": null,
-    "sleep_history_factor": 76
+    "sleep_history_factor": 88
   },
   "stress": {
-    "avg": 7
+    "avg": 16
   },
-  "resting_hr": 45.0,
+  "resting_hr": 50.0,
   "vo2_max": 47.0,
-  "steps": 95,
-  "active_calories": 3.0,
-  "total_calories": 964.0,
-  "spo2_avg": 97.0,
-  "last_activity": {
-    "type": "open_water_swimming",
-    "name": "Vilnius Open Water Swimming",
-    "start_time": "2026-06-26 14:41:53",
-    "duration_seconds": 886.5159912109375,
-    "distance_meters": 691.1300048828125,
-    "avg_hr": 125.0,
-    "max_hr": 136.0,
-    "calories": 171.0,
-    "training_load": 15.328720092773438,
-    "avg_pace": 0.7799999713897705,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "open_water_swimming",
-      "name": "Vilnius Open Water Swimming",
-      "start_time": "2026-06-26 14:41:53",
-      "duration_seconds": 886.5159912109375,
-      "distance_meters": 691.1300048828125,
-      "avg_hr": 125.0,
-      "max_hr": 136.0,
-      "calories": 171.0,
-      "training_load": 15.328720092773438,
-      "avg_pace": 0.7799999713897705,
-      "hr_zones": []
-    }
-  ]
+  "steps": 256,
+  "active_calories": 18.0,
+  "total_calories": 671.0,
+  "spo2_avg": 96.0,
+  "last_activity": {},
+  "activities": []
 }
