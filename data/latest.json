@@ -29,47 +29,86 @@
         31
       ],
       [
-        1782601380000,
-        38
+        1782608220000,
+        57
       ],
       [
-        1782601740000,
-        38
-      ],
-      [
-        1782609120000,
-        60
-      ],
-      [
-        1782609480000,
-        61
+        1782608400000,
+        57
       ],
       [
         1782615780000,
         78
+      ],
+      [
+        1782622800000,
+        58
+      ],
+      [
+        1782636300000,
+        29
       ]
     ],
     "source_date": "2026-06-28"
   },
   "training_readiness": {
-    "score": 70,
-    "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_MOD",
+    "score": 10,
+    "level": "POOR",
+    "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
     "sleep_score": 63,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 17,
     "acwr_factor": null,
     "sleep_history_factor": 88
   },
   "stress": {
-    "avg": 16
+    "avg": 21
   },
   "resting_hr": 50.0,
   "vo2_max": 47.0,
-  "steps": 256,
-  "active_calories": 18.0,
-  "total_calories": 671.0,
+  "steps": 13927,
+  "active_calories": 2610.0,
+  "total_calories": 3823.0,
   "spo2_avg": 96.0,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "running",
+    "name": "Trakai Running",
+    "start_time": "2026-06-28 10:06:57",
+    "duration_seconds": 3801.056884765625,
+    "distance_meters": 9958.3798828125,
+    "avg_hr": 168.0,
+    "max_hr": 183.0,
+    "calories": 1019.0,
+    "training_load": 157.34451293945312,
+    "avg_pace": 2.619999885559082,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "running",
+      "name": "Trakai Running",
+      "start_time": "2026-06-28 10:06:57",
+      "duration_seconds": 3801.056884765625,
+      "distance_meters": 9958.3798828125,
+      "avg_hr": 168.0,
+      "max_hr": 183.0,
+      "calories": 1019.0,
+      "training_load": 157.34451293945312,
+      "avg_pace": 2.619999885559082,
+      "hr_zones": []
+    },
+    {
+      "type": "open_water_swimming",
+      "name": "Trakai Open Water Swimming",
+      "start_time": "2026-06-28 08:00:11",
+      "duration_seconds": 2252.402099609375,
+      "distance_meters": 1555.239990234375,
+      "avg_hr": 146.0,
+      "max_hr": 174.0,
+      "calories": 562.0,
+      "training_load": 78.42379760742188,
+      "avg_pace": 0.6899999976158142,
+      "hr_zones": []
+    }
+  ]
 }
