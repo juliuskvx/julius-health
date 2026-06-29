@@ -3,26 +3,26 @@
   "data_date": "2026-06-29",
   "sleep": {
     "date": "2026-06-29",
-    "score": 63,
-    "duration_seconds": 17700,
-    "deep_seconds": 4740,
-    "light_seconds": 10380,
-    "rem_seconds": 2580,
-    "awake_seconds": 480,
+    "score": 62,
+    "duration_seconds": 24660,
+    "deep_seconds": 720,
+    "light_seconds": 21960,
+    "rem_seconds": 1980,
+    "awake_seconds": 1920,
     "stages": [],
-    "source_date": "2026-06-28",
-    "is_stale": true
+    "source_date": "2026-06-29",
+    "is_stale": false
   },
   "hrv": {
     "weekly_avg": 58,
-    "last_night": 51,
-    "last_night_5min": 68,
-    "status": "NONE",
-    "source_date": "2026-06-28",
-    "is_stale": true
+    "last_night": 60,
+    "last_night_5min": 79,
+    "status": "BALANCED",
+    "source_date": "2026-06-29",
+    "is_stale": false
   },
   "body_battery": {
-    "morning": 60,
+    "morning": 66,
     "values": [
       [
         1782680400000,
@@ -33,42 +33,42 @@
         5
       ],
       [
-        1782690840000,
+        1782692640000,
         5
       ],
       [
-        1782701100000,
-        31
+        1782704700000,
+        41
       ],
       [
-        1782701280000,
-        31
+        1782704880000,
+        41
       ],
       [
-        1782711000000,
-        60
+        1782713700000,
+        66
       ]
     ],
     "source_date": "2026-06-29"
   },
   "training_readiness": {
-    "score": 3,
+    "score": 2,
     "level": "POOR",
     "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
-    "sleep_score": 63,
-    "hrv_factor": 0,
-    "recovery_time_factor": 18,
+    "sleep_score": 62,
+    "hrv_factor": 100,
+    "recovery_time_factor": 32,
     "acwr_factor": null,
-    "sleep_history_factor": 88
+    "sleep_history_factor": 60
   },
   "stress": {
-    "avg": 23
+    "avg": 22
   },
   "resting_hr": 52.0,
   "vo2_max": 46.8,
-  "steps": 55,
+  "steps": 135,
   "active_calories": 5.0,
-  "total_calories": 874.0,
+  "total_calories": 1040.0,
   "spo2_avg": 94.0,
   "last_activity": {
     "type": "running",
