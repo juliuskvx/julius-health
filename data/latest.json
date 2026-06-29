@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-06-28",
-  "data_date": "2026-06-28",
+  "sync_date": "2026-06-29",
+  "data_date": "2026-06-29",
   "sleep": {
-    "date": "2026-06-28",
+    "date": "2026-06-29",
     "score": 63,
     "duration_seconds": 17700,
     "deep_seconds": 4740,
@@ -11,7 +11,7 @@
     "awake_seconds": 480,
     "stages": [],
     "source_date": "2026-06-28",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": 58,
@@ -19,57 +19,57 @@
     "last_night_5min": 68,
     "status": "NONE",
     "source_date": "2026-06-28",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 78,
+    "morning": 60,
     "values": [
       [
-        1782594000000,
+        1782680400000,
+        5
+      ],
+      [
+        1782680400000,
+        5
+      ],
+      [
+        1782690840000,
+        5
+      ],
+      [
+        1782701100000,
         31
       ],
       [
-        1782608220000,
-        57
+        1782701280000,
+        31
       ],
       [
-        1782608400000,
-        57
-      ],
-      [
-        1782615780000,
-        78
-      ],
-      [
-        1782622800000,
-        58
-      ],
-      [
-        1782636300000,
-        29
+        1782711000000,
+        60
       ]
     ],
-    "source_date": "2026-06-28"
+    "source_date": "2026-06-29"
   },
   "training_readiness": {
-    "score": 10,
+    "score": 3,
     "level": "POOR",
     "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
     "sleep_score": 63,
     "hrv_factor": 0,
-    "recovery_time_factor": 17,
+    "recovery_time_factor": 18,
     "acwr_factor": null,
     "sleep_history_factor": 88
   },
   "stress": {
-    "avg": 21
+    "avg": 23
   },
-  "resting_hr": 50.0,
-  "vo2_max": 47.0,
-  "steps": 13927,
-  "active_calories": 2610.0,
-  "total_calories": 3823.0,
-  "spo2_avg": 96.0,
+  "resting_hr": 52.0,
+  "vo2_max": 46.8,
+  "steps": 55,
+  "active_calories": 5.0,
+  "total_calories": 874.0,
+  "spo2_avg": 94.0,
   "last_activity": {
     "type": "running",
     "name": "Trakai Running",
@@ -95,6 +95,19 @@
       "calories": 1019.0,
       "training_load": 157.34451293945312,
       "avg_pace": 2.619999885559082,
+      "hr_zones": []
+    },
+    {
+      "type": "road_biking",
+      "name": "Trakai Road Cycling",
+      "start_time": "2026-06-28 08:42:05",
+      "duration_seconds": 4961.4541015625,
+      "distance_meters": 39624.19921875,
+      "avg_hr": 157.0,
+      "max_hr": 175.0,
+      "calories": 1232.0,
+      "training_load": 197.30067443847656,
+      "avg_pace": 7.986000061035156,
       "hr_zones": []
     },
     {
