@@ -29,47 +29,73 @@
         19
       ],
       [
-        1782777060000,
-        29
+        1782779580000,
+        36
       ],
       [
-        1782777240000,
-        29
+        1782779940000,
+        37
       ],
       [
-        1782787320000,
-        63
-      ],
-      [
-        1782787680000,
-        64
+        1782792720000,
+        78
       ],
       [
         1782797040000,
         87
+      ],
+      [
+        1782804600000,
+        69
       ]
     ],
     "source_date": "2026-06-30"
   },
   "training_readiness": {
-    "score": 30,
+    "score": 32,
     "level": "LOW",
     "feedback_long": "LOW_RT_MOD_OR_LOW_SS_MOD_SLEEP_HISTORY_NEG",
     "sleep_score": 65,
     "hrv_factor": 100,
-    "recovery_time_factor": 62,
+    "recovery_time_factor": 65,
     "acwr_factor": null,
     "sleep_history_factor": 43
   },
   "stress": {
-    "avg": 14
+    "avg": 16
   },
   "resting_hr": 49.0,
   "vo2_max": 46.8,
-  "steps": 195,
-  "active_calories": 15.0,
-  "total_calories": 896.0,
+  "steps": 717,
+  "active_calories": 1053.0,
+  "total_calories": 2159.0,
   "spo2_avg": 95.0,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "road_biking",
+    "name": "Vilnius Road Cycling",
+    "start_time": "2026-06-30 09:04:11",
+    "duration_seconds": 5798.6767578125,
+    "distance_meters": 48894.75,
+    "avg_hr": null,
+    "max_hr": null,
+    "calories": 2371.0,
+    "training_load": 0.5142669677734375,
+    "avg_pace": 8.432000160217285,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "road_biking",
+      "name": "Vilnius Road Cycling",
+      "start_time": "2026-06-30 09:04:11",
+      "duration_seconds": 5798.6767578125,
+      "distance_meters": 48894.75,
+      "avg_hr": null,
+      "max_hr": null,
+      "calories": 2371.0,
+      "training_load": 0.5142669677734375,
+      "avg_pace": 8.432000160217285,
+      "hr_zones": []
+    }
+  ]
 }
