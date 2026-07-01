@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-07-01",
+  "data_date": "2026-07-01",
+  "sleep": {
+    "date": "2026-07-01",
+    "score": 82,
+    "duration_seconds": 24420,
+    "deep_seconds": 5280,
+    "light_seconds": 14820,
+    "rem_seconds": 4320,
+    "awake_seconds": 600,
+    "stages": [],
+    "source_date": "2026-07-01",
+    "is_stale": false
+  },
+  "hrv": {
+    "weekly_avg": 58,
+    "last_night": 55,
+    "last_night_5min": 75,
+    "status": "BALANCED",
+    "source_date": "2026-07-01",
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": 94,
+    "values": [
+      [
+        1782853200000,
+        15
+      ],
+      [
+        1782864180000,
+        26
+      ],
+      [
+        1782864540000,
+        27
+      ],
+      [
+        1782875700000,
+        70
+      ],
+      [
+        1782875880000,
+        71
+      ],
+      [
+        1782886680000,
+        94
+      ]
+    ],
+    "source_date": "2026-07-01"
+  },
+  "training_readiness": {
+    "score": 62,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_MOD_OR_LOW_SS_GOOD_SLEEP_HISTORY_NEG",
+    "sleep_score": 82,
+    "hrv_factor": 100,
+    "recovery_time_factor": 97,
+    "acwr_factor": null,
+    "sleep_history_factor": 46
+  },
+  "stress": {
+    "avg": 13
+  },
+  "resting_hr": 48.0,
+  "vo2_max": 46.8,
+  "steps": 105,
+  "active_calories": 1.0,
+  "total_calories": 958.0,
+  "spo2_avg": 94.0,
+  "last_activity": {
+    "type": "road_biking",
+    "name": "Vilnius Road Cycling",
+    "start_time": "2026-06-30 09:04:11",
+    "duration_seconds": 5798.6767578125,
+    "distance_meters": 48894.75,
+    "avg_hr": null,
+    "max_hr": null,
+    "calories": 2371.0,
+    "training_load": 0.5142669677734375,
+    "avg_pace": 8.432000160217285,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "road_biking",
+      "name": "Vilnius Road Cycling",
+      "start_time": "2026-06-30 09:04:11",
+      "duration_seconds": 5798.6767578125,
+      "distance_meters": 48894.75,
+      "avg_hr": null,
+      "max_hr": null,
+      "calories": 2371.0,
+      "training_load": 0.5142669677734375,
+      "avg_pace": 8.432000160217285,
+      "hr_zones": []
+    }
+  ]
+}
