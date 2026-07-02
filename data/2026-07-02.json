@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-07-02",
+  "data_date": "2026-07-02",
+  "sleep": {
+    "date": "2026-07-02",
+    "score": 63,
+    "duration_seconds": 18000,
+    "deep_seconds": 2940,
+    "light_seconds": 12480,
+    "rem_seconds": 2580,
+    "awake_seconds": 1680,
+    "stages": [],
+    "source_date": "2026-07-02",
+    "is_stale": false
+  },
+  "hrv": {
+    "weekly_avg": 57,
+    "last_night": 57,
+    "last_night_5min": 80,
+    "status": "BALANCED",
+    "source_date": "2026-07-02",
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": 80,
+    "values": [
+      [
+        1782940140000,
+        16
+      ],
+      [
+        1782951120000,
+        28
+      ],
+      [
+        1782951660000,
+        29
+      ],
+      [
+        1782963540000,
+        70
+      ],
+      [
+        1782963720000,
+        70
+      ],
+      [
+        1782967680000,
+        80
+      ]
+    ],
+    "source_date": "2026-07-02"
+  },
+  "training_readiness": {
+    "score": 62,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_MOD",
+    "sleep_score": 63,
+    "hrv_factor": 100,
+    "recovery_time_factor": 99,
+    "acwr_factor": null,
+    "sleep_history_factor": 64
+  },
+  "stress": {
+    "avg": 15
+  },
+  "resting_hr": 51.0,
+  "vo2_max": 46.8,
+  "steps": 272,
+  "active_calories": 6.0,
+  "total_calories": 1012.0,
+  "spo2_avg": 95.0,
+  "last_activity": {
+    "type": "bouldering",
+    "name": "Bouldering",
+    "start_time": "2026-07-01 19:41:42",
+    "duration_seconds": 6265.9228515625,
+    "distance_meters": null,
+    "avg_hr": 96.0,
+    "max_hr": 159.0,
+    "calories": 564.0,
+    "training_load": 32.91865539550781,
+    "avg_pace": null,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "bouldering",
+      "name": "Bouldering",
+      "start_time": "2026-07-01 19:41:42",
+      "duration_seconds": 6265.9228515625,
+      "distance_meters": null,
+      "avg_hr": 96.0,
+      "max_hr": 159.0,
+      "calories": 564.0,
+      "training_load": 32.91865539550781,
+      "avg_pace": null,
+      "hr_zones": []
+    }
+  ]
+}
