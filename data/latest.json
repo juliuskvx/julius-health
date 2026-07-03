@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-07-02",
-  "data_date": "2026-07-02",
+  "sync_date": "2026-07-03",
+  "data_date": "2026-07-03",
   "sleep": {
-    "date": "2026-07-02",
+    "date": "2026-07-03",
     "score": 63,
     "duration_seconds": 18000,
     "deep_seconds": 2940,
@@ -11,7 +11,7 @@
     "awake_seconds": 1680,
     "stages": [],
     "source_date": "2026-07-02",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": 57,
@@ -19,83 +19,57 @@
     "last_night_5min": 80,
     "status": "BALANCED",
     "source_date": "2026-07-02",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 80,
+    "morning": 18,
     "values": [
       [
-        1782940140000,
-        16
+        1783026000000,
+        14
       ],
       [
-        1782951120000,
-        28
+        1783031040000,
+        5
       ],
       [
-        1782951660000,
-        29
+        1783035180000,
+        5
       ],
       [
-        1782963540000,
-        70
+        1783035180000,
+        5
       ],
       [
-        1782963720000,
-        70
+        1783044360000,
+        5
       ],
       [
-        1782967680000,
-        80
+        1783052640000,
+        18
       ]
     ],
-    "source_date": "2026-07-02"
+    "source_date": "2026-07-03"
   },
   "training_readiness": {
-    "score": 62,
+    "score": 74,
     "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_MOD",
-    "sleep_score": 63,
+    "feedback_long": "MODERATE_NAP",
+    "sleep_score": null,
     "hrv_factor": 100,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 98,
     "acwr_factor": null,
-    "sleep_history_factor": 64
+    "sleep_history_factor": 54
   },
   "stress": {
-    "avg": 15
+    "avg": 55
   },
-  "resting_hr": 51.0,
+  "resting_hr": 53.0,
   "vo2_max": 46.8,
-  "steps": 272,
-  "active_calories": 6.0,
-  "total_calories": 1012.0,
-  "spo2_avg": 95.0,
-  "last_activity": {
-    "type": "bouldering",
-    "name": "Bouldering",
-    "start_time": "2026-07-01 19:41:42",
-    "duration_seconds": 6265.9228515625,
-    "distance_meters": null,
-    "avg_hr": 96.0,
-    "max_hr": 159.0,
-    "calories": 564.0,
-    "training_load": 32.91865539550781,
-    "avg_pace": null,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "bouldering",
-      "name": "Bouldering",
-      "start_time": "2026-07-01 19:41:42",
-      "duration_seconds": 6265.9228515625,
-      "distance_meters": null,
-      "avg_hr": 96.0,
-      "max_hr": 159.0,
-      "calories": 564.0,
-      "training_load": 32.91865539550781,
-      "avg_pace": null,
-      "hr_zones": []
-    }
-  ]
+  "steps": 4144,
+  "active_calories": 308.0,
+  "total_calories": 1072.0,
+  "spo2_avg": 93.0,
+  "last_activity": {},
+  "activities": []
 }
