@@ -3,23 +3,23 @@
   "data_date": "2026-07-03",
   "sleep": {
     "date": "2026-07-03",
-    "score": 63,
-    "duration_seconds": 18000,
-    "deep_seconds": 2940,
-    "light_seconds": 12480,
-    "rem_seconds": 2580,
-    "awake_seconds": 1680,
+    "score": 32,
+    "duration_seconds": 12240,
+    "deep_seconds": 4980,
+    "light_seconds": 7260,
+    "rem_seconds": 0,
+    "awake_seconds": 480,
     "stages": [],
-    "source_date": "2026-07-02",
-    "is_stale": true
+    "source_date": "2026-07-03",
+    "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 57,
-    "last_night": 57,
-    "last_night_5min": 80,
+    "weekly_avg": 53,
+    "last_night": 38,
+    "last_night_5min": 35,
     "status": "BALANCED",
-    "source_date": "2026-07-02",
-    "is_stale": true
+    "source_date": "2026-07-03",
+    "is_stale": false
   },
   "body_battery": {
     "morning": 18,
@@ -33,42 +33,42 @@
         5
       ],
       [
-        1783035180000,
-        5
-      ],
-      [
-        1783035180000,
-        5
-      ],
-      [
-        1783044360000,
+        1783040400000,
         5
       ],
       [
         1783052640000,
         18
+      ],
+      [
+        1783054800000,
+        18
+      ],
+      [
+        1783055160000,
+        16
       ]
     ],
     "source_date": "2026-07-03"
   },
   "training_readiness": {
-    "score": 74,
-    "level": "MODERATE",
-    "feedback_long": "MODERATE_NAP",
-    "sleep_score": null,
-    "hrv_factor": 100,
-    "recovery_time_factor": 98,
+    "score": 13,
+    "level": "POOR",
+    "feedback_long": "POOR_RT_MOD_OR_LOW_SS_POOR",
+    "sleep_score": 32,
+    "hrv_factor": 99,
+    "recovery_time_factor": 89,
     "acwr_factor": null,
     "sleep_history_factor": 54
   },
   "stress": {
-    "avg": 55
+    "avg": 46
   },
   "resting_hr": 53.0,
   "vo2_max": 46.8,
-  "steps": 4144,
-  "active_calories": 308.0,
-  "total_calories": 1072.0,
+  "steps": 4278,
+  "active_calories": 317.0,
+  "total_calories": 1530.0,
   "spo2_avg": 93.0,
   "last_activity": {},
   "activities": []
