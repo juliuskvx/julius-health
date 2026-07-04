@@ -28,6 +28,7 @@ def sync():
     yesterday = today - datetime.timedelta(days=1)
     date_str  = today.isoformat()
     yest_str  = yesterday.isoformat()
+    valid_dates = {date_str, yest_str}
 
     print(f"[{date_str}] Connecting to Garmin Connect...")
     client = Garmin(GARMIN_EMAIL, GARMIN_PASSWORD)
@@ -48,8 +49,7 @@ def sync():
         sleep_cal_dt = sleep_data.get("calendarDate")
 
     # If the data we got is still not for today or yesterday, discard it entirely.
-    valid_sleep_dates = {date_str, yest_str}
-    if sleep_cal_dt not in valid_sleep_dates:
+    if sleep_cal_dt not in valid_dates:
         print(f"Sleep data calendarDate={sleep_cal_dt} is neither today nor yesterday — discarding as stale.")
         sleep_data   = {}
         sleep_cal_dt = None
@@ -89,7 +89,7 @@ def sync():
         hrv_cal_dt  = hrv_summary.get("calendarDate")
 
     # If still not a valid date, discard entirely.
-    if hrv_cal_dt not in valid_sleep_dates:
+    if hrv_cal_dt not in valid_dates:
         print(f"HRV data calendarDate={hrv_cal_dt} is neither today nor yesterday — discarding as stale.")
         hrv_summary = {}
         hrv_cal_dt  = None
@@ -161,8 +161,9 @@ def sync():
         rhr = rhr_raw.get("allMetrics", {}).get("metricsMap", {}).get(
             "WELLNESS_RESTING_HEART_RATE", [{}])[0].get("value") if rhr_raw else None
     if not rhr:
-        stats_today = safe_get(lambda: client.get_stats(date_str), {})
-        rhr = stats_today.get("restingHeartRate") if stats_today else None
+        # Fallback: use yesterday's complete stats, not today's in-progress stats
+        stats_fallback = safe_get(lambda: client.get_stats(yest_str), {})
+        rhr = stats_fallback.get("restingHeartRate") if stats_fallback else None
 
     # ── VO2 Max ───────────────────────────────────────────────────────────────
     vo2 = None
@@ -179,14 +180,15 @@ def sync():
             break
 
     # ── Steps & Calories ──────────────────────────────────────────────────────
-    steps_raw = safe_get(lambda: client.get_steps_data(date_str), [])
+    # Pull from YESTERDAY (yest_str) — today's data is incomplete at 10am sync time.
+    steps_raw = safe_get(lambda: client.get_steps_data(yest_str), [])
     total_steps = 0
     if isinstance(steps_raw, list):
         for s in steps_raw:
             if isinstance(s, dict):
                 total_steps += s.get("steps", 0)
 
-    stats_raw = safe_get(lambda: client.get_stats(date_str), {})
+    stats_raw = safe_get(lambda: client.get_stats(yest_str), {})
     active_calories = stats_raw.get("activeKilocalories") if stats_raw else None
     total_calories  = stats_raw.get("totalKilocalories") if stats_raw else None
 
