@@ -3,68 +3,68 @@
   "data_date": "2026-07-05",
   "sleep": {
     "date": "2026-07-05",
-    "score": 84,
-    "duration_seconds": 24060,
-    "deep_seconds": 6120,
-    "light_seconds": 14280,
-    "rem_seconds": 3660,
-    "awake_seconds": 60,
+    "score": 71,
+    "duration_seconds": 28620,
+    "deep_seconds": 4560,
+    "light_seconds": 18000,
+    "rem_seconds": 6060,
+    "awake_seconds": 3360,
     "stages": [],
-    "source_date": "2026-07-04",
-    "is_stale": true
+    "source_date": "2026-07-05",
+    "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 56,
-    "last_night": 94,
-    "last_night_5min": 157,
+    "weekly_avg": 57,
+    "last_night": 58,
+    "last_night_5min": 97,
     "status": "BALANCED",
-    "source_date": "2026-07-04",
-    "is_stale": true
+    "source_date": "2026-07-05",
+    "is_stale": false
   },
   "body_battery": {
-    "morning": 68,
+    "morning": 94,
     "values": [
-      [
-        1783198800000,
-        12
-      ],
       [
         1783199160000,
         11
       ],
       [
-        1783207620000,
-        11
+        1783212480000,
+        20
       ],
       [
-        1783216260000,
-        33
+        1783212660000,
+        20
       ],
       [
-        1783216440000,
-        34
+        1783226340000,
+        72
       ],
       [
-        1783225080000,
-        68
+        1783226520000,
+        73
+      ],
+      [
+        1783240020000,
+        94
       ]
     ],
     "source_date": "2026-07-05"
   },
   "training_readiness": {
-    "score": 59,
+    "score": 62,
     "level": "MODERATE",
-    "feedback_long": "MOD_RT_MOD_OR_LOW_SS_GOOD_SLEEP_HISTORY_NEG",
-    "sleep_score": 84,
+    "feedback_long": "MOD_RT_LOW_SS_MOD_SLEEP_HISTORY_NEG",
+    "sleep_score": 71,
     "hrv_factor": 100,
     "recovery_time_factor": 99,
     "acwr_factor": null,
-    "sleep_history_factor": 31
+    "sleep_history_factor": 49
   },
   "stress": {
-    "avg": 17
+    "avg": 15
   },
-  "resting_hr": 49.0,
+  "resting_hr": 48.0,
   "vo2_max": 46.8,
   "steps": 5248,
   "active_calories": 160.0,
