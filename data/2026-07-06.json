@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-07-06",
+  "data_date": "2026-07-06",
+  "sleep": {
+    "date": "2026-07-06",
+    "score": 71,
+    "duration_seconds": 28620,
+    "deep_seconds": 4560,
+    "light_seconds": 18000,
+    "rem_seconds": 6060,
+    "awake_seconds": 3360,
+    "stages": [],
+    "source_date": "2026-07-05",
+    "is_stale": true
+  },
+  "hrv": {
+    "weekly_avg": 57,
+    "last_night": 58,
+    "last_night_5min": 97,
+    "status": "BALANCED",
+    "source_date": "2026-07-05",
+    "is_stale": true
+  },
+  "body_battery": {
+    "morning": 5,
+    "values": [
+      [
+        1783285200000,
+        5
+      ],
+      [
+        1783285200000,
+        5
+      ],
+      [
+        1783291860000,
+        5
+      ],
+      [
+        1783291860000,
+        5
+      ],
+      [
+        1783298520000,
+        5
+      ],
+      [
+        1783298520000,
+        5
+      ]
+    ],
+    "source_date": "2026-07-06"
+  },
+  "training_readiness": {
+    "score": 1,
+    "level": "POOR",
+    "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
+    "sleep_score": 71,
+    "hrv_factor": 100,
+    "recovery_time_factor": 10,
+    "acwr_factor": null,
+    "sleep_history_factor": 49
+  },
+  "stress": {
+    "avg": 87
+  },
+  "resting_hr": 53.0,
+  "vo2_max": 46.8,
+  "steps": 6877,
+  "active_calories": 2663.0,
+  "total_calories": 5100.0,
+  "spo2_avg": 95.0,
+  "last_activity": {
+    "type": "cycling",
+    "name": "Kretingsodis Cycling",
+    "start_time": "2026-07-05 20:20:00",
+    "duration_seconds": 10734.529296875,
+    "distance_meters": 79588.46875,
+    "avg_hr": 160.0,
+    "max_hr": 178.0,
+    "calories": 2546.0,
+    "training_load": 345.1583557128906,
+    "avg_pace": 7.414000034332275,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "cycling",
+      "name": "Kretingsodis Cycling",
+      "start_time": "2026-07-05 20:20:00",
+      "duration_seconds": 10734.529296875,
+      "distance_meters": 79588.46875,
+      "avg_hr": 160.0,
+      "max_hr": 178.0,
+      "calories": 2546.0,
+      "training_load": 345.1583557128906,
+      "avg_pace": 7.414000034332275,
+      "hr_zones": []
+    }
+  ]
+}
