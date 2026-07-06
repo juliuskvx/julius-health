@@ -15,11 +15,11 @@
   },
   "hrv": {
     "weekly_avg": 57,
-    "last_night": 58,
-    "last_night_5min": 97,
+    "last_night": null,
+    "last_night_5min": null,
     "status": "BALANCED",
-    "source_date": "2026-07-05",
-    "is_stale": true
+    "source_date": "2026-07-06",
+    "is_stale": false
   },
   "body_battery": {
     "morning": 5,
@@ -52,14 +52,14 @@
     "source_date": "2026-07-06"
   },
   "training_readiness": {
-    "score": 1,
+    "score": 11,
     "level": "POOR",
-    "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
-    "sleep_score": 71,
+    "feedback_long": "POOR_RT_HIGH_SS_UNKNOWN",
+    "sleep_score": null,
     "hrv_factor": 100,
     "recovery_time_factor": 10,
     "acwr_factor": null,
-    "sleep_history_factor": 49
+    "sleep_history_factor": 63
   },
   "stress": {
     "avg": 87
