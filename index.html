@@ -94,6 +94,8 @@
   .flag-warn { background: var(--amber-bg); color: var(--amber); border: 0.5px solid var(--amber-d); }
   .flag-bad  { background: var(--red-bg);   color: var(--red); }
 
+  .stale-note { margin-top: 12px; font-size: 12px; color: var(--amber); background: var(--amber-bg); border: 0.5px solid var(--amber-d); border-radius: var(--radius-sm); padding: 8px 10px; display: none; }
+
   .loading { text-align: center; padding: 60px; color: var(--muted); }
   .error-box { background: var(--red-bg); border: 0.5px solid var(--red); border-radius: var(--radius); padding: 16px; color: var(--red); margin-bottom: 20px; font-size: 13px; }
 
@@ -197,6 +199,7 @@
           <div class="stage-item"><div class="stage-dot" style="background:#0C447C"></div>Deep <span id="deep-pct"></span></div>
         </div>
         <div style="margin-top:12px;font-size:13px;color:var(--subtle)">Total: <span id="sleep-total" style="color:var(--text);font-weight:500"></span> &nbsp;·&nbsp; Score: <span id="sleep-score" style="color:var(--text);font-weight:500"></span></div>
+        <div class="stale-note" id="sleep-stale-note"></div>
       </div>
       <div class="chart-card">
         <div class="chart-title">Body Battery — 7 days</div>
@@ -392,6 +395,12 @@ async function renderDashboard(data) {
   $('m-rhr').textContent  = fmt(rhr, ' bpm');
   $('m-vo2').textContent  = vo2 ? fmtDec(vo2) : '—';
 
+  // Surface HRV staleness right on the metric card
+  const hrvStale = !!(data.hrv?.is_stale && data.hrv?.source_date);
+  $('m-hrv-trend').innerHTML = hrvStale
+    ? `<span class="warn">⚠ from ${data.hrv.source_date}, not last night</span>`
+    : '';
+
   const sleep = data.sleep || {};
   const totalSecs = sleep.duration_seconds || 0;
   const deepSecs  = sleep.deep_seconds  || 0;
@@ -399,6 +408,7 @@ async function renderDashboard(data) {
   const remSecs   = sleep.rem_seconds   || 0;
   const awakeSecs = sleep.awake_seconds || 0;
   const sleepTotal = deepSecs+lightSecs+remSecs+awakeSecs || 1;
+  const sleepStale = !!(sleep.is_stale && sleep.source_date);
 
   $('sleep-total').textContent = secsToHM(totalSecs);
   $('sleep-score').textContent = sleep.score ? `${sleep.score}/100` : '—';
@@ -417,6 +427,18 @@ async function renderDashboard(data) {
   $('light-pct').textContent = lightSecs ? `${Math.round(lightSecs/sleepTotal*100)}%` : '';
   $('deep-pct').textContent  = deepSecs  ? `${Math.round(deepSecs/sleepTotal*100)}%`  : '';
 
+  // Stale sleep banner — this is the fix: if sync.py fell back to a previous
+  // night's sleep (e.g. watch wasn't worn), say so loudly instead of silently
+  // repeating old numbers as if they were last night's.
+  const sleepStaleNote = $('sleep-stale-note');
+  if (sleepStale) {
+    sleepStaleNote.style.display = 'block';
+    sleepStaleNote.textContent = `⚠️ No sleep data for last night — showing the last recorded session, from the night before ${sleep.source_date}. Likely the watch wasn't worn.`;
+  } else {
+    sleepStaleNote.style.display = 'none';
+    sleepStaleNote.textContent = '';
+  }
+
   $('stat-steps').textContent  = data.steps ? Number(data.steps).toLocaleString() : '—';
   $('stat-cals').textContent   = fmt(data.active_calories, ' kcal');
   $('stat-stress').textContent = data.stress?.avg ? `${Math.round(data.stress.avg)} / 100` : '—';
@@ -433,7 +455,10 @@ async function renderDashboard(data) {
     : (data.last_activity?.type ? [data.last_activity] : []);
   renderActivities(activities);
 
-  // Flags
+  // Flags — stale-data flags go first since they affect how to read everything else
+  if (sleepStale) addFlag(`Sleep is STALE — this is from the night before ${sleep.source_date}, not last night. Watch probably wasn't worn.`, 'bad');
+  if (hrvStale)   addFlag(`HRV is STALE — this is from the night before ${data.hrv.source_date}, not last night.`, 'bad');
+
   if (hrv && hrv > 55) addFlag('HRV above 55ms — nervous system well recovered', 'ok');
   else if (hrv && hrv < 45) addFlag('HRV below 45ms — consider easy day', 'warn');
   if (bb && bb >= 70) addFlag(`Body Battery at ${Math.round(bb)} — fully charged`, 'ok');
@@ -507,6 +532,8 @@ function copyForClaude() {
 
   const sleep = d.sleep || {};
   const totalH = sleep.duration_seconds ? (sleep.duration_seconds/3600).toFixed(1) : '—';
+  const sleepStale = !!(sleep.is_stale && sleep.source_date);
+  const hrvStale   = !!(d.hrv?.is_stale && d.hrv?.source_date);
 
   // Build activities section — all sessions
   const activities = d.activities && d.activities.length > 0
@@ -539,12 +566,19 @@ function copyForClaude() {
     return map[type] || (type ? type.replace(/_/g,' ') : 'Activity');
   }
 
+  const sleepStaleLine = sleepStale
+    ? `⚠️ STALE DATA: no sleep recorded for last night. These numbers are from the night before ${sleep.source_date} (watch likely wasn't worn last night).\n`
+    : '';
+  const hrvStaleLine = hrvStale
+    ? `- ⚠️ HRV above is STALE — from the night before ${d.hrv.source_date}, not last night\n`
+    : '';
+
   const text = `# Julius — Daily Health Data
 Date: ${d.data_date || 'yesterday'} | Synced: ${d.sync_date || 'today'}
 Device: Garmin Fenix 7 + HRM-Pro belt
 
 ## Sleep
-- Duration: ${totalH} hours
+${sleepStaleLine}- Duration: ${totalH} hours
 - Score: ${sleep.score ?? '—'}/100
 - Deep sleep: ${secsToHM(sleep.deep_seconds)}
 - REM sleep: ${secsToHM(sleep.rem_seconds)}
@@ -553,7 +587,7 @@ Device: Garmin Fenix 7 + HRM-Pro belt
 
 ## HRV & Recovery
 - HRV last night: ${d.hrv?.last_night ?? '—'} ms
-- HRV weekly avg: ${d.hrv?.weekly_avg ?? '—'} ms
+${hrvStaleLine}- HRV weekly avg: ${d.hrv?.weekly_avg ?? '—'} ms
 - HRV status: ${d.hrv?.status ?? '—'}
 - Resting HR: ${d.resting_hr ?? '—'} bpm
 - Body Battery (morning): ${d.body_battery?.morning ?? '—'}
