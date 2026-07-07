@@ -1,101 +1,75 @@
 {
-  "sync_date": "2026-07-06",
-  "data_date": "2026-07-06",
+  "sync_date": "2026-07-07",
+  "data_date": "2026-07-07",
   "sleep": {
-    "date": "2026-07-06",
-    "score": 71,
-    "duration_seconds": 28620,
-    "deep_seconds": 4560,
-    "light_seconds": 18000,
-    "rem_seconds": 6060,
-    "awake_seconds": 3360,
+    "date": "2026-07-07",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-07-05",
+    "source_date": "2026-07-06",
     "is_stale": true
   },
   "hrv": {
-    "weekly_avg": 57,
+    "weekly_avg": 58,
     "last_night": null,
     "last_night_5min": null,
     "status": "BALANCED",
-    "source_date": "2026-07-06",
+    "source_date": "2026-07-07",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 5,
+    "morning": null,
     "values": [
       [
-        1783285200000,
-        5
+        1783382400001,
+        null
       ],
       [
-        1783285200000,
-        5
+        1783382400002,
+        null
       ],
       [
-        1783291860000,
-        5
+        1783382400003,
+        null
       ],
       [
-        1783291860000,
-        5
+        1783382400004,
+        null
       ],
       [
-        1783298520000,
-        5
+        1783382400005,
+        null
       ],
       [
-        1783298520000,
-        5
+        1783382400006,
+        null
       ]
     ],
-    "source_date": "2026-07-06"
+    "source_date": "2026-07-07"
   },
   "training_readiness": {
-    "score": 11,
+    "score": 9,
     "level": "POOR",
     "feedback_long": "POOR_RT_HIGH_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 100,
     "recovery_time_factor": 10,
     "acwr_factor": null,
-    "sleep_history_factor": 63
+    "sleep_history_factor": 56
   },
   "stress": {
-    "avg": 87
+    "avg": null
   },
   "resting_hr": 53.0,
   "vo2_max": 46.8,
-  "steps": 6877,
-  "active_calories": 2663.0,
-  "total_calories": 5100.0,
-  "spo2_avg": 95.0,
-  "last_activity": {
-    "type": "cycling",
-    "name": "Kretingsodis Cycling",
-    "start_time": "2026-07-05 20:20:00",
-    "duration_seconds": 10734.529296875,
-    "distance_meters": 79588.46875,
-    "avg_hr": 160.0,
-    "max_hr": 178.0,
-    "calories": 2546.0,
-    "training_load": 345.1583557128906,
-    "avg_pace": 7.414000034332275,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "cycling",
-      "name": "Kretingsodis Cycling",
-      "start_time": "2026-07-05 20:20:00",
-      "duration_seconds": 10734.529296875,
-      "distance_meters": 79588.46875,
-      "avg_hr": 160.0,
-      "max_hr": 178.0,
-      "calories": 2546.0,
-      "training_load": 345.1583557128906,
-      "avg_pace": 7.414000034332275,
-      "hr_zones": []
-    }
-  ]
+  "steps": 7565,
+  "active_calories": 465.0,
+  "total_calories": 2902.0,
+  "spo2_avg": null,
+  "last_activity": {},
+  "activities": []
 }
