@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-07-07",
-  "data_date": "2026-07-07",
+  "sync_date": "2026-07-08",
+  "data_date": "2026-07-08",
   "sleep": {
-    "date": "2026-07-07",
+    "date": "2026-07-08",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,66 +10,66 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-07-06",
+    "source_date": "2026-07-07",
     "is_stale": true
   },
   "hrv": {
-    "weekly_avg": 58,
+    "weekly_avg": 59,
     "last_night": null,
     "last_night_5min": null,
     "status": "BALANCED",
-    "source_date": "2026-07-07",
+    "source_date": "2026-07-08",
     "is_stale": false
   },
   "body_battery": {
     "morning": null,
     "values": [
       [
-        1783381140000,
+        1783468800001,
         null
       ],
       [
-        1783381140000,
+        1783468800002,
         null
       ],
       [
-        1783381140000,
+        1783468800003,
         null
       ],
       [
-        1783381140001,
+        1783468800004,
         null
       ],
       [
-        1783381140002,
+        1783468800005,
         null
       ],
       [
-        1783381140003,
+        1783468800006,
         null
       ]
     ],
-    "source_date": "2026-07-07"
+    "source_date": "2026-07-08"
   },
   "training_readiness": {
-    "score": 9,
-    "level": "POOR",
-    "feedback_long": "POOR_RT_HIGH_SS_UNKNOWN",
+    "score": 31,
+    "level": "LOW",
+    "feedback_long": "LOW_RT_HIGH_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 100,
-    "recovery_time_factor": 10,
+    "recovery_time_factor": 27,
     "acwr_factor": null,
-    "sleep_history_factor": 56
+    "sleep_history_factor": 0
   },
   "stress": {
-    "avg": 55
+    "avg": null
   },
   "resting_hr": 73.0,
   "vo2_max": 46.8,
-  "steps": 7565,
-  "active_calories": 465.0,
-  "total_calories": 2902.0,
-  "spo2_avg": 95.33333333333333,
+  "steps": 0,
+  "active_calories": 0.0,
+  "total_calories": 2437.0,
+  "spo2_avg": null,
   "last_activity": {},
   "activities": []
 }
