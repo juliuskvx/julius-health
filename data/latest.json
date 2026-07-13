@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-07-12",
-  "data_date": "2026-07-12",
+  "sync_date": "2026-07-13",
+  "data_date": "2026-07-13",
   "sleep": {
-    "date": "2026-07-12",
+    "date": "2026-07-13",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-07-11",
+    "source_date": "2026-07-12",
     "is_stale": true
   },
   "hrv": {
@@ -25,34 +25,34 @@
     "morning": null,
     "values": [
       [
-        1783814400001,
+        1783900800001,
         null
       ],
       [
-        1783814400002,
+        1783900800002,
         null
       ],
       [
-        1783814400003,
+        1783900800003,
         null
       ],
       [
-        1783814400004,
+        1783900800004,
         null
       ],
       [
-        1783814400005,
+        1783900800005,
         null
       ],
       [
-        1783814400006,
+        1783900800006,
         null
       ]
     ],
-    "source_date": "2026-07-12"
+    "source_date": "2026-07-13"
   },
   "training_readiness": {
-    "score": 91,
+    "score": 93,
     "level": "HIGH",
     "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_ACWR_POS",
     "sleep_score": null,
