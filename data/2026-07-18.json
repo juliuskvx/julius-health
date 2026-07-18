@@ -52,12 +52,12 @@
     "source_date": "2026-07-18"
   },
   "training_readiness": {
-    "score": 50,
+    "score": 52,
     "level": "MODERATE",
     "feedback_long": "MOD_RT_MOD_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 58,
+    "recovery_time_factor": 64,
     "acwr_factor": null,
     "sleep_history_factor": 0
   },
