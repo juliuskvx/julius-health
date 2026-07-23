@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-07-22",
-  "data_date": "2026-07-22",
+  "sync_date": "2026-07-23",
+  "data_date": "2026-07-23",
   "sleep": {
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-07-21",
+    "source_date": "2026-07-22",
     "is_stale": true
   },
   "hrv": {
@@ -25,34 +25,34 @@
     "morning": null,
     "values": [
       [
-        1784678400001,
+        1784764800001,
         null
       ],
       [
-        1784678400002,
+        1784764800002,
         null
       ],
       [
-        1784678400003,
+        1784764800003,
         null
       ],
       [
-        1784678400004,
+        1784764800004,
         null
       ],
       [
-        1784678400005,
+        1784764800005,
         null
       ],
       [
-        1784678400006,
+        1784764800006,
         null
       ]
     ],
-    "source_date": "2026-07-22"
+    "source_date": "2026-07-23"
   },
   "training_readiness": {
-    "score": 78,
+    "score": 80,
     "level": "HIGH",
     "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
     "sleep_score": null,
@@ -67,9 +67,35 @@
   "resting_hr": null,
   "vo2_max": 46.8,
   "steps": 0,
-  "active_calories": 0.0,
-  "total_calories": 2437.0,
-  "spo2_avg": 95.33333333333333,
-  "last_activity": {},
-  "activities": []
+  "active_calories": 1350.0,
+  "total_calories": 3787.0,
+  "spo2_avg": null,
+  "last_activity": {
+    "type": "road_biking",
+    "name": "Klaipeda Road Cycling",
+    "start_time": "2026-07-22 16:53:17",
+    "duration_seconds": 4017.18603515625,
+    "distance_meters": 33016.859375,
+    "avg_hr": null,
+    "max_hr": null,
+    "calories": 1438.0,
+    "training_load": 0.5142669677734375,
+    "avg_pace": 8.218999862670898,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "road_biking",
+      "name": "Klaipeda Road Cycling",
+      "start_time": "2026-07-22 16:53:17",
+      "duration_seconds": 4017.18603515625,
+      "distance_meters": 33016.859375,
+      "avg_hr": null,
+      "max_hr": null,
+      "calories": 1438.0,
+      "training_load": 0.5142669677734375,
+      "avg_pace": 8.218999862670898,
+      "hr_zones": []
+    }
+  ]
 }
