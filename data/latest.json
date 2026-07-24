@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-07-23",
-  "data_date": "2026-07-23",
+  "sync_date": "2026-07-24",
+  "data_date": "2026-07-24",
   "sleep": {
-    "date": "2026-07-23",
+    "date": "2026-07-24",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-07-22",
+    "source_date": "2026-07-23",
     "is_stale": true
   },
   "hrv": {
@@ -22,39 +22,39 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": null,
+    "morning": 61,
     "values": [
       [
-        1784764800001,
+        1784840400000,
         null
       ],
       [
-        1784764800002,
+        1784840400001,
         null
       ],
       [
-        1784764800003,
+        1784840400002,
         null
       ],
       [
-        1784764800004,
+        1784840400003,
         null
       ],
       [
-        1784764800005,
-        null
+        1784875320000,
+        61
       ],
       [
-        1784764800006,
-        null
+        1784875860000,
+        60
       ]
     ],
-    "source_date": "2026-07-23"
+    "source_date": "2026-07-24"
   },
   "training_readiness": {
-    "score": 80,
+    "score": 87,
     "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_ACWR_POS",
     "sleep_score": null,
     "hrv_factor": 0,
     "recovery_time_factor": 99,
@@ -62,40 +62,14 @@
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": null
+    "avg": 66
   },
-  "resting_hr": null,
+  "resting_hr": 68.0,
   "vo2_max": 46.8,
   "steps": 0,
-  "active_calories": 1350.0,
-  "total_calories": 3787.0,
-  "spo2_avg": null,
-  "last_activity": {
-    "type": "road_biking",
-    "name": "Klaipeda Road Cycling",
-    "start_time": "2026-07-22 16:53:17",
-    "duration_seconds": 4017.18603515625,
-    "distance_meters": 33016.859375,
-    "avg_hr": null,
-    "max_hr": null,
-    "calories": 1438.0,
-    "training_load": 0.5142669677734375,
-    "avg_pace": 8.218999862670898,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "road_biking",
-      "name": "Klaipeda Road Cycling",
-      "start_time": "2026-07-22 16:53:17",
-      "duration_seconds": 4017.18603515625,
-      "distance_meters": 33016.859375,
-      "avg_hr": null,
-      "max_hr": null,
-      "calories": 1438.0,
-      "training_load": 0.5142669677734375,
-      "avg_pace": 8.218999862670898,
-      "hr_zones": []
-    }
-  ]
+  "active_calories": 0.0,
+  "total_calories": 2437.0,
+  "spo2_avg": 95.0,
+  "last_activity": {},
+  "activities": []
 }
