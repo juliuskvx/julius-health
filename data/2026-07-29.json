@@ -1,0 +1,114 @@
+{
+  "sync_date": "2026-07-29",
+  "data_date": "2026-07-29",
+  "sleep": {
+    "date": "2026-07-29",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
+    "stages": [],
+    "source_date": "2026-07-28",
+    "is_stale": true
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null,
+    "source_date": null,
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": null,
+    "values": [
+      [
+        1785273480000,
+        null
+      ],
+      [
+        1785273480000,
+        null
+      ],
+      [
+        1785274740000,
+        null
+      ],
+      [
+        1785274740000,
+        null
+      ],
+      [
+        1785276000000,
+        null
+      ],
+      [
+        1785276000000,
+        null
+      ]
+    ],
+    "source_date": "2026-07-29"
+  },
+  "training_readiness": {
+    "score": 57,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_MOD_SS_UNKNOWN",
+    "sleep_score": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 52,
+    "acwr_factor": null,
+    "sleep_history_factor": 0
+  },
+  "stress": {
+    "avg": 43
+  },
+  "resting_hr": 77.0,
+  "vo2_max": 46.8,
+  "steps": 8536,
+  "active_calories": 984.0,
+  "total_calories": 3421.0,
+  "spo2_avg": null,
+  "last_activity": {
+    "type": "bouldering",
+    "name": "Bouldering",
+    "start_time": "2026-07-28 20:12:06",
+    "duration_seconds": 4201.619140625,
+    "distance_meters": null,
+    "avg_hr": 105.0,
+    "max_hr": 165.0,
+    "calories": 464.0,
+    "training_load": 46.772430419921875,
+    "avg_pace": null,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "bouldering",
+      "name": "Bouldering",
+      "start_time": "2026-07-28 20:12:06",
+      "duration_seconds": 4201.619140625,
+      "distance_meters": null,
+      "avg_hr": 105.0,
+      "max_hr": 165.0,
+      "calories": 464.0,
+      "training_load": 46.772430419921875,
+      "avg_pace": null,
+      "hr_zones": []
+    },
+    {
+      "type": "running",
+      "name": "Vilnius Running",
+      "start_time": "2026-07-28 16:49:48",
+      "duration_seconds": 1780.595947265625,
+      "distance_meters": 5027.58984375,
+      "avg_hr": 156.0,
+      "max_hr": 179.0,
+      "calories": 478.0,
+      "training_load": 100.61959838867188,
+      "avg_pace": 2.8239998817443848,
+      "hr_zones": []
+    }
+  ]
+}
