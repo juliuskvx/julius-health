@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-07-31",
-  "data_date": "2026-07-31",
+  "sync_date": "2026-08-01",
+  "data_date": "2026-08-01",
   "sleep": {
-    "date": "2026-07-31",
+    "date": "2026-08-01",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-07-30",
+    "source_date": "2026-07-31",
     "is_stale": true
   },
   "hrv": {
@@ -22,54 +22,80 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": 52,
+    "morning": null,
     "values": [
       [
-        1785445200000,
+        1785542400001,
         null
       ],
       [
-        1785445200001,
+        1785542400002,
         null
       ],
       [
-        1785445200002,
+        1785542400003,
         null
       ],
       [
-        1785445200003,
+        1785542400004,
         null
       ],
       [
-        1785486780000,
-        52
+        1785542400005,
+        null
       ],
       [
-        1785486960000,
-        51
+        1785542400006,
+        null
       ]
     ],
-    "source_date": "2026-07-31"
+    "source_date": "2026-08-01"
   },
   "training_readiness": {
-    "score": 83,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
+    "score": 64,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 72,
     "acwr_factor": null,
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": 93
+    "avg": 31
   },
-  "resting_hr": 99.0,
+  "resting_hr": 74.0,
   "vo2_max": 46.8,
-  "steps": 5596,
-  "active_calories": 199.0,
-  "total_calories": 2636.0,
+  "steps": 3654,
+  "active_calories": 1075.0,
+  "total_calories": 3512.0,
   "spo2_avg": null,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "mixed_martial_arts",
+    "name": "Mixed Martial Arts",
+    "start_time": "2026-07-31 11:56:15",
+    "duration_seconds": 3980.2509765625,
+    "distance_meters": 0.0,
+    "avg_hr": 156.0,
+    "max_hr": 187.0,
+    "calories": 961.0,
+    "training_load": 188.17343139648438,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "mixed_martial_arts",
+      "name": "Mixed Martial Arts",
+      "start_time": "2026-07-31 11:56:15",
+      "duration_seconds": 3980.2509765625,
+      "distance_meters": 0.0,
+      "avg_hr": 156.0,
+      "max_hr": 187.0,
+      "calories": 961.0,
+      "training_load": 188.17343139648438,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
 }
