@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-08-01",
+  "data_date": "2026-08-01",
+  "sleep": {
+    "date": "2026-08-01",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
+    "stages": [],
+    "source_date": "2026-07-31",
+    "is_stale": true
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null,
+    "source_date": null,
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": null,
+    "values": [
+      [
+        1785542400001,
+        null
+      ],
+      [
+        1785542400002,
+        null
+      ],
+      [
+        1785542400003,
+        null
+      ],
+      [
+        1785542400004,
+        null
+      ],
+      [
+        1785542400005,
+        null
+      ],
+      [
+        1785542400006,
+        null
+      ]
+    ],
+    "source_date": "2026-08-01"
+  },
+  "training_readiness": {
+    "score": 64,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN",
+    "sleep_score": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 72,
+    "acwr_factor": null,
+    "sleep_history_factor": 0
+  },
+  "stress": {
+    "avg": 31
+  },
+  "resting_hr": 74.0,
+  "vo2_max": 46.8,
+  "steps": 3654,
+  "active_calories": 1075.0,
+  "total_calories": 3512.0,
+  "spo2_avg": null,
+  "last_activity": {
+    "type": "mixed_martial_arts",
+    "name": "Mixed Martial Arts",
+    "start_time": "2026-07-31 11:56:15",
+    "duration_seconds": 3980.2509765625,
+    "distance_meters": 0.0,
+    "avg_hr": 156.0,
+    "max_hr": 187.0,
+    "calories": 961.0,
+    "training_load": 188.17343139648438,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "mixed_martial_arts",
+      "name": "Mixed Martial Arts",
+      "start_time": "2026-07-31 11:56:15",
+      "duration_seconds": 3980.2509765625,
+      "distance_meters": 0.0,
+      "avg_hr": 156.0,
+      "max_hr": 187.0,
+      "calories": 961.0,
+      "training_load": 188.17343139648438,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
+}
