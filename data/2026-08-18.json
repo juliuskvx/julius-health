@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-08-18",
+  "data_date": "2026-08-18",
+  "sleep": {
+    "date": "2026-08-18",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
+    "stages": [],
+    "source_date": "2026-08-17",
+    "is_stale": true
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null,
+    "source_date": null,
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": null,
+    "values": [
+      [
+        1787011200001,
+        null
+      ],
+      [
+        1787011200002,
+        null
+      ],
+      [
+        1787011200003,
+        null
+      ],
+      [
+        1787011200004,
+        null
+      ],
+      [
+        1787011200005,
+        null
+      ],
+      [
+        1787011200006,
+        null
+      ]
+    ],
+    "source_date": "2026-08-18"
+  },
+  "training_readiness": {
+    "score": 64,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN",
+    "sleep_score": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 73,
+    "acwr_factor": null,
+    "sleep_history_factor": 0
+  },
+  "stress": {
+    "avg": null
+  },
+  "resting_hr": 71.0,
+  "vo2_max": 47.2,
+  "steps": 6746,
+  "active_calories": 1559.0,
+  "total_calories": 3071.0,
+  "spo2_avg": null,
+  "last_activity": {
+    "type": "hiking",
+    "name": "Dogubayazit Hiking",
+    "start_time": "2026-08-17 11:52:46",
+    "duration_seconds": 7740.3369140625,
+    "distance_meters": 4754.080078125,
+    "avg_hr": 134.0,
+    "max_hr": 160.0,
+    "calories": 1384.0,
+    "training_load": 52.53509521484375,
+    "avg_pace": 0.6140000224113464,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "hiking",
+      "name": "Dogubayazit Hiking",
+      "start_time": "2026-08-17 11:52:46",
+      "duration_seconds": 7740.3369140625,
+      "distance_meters": 4754.080078125,
+      "avg_hr": 134.0,
+      "max_hr": 160.0,
+      "calories": 1384.0,
+      "training_load": 52.53509521484375,
+      "avg_pace": 0.6140000224113464,
+      "hr_zones": []
+    }
+  ]
+}
