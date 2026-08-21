@@ -1,101 +1,75 @@
 {
-  "sync_date": "2026-08-20",
-  "data_date": "2026-08-20",
+  "sync_date": "2026-08-21",
+  "data_date": "2026-08-21",
   "sleep": {
-    "date": "2026-08-20",
-    "score": 82,
-    "duration_seconds": 29760,
-    "deep_seconds": 4080,
-    "light_seconds": 22380,
-    "rem_seconds": 3300,
-    "awake_seconds": 180,
+    "date": "2026-08-21",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-08-19",
+    "source_date": "2026-08-20",
     "is_stale": true
   },
   "hrv": {
     "weekly_avg": null,
-    "last_night": 42,
-    "last_night_5min": 71,
-    "status": "NONE",
-    "source_date": "2026-08-19",
-    "is_stale": true
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null,
+    "source_date": null,
+    "is_stale": false
   },
   "body_battery": {
     "morning": null,
     "values": [
       [
-        1787184000001,
+        1787270400001,
         null
       ],
       [
-        1787184000002,
+        1787270400002,
         null
       ],
       [
-        1787184000003,
+        1787270400003,
         null
       ],
       [
-        1787184000004,
+        1787270400004,
         null
       ],
       [
-        1787184000005,
+        1787270400005,
         null
       ],
       [
-        1787184000006,
+        1787270400006,
         null
       ]
     ],
-    "source_date": "2026-08-20"
+    "source_date": "2026-08-21"
   },
   "training_readiness": {
-    "score": 43,
-    "level": "LOW",
-    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_GOOD_SLEEP_HISTORY_NEG",
-    "sleep_score": 82,
-    "hrv_factor": 0,
-    "recovery_time_factor": 69,
+    "score": null,
+    "level": null,
+    "feedback_long": null,
+    "sleep_score": null,
+    "hrv_factor": null,
+    "recovery_time_factor": null,
     "acwr_factor": null,
-    "sleep_history_factor": 27
+    "sleep_history_factor": null
   },
   "stress": {
     "avg": null
   },
-  "resting_hr": 64.0,
+  "resting_hr": null,
   "vo2_max": 47.2,
-  "steps": 317,
-  "active_calories": 70.0,
-  "total_calories": 860.0,
+  "steps": 0,
+  "active_calories": null,
+  "total_calories": null,
   "spo2_avg": null,
-  "last_activity": {
-    "type": "hiking",
-    "name": "Dogubayazit Hiking",
-    "start_time": "2026-08-19 10:11:31",
-    "duration_seconds": 8727.162109375,
-    "distance_meters": 3010.909912109375,
-    "avg_hr": 133.0,
-    "max_hr": 158.0,
-    "calories": 1410.0,
-    "training_load": 69.933349609375,
-    "avg_pace": 0.3449999988079071,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "hiking",
-      "name": "Dogubayazit Hiking",
-      "start_time": "2026-08-19 10:11:31",
-      "duration_seconds": 8727.162109375,
-      "distance_meters": 3010.909912109375,
-      "avg_hr": 133.0,
-      "max_hr": 158.0,
-      "calories": 1410.0,
-      "training_load": 69.933349609375,
-      "avg_pace": 0.3449999988079071,
-      "hr_zones": []
-    }
-  ]
+  "last_activity": {},
+  "activities": []
 }
