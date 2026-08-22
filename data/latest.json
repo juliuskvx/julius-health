@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-08-21",
-  "data_date": "2026-08-21",
+  "sync_date": "2026-08-22",
+  "data_date": "2026-08-22",
   "sleep": {
-    "date": "2026-08-21",
+    "date": "2026-08-22",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-08-20",
+    "source_date": "2026-08-21",
     "is_stale": true
   },
   "hrv": {
@@ -22,54 +22,54 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": null,
+    "morning": 16,
     "values": [
       [
-        1787270400001,
+        1787346000000,
+        16
+      ],
+      [
+        1787350860000,
+        11
+      ],
+      [
+        1787352660000,
+        10
+      ],
+      [
+        1787357160000,
+        8
+      ],
+      [
+        1787365800000,
         null
       ],
       [
-        1787270400002,
-        null
-      ],
-      [
-        1787270400003,
-        null
-      ],
-      [
-        1787270400004,
-        null
-      ],
-      [
-        1787270400005,
-        null
-      ],
-      [
-        1787270400006,
+        1787365800000,
         null
       ]
     ],
-    "source_date": "2026-08-21"
+    "source_date": "2026-08-22"
   },
   "training_readiness": {
-    "score": null,
-    "level": null,
-    "feedback_long": null,
+    "score": 78,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
     "sleep_score": null,
-    "hrv_factor": null,
-    "recovery_time_factor": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 100,
     "acwr_factor": null,
-    "sleep_history_factor": null
+    "sleep_history_factor": 0
   },
   "stress": {
-    "avg": null
+    "avg": 36
   },
-  "resting_hr": null,
+  "resting_hr": 74.0,
   "vo2_max": 47.2,
-  "steps": 0,
-  "active_calories": null,
-  "total_calories": null,
-  "spo2_avg": null,
+  "steps": 8034,
+  "active_calories": 439.0,
+  "total_calories": 2876.0,
+  "spo2_avg": 94.0,
   "last_activity": {},
   "activities": []
 }
