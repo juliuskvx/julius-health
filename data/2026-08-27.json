@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-08-27",
+  "data_date": "2026-08-27",
+  "sleep": {
+    "date": "2026-08-27",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
+    "stages": [],
+    "source_date": "2026-08-26",
+    "is_stale": true
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null,
+    "source_date": null,
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": null,
+    "values": [
+      [
+        1787788800001,
+        null
+      ],
+      [
+        1787788800002,
+        null
+      ],
+      [
+        1787788800003,
+        null
+      ],
+      [
+        1787788800004,
+        null
+      ],
+      [
+        1787788800005,
+        null
+      ],
+      [
+        1787788800006,
+        null
+      ]
+    ],
+    "source_date": "2026-08-27"
+  },
+  "training_readiness": {
+    "score": 63,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_MOD_SS_UNKNOWN",
+    "sleep_score": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 68,
+    "acwr_factor": null,
+    "sleep_history_factor": 0
+  },
+  "stress": {
+    "avg": null
+  },
+  "resting_hr": 72.0,
+  "vo2_max": 47.2,
+  "steps": 964,
+  "active_calories": 1937.0,
+  "total_calories": 4374.0,
+  "spo2_avg": null,
+  "last_activity": {
+    "type": "road_biking",
+    "name": "Klaipeda Road Cycling",
+    "start_time": "2026-08-26 10:07:14",
+    "duration_seconds": 13344.6240234375,
+    "distance_meters": 101233.3515625,
+    "avg_hr": 138.0,
+    "max_hr": 168.0,
+    "calories": 2232.0,
+    "training_load": 146.141357421875,
+    "avg_pace": 7.585999965667725,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "road_biking",
+      "name": "Klaipeda Road Cycling",
+      "start_time": "2026-08-26 10:07:14",
+      "duration_seconds": 13344.6240234375,
+      "distance_meters": 101233.3515625,
+      "avg_hr": 138.0,
+      "max_hr": 168.0,
+      "calories": 2232.0,
+      "training_load": 146.141357421875,
+      "avg_pace": 7.585999965667725,
+      "hr_zones": []
+    }
+  ]
+}
