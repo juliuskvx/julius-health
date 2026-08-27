@@ -22,31 +22,31 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": null,
+    "morning": 43,
     "values": [
       [
-        1787788800001,
+        1787778000000,
         null
       ],
       [
-        1787788800002,
+        1787778000001,
         null
       ],
       [
-        1787788800003,
-        null
+        1787824980000,
+        43
       ],
       [
-        1787788800004,
-        null
+        1787826600000,
+        41
       ],
       [
-        1787788800005,
-        null
+        1787826960000,
+        41
       ],
       [
-        1787788800006,
-        null
+        1787850000000,
+        17
       ]
     ],
     "source_date": "2026-08-27"
@@ -62,14 +62,14 @@
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": null
+    "avg": 52
   },
   "resting_hr": 72.0,
   "vo2_max": 47.2,
   "steps": 964,
   "active_calories": 1937.0,
   "total_calories": 4374.0,
-  "spo2_avg": null,
+  "spo2_avg": 95.0,
   "last_activity": {
     "type": "road_biking",
     "name": "Klaipeda Road Cycling",
