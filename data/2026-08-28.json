@@ -22,47 +22,47 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": null,
+    "morning": 52,
     "values": [
       [
-        1787864760000,
+        1787866920000,
         null
       ],
       [
-        1787864760000,
+        1787866920000,
         null
       ],
       [
-        1787865300000,
+        1787866920000,
         null
       ],
       [
-        1787865300000,
+        1787866920001,
         null
       ],
       [
-        1787865660000,
-        null
+        1787904540000,
+        52
       ],
       [
-        1787865660000,
-        null
+        1787916060000,
+        36
       ]
     ],
     "source_date": "2026-08-28"
   },
   "training_readiness": {
-    "score": 81,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
+    "score": 61,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_MOD_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 64,
     "acwr_factor": null,
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": 55
+    "avg": 65
   },
   "resting_hr": 72.0,
   "vo2_max": 47.2,
@@ -70,6 +70,32 @@
   "active_calories": 596.0,
   "total_calories": 3033.0,
   "spo2_avg": 94.66666666666667,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "road_biking",
+    "name": "Klaipeda Road Cycling",
+    "start_time": "2026-08-28 11:14:37",
+    "duration_seconds": 7096.42822265625,
+    "distance_meters": 54057.12890625,
+    "avg_hr": 138.0,
+    "max_hr": 173.0,
+    "calories": 1318.0,
+    "training_load": 104.77346801757812,
+    "avg_pace": 7.618000030517578,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "road_biking",
+      "name": "Klaipeda Road Cycling",
+      "start_time": "2026-08-28 11:14:37",
+      "duration_seconds": 7096.42822265625,
+      "distance_meters": 54057.12890625,
+      "avg_hr": 138.0,
+      "max_hr": 173.0,
+      "calories": 1318.0,
+      "training_load": 104.77346801757812,
+      "avg_pace": 7.618000030517578,
+      "hr_zones": []
+    }
+  ]
 }
