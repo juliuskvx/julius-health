@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-09-05",
-  "data_date": "2026-09-05",
+  "sync_date": "2026-09-06",
+  "data_date": "2026-09-06",
   "sleep": {
-    "date": "2026-09-05",
+    "date": "2026-09-06",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-09-04",
+    "source_date": "2026-09-05",
     "is_stale": true
   },
   "hrv": {
@@ -25,50 +25,50 @@
     "morning": null,
     "values": [
       [
-        1788566400001,
+        1788652800001,
         null
       ],
       [
-        1788566400002,
+        1788652800002,
         null
       ],
       [
-        1788566400003,
+        1788652800003,
         null
       ],
       [
-        1788566400004,
+        1788652800004,
         null
       ],
       [
-        1788566400005,
+        1788652800005,
         null
       ],
       [
-        1788566400006,
+        1788652800006,
         null
       ]
     ],
-    "source_date": "2026-09-05"
+    "source_date": "2026-09-06"
   },
   "training_readiness": {
-    "score": 93,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_ACWR_POS",
+    "score": null,
+    "level": null,
+    "feedback_long": null,
     "sleep_score": null,
-    "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "hrv_factor": null,
+    "recovery_time_factor": null,
     "acwr_factor": null,
-    "sleep_history_factor": 0
+    "sleep_history_factor": null
   },
   "stress": {
     "avg": null
   },
-  "resting_hr": 76.0,
+  "resting_hr": null,
   "vo2_max": 47.2,
-  "steps": 420,
-  "active_calories": 62.0,
-  "total_calories": 214.0,
+  "steps": 0,
+  "active_calories": null,
+  "total_calories": null,
   "spo2_avg": null,
   "last_activity": {},
   "activities": []
