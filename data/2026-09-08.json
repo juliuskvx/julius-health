@@ -22,31 +22,31 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": null,
+    "morning": 53,
     "values": [
       [
-        1788825600001,
+        1788814800000,
         null
       ],
       [
-        1788825600002,
+        1788814800001,
         null
       ],
       [
-        1788825600003,
+        1788814800002,
         null
       ],
       [
-        1788825600004,
+        1788814800003,
         null
       ],
       [
-        1788825600005,
-        null
+        1788852780000,
+        53
       ],
       [
-        1788825600006,
-        null
+        1788858000000,
+        45
       ]
     ],
     "source_date": "2026-09-08"
@@ -62,9 +62,9 @@
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": 5
+    "avg": 43
   },
-  "resting_hr": 63.0,
+  "resting_hr": 76.0,
   "vo2_max": 47.2,
   "steps": 11,
   "active_calories": 0.0,
