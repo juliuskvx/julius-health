@@ -22,54 +22,54 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": null,
+    "morning": 60,
     "values": [
       [
-        1789084800001,
+        1789074000000,
         null
       ],
       [
-        1789084800002,
+        1789074000001,
         null
       ],
       [
-        1789084800003,
+        1789074000002,
         null
       ],
       [
-        1789084800004,
+        1789074000003,
         null
       ],
       [
-        1789084800005,
-        null
+        1789109280000,
+        60
       ],
       [
-        1789084800006,
-        null
+        1789120440000,
+        49
       ]
     ],
     "source_date": "2026-09-11"
   },
   "training_readiness": {
-    "score": 72,
-    "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN",
+    "score": 75,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 88,
+    "recovery_time_factor": 94,
     "acwr_factor": null,
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": null
+    "avg": 31
   },
-  "resting_hr": null,
+  "resting_hr": 73.0,
   "vo2_max": null,
   "steps": 0,
   "active_calories": 0.0,
   "total_calories": 2437.0,
-  "spo2_avg": null,
+  "spo2_avg": 95.0,
   "last_activity": {},
   "activities": []
 }
