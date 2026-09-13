@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-09-12",
-  "data_date": "2026-09-12",
+  "sync_date": "2026-09-13",
+  "data_date": "2026-09-13",
   "sleep": {
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "score": null,
     "duration_seconds": null,
     "deep_seconds": null,
@@ -10,7 +10,7 @@
     "rem_seconds": null,
     "awake_seconds": null,
     "stages": [],
-    "source_date": "2026-09-11",
+    "source_date": "2026-09-12",
     "is_stale": true
   },
   "hrv": {
@@ -22,54 +22,80 @@
     "is_stale": false
   },
   "body_battery": {
-    "morning": 22,
+    "morning": null,
     "values": [
       [
-        1789160400000,
-        22
-      ],
-      [
-        1789160940000,
-        21
-      ],
-      [
-        1789160940000,
+        1789257600001,
         null
       ],
       [
-        1789160940001,
+        1789257600002,
         null
       ],
       [
-        1789160940002,
+        1789257600003,
         null
       ],
       [
-        1789160940003,
+        1789257600004,
+        null
+      ],
+      [
+        1789257600005,
+        null
+      ],
+      [
+        1789257600006,
         null
       ]
     ],
-    "source_date": "2026-09-12"
+    "source_date": "2026-09-13"
   },
   "training_readiness": {
-    "score": 78,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN",
+    "score": 62,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN",
     "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 74,
     "acwr_factor": null,
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": 23
+    "avg": 28
   },
-  "resting_hr": 69.0,
+  "resting_hr": 66.0,
   "vo2_max": null,
-  "steps": 5605,
-  "active_calories": 221.0,
-  "total_calories": 2658.0,
-  "spo2_avg": 97.0,
-  "last_activity": {},
-  "activities": []
+  "steps": 6132,
+  "active_calories": 1056.0,
+  "total_calories": 3493.0,
+  "spo2_avg": 96.0,
+  "last_activity": {
+    "type": "cycling",
+    "name": "Vilnius Cycling",
+    "start_time": "2026-09-12 18:18:46",
+    "duration_seconds": 4570.5390625,
+    "distance_meters": 35050.55078125,
+    "avg_hr": 139.0,
+    "max_hr": 167.0,
+    "calories": 891.0,
+    "training_load": 101.53550720214844,
+    "avg_pace": 7.669000148773193,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "cycling",
+      "name": "Vilnius Cycling",
+      "start_time": "2026-09-12 18:18:46",
+      "duration_seconds": 4570.5390625,
+      "distance_meters": 35050.55078125,
+      "avg_hr": 139.0,
+      "max_hr": 167.0,
+      "calories": 891.0,
+      "training_load": 101.53550720214844,
+      "avg_pace": 7.669000148773193,
+      "hr_zones": []
+    }
+  ]
 }
