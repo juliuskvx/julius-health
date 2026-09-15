@@ -69,7 +69,7 @@
   "steps": 0,
   "active_calories": 0.0,
   "total_calories": 2437.0,
-  "spo2_avg": null,
+  "spo2_avg": 96.0,
   "last_activity": {},
   "activities": []
 }
