@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-09-17",
-  "data_date": "2026-09-17",
+  "sync_date": "2026-09-18",
+  "data_date": "2026-09-18",
   "sleep": {
-    "date": "2026-09-17",
+    "date": "2026-09-18",
     "score": 92,
     "duration_seconds": 29520,
     "deep_seconds": 7320,
@@ -11,7 +11,7 @@
     "awake_seconds": 540,
     "stages": [],
     "source_date": "2026-09-17",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": null,
@@ -19,57 +19,57 @@
     "last_night_5min": 84,
     "status": "NONE",
     "source_date": "2026-09-17",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 100,
+    "morning": 8,
     "values": [
       [
-        1789592400000,
-        20
+        1789678800000,
+        8
       ],
       [
-        1789606980000,
-        66
+        1789681320000,
+        5
       ],
       [
-        1789607160000,
-        66
+        1789685100000,
+        5
       ],
       [
-        1789620120000,
-        100
+        1789685100000,
+        5
       ],
       [
-        1789621920000,
-        100
+        1789691400000,
+        5
       ],
       [
-        1789636320000,
-        71
+        1789691400000,
+        5
       ]
     ],
-    "source_date": "2026-09-17"
+    "source_date": "2026-09-18"
   },
   "training_readiness": {
     "score": 86,
     "level": "HIGH",
-    "feedback_long": "HIGH_RT_HIGHEST_SS_AVAILABLE",
-    "sleep_score": 92,
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_SLEEP_HISTORY_POS",
+    "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 100,
+    "recovery_time_factor": 99,
     "acwr_factor": null,
-    "sleep_history_factor": 0
+    "sleep_history_factor": 92
   },
   "stress": {
-    "avg": 17
+    "avg": 90
   },
-  "resting_hr": 48.0,
+  "resting_hr": 66.0,
   "vo2_max": 45.3,
-  "steps": 2836,
-  "active_calories": 247.0,
-  "total_calories": 2684.0,
-  "spo2_avg": 96.0,
+  "steps": 7627,
+  "active_calories": 792.0,
+  "total_calories": 3229.0,
+  "spo2_avg": 97.0,
   "last_activity": {},
   "activities": []
 }
