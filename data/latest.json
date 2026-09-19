@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-09-18",
-  "data_date": "2026-09-18",
+  "sync_date": "2026-09-19",
+  "data_date": "2026-09-19",
   "sleep": {
-    "date": "2026-09-18",
+    "date": "2026-09-19",
     "score": 46,
     "duration_seconds": 21780,
     "deep_seconds": 5220,
@@ -11,7 +11,7 @@
     "awake_seconds": 1620,
     "stages": [],
     "source_date": "2026-09-18",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": null,
@@ -19,57 +19,57 @@
     "last_night_5min": 51,
     "status": "NONE",
     "source_date": "2026-09-18",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 19,
+    "morning": 5,
     "values": [
       [
-        1789678800000,
-        8
-      ],
-      [
-        1789681320000,
+        1789765200000,
         5
       ],
       [
-        1789693560000,
+        1789765200000,
         5
       ],
       [
-        1789707960000,
-        7
+        1789765740000,
+        5
       ],
       [
-        1789708320000,
-        8
+        1789765740000,
+        5
       ],
       [
-        1789720020000,
-        19
+        1789765740000,
+        null
+      ],
+      [
+        1789765740001,
+        null
       ]
     ],
-    "source_date": "2026-09-18"
+    "source_date": "2026-09-19"
   },
   "training_readiness": {
-    "score": 33,
-    "level": "LOW",
-    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_POOR",
-    "sleep_score": 46,
+    "score": 58,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN_SLEEP_HISTORY_NEG",
+    "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 94,
+    "recovery_time_factor": 99,
     "acwr_factor": null,
-    "sleep_history_factor": 92
+    "sleep_history_factor": 42
   },
   "stress": {
-    "avg": 68
+    "avg": 85
   },
-  "resting_hr": 66.0,
+  "resting_hr": 99.0,
   "vo2_max": 45.3,
-  "steps": 7627,
-  "active_calories": 792.0,
-  "total_calories": 3229.0,
-  "spo2_avg": 97.0,
+  "steps": 10525,
+  "active_calories": 1444.0,
+  "total_calories": 3881.0,
+  "spo2_avg": null,
   "last_activity": {},
   "activities": []
 }
