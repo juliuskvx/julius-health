@@ -3,68 +3,68 @@
   "data_date": "2026-09-19",
   "sleep": {
     "date": "2026-09-19",
-    "score": 46,
-    "duration_seconds": 21780,
-    "deep_seconds": 5220,
-    "light_seconds": 13500,
-    "rem_seconds": 3060,
-    "awake_seconds": 1620,
+    "score": 42,
+    "duration_seconds": 23280,
+    "deep_seconds": 6300,
+    "light_seconds": 13860,
+    "rem_seconds": 3120,
+    "awake_seconds": 3480,
     "stages": [],
-    "source_date": "2026-09-18",
-    "is_stale": true
+    "source_date": "2026-09-19",
+    "is_stale": false
   },
   "hrv": {
     "weekly_avg": null,
-    "last_night": 24,
-    "last_night_5min": 51,
+    "last_night": 36,
+    "last_night_5min": 81,
     "status": "NONE",
-    "source_date": "2026-09-18",
-    "is_stale": true
+    "source_date": "2026-09-19",
+    "is_stale": false
   },
   "body_battery": {
-    "morning": 5,
+    "morning": 36,
     "values": [
       [
         1789765200000,
         5
       ],
       [
-        1789765200000,
-        5
+        1789781040000,
+        15
       ],
       [
-        1789765740000,
-        5
+        1789781220000,
+        15
       ],
       [
-        1789765740000,
-        5
+        1789797060000,
+        29
       ],
       [
-        1789765740000,
-        null
+        1789797240000,
+        29
       ],
       [
-        1789765740001,
-        null
+        1789804980000,
+        36
       ]
     ],
     "source_date": "2026-09-19"
   },
   "training_readiness": {
-    "score": 58,
-    "level": "MODERATE",
-    "feedback_long": "MOD_RT_LOW_SS_UNKNOWN_SLEEP_HISTORY_NEG",
-    "sleep_score": null,
+    "score": 18,
+    "level": "POOR",
+    "feedback_long": "POOR_RT_MOD_OR_LOW_SS_POOR",
+    "sleep_score": 42,
     "hrv_factor": 0,
-    "recovery_time_factor": 99,
+    "recovery_time_factor": 93,
     "acwr_factor": null,
     "sleep_history_factor": 42
   },
   "stress": {
-    "avg": 85
+    "avg": 47
   },
-  "resting_hr": 99.0,
+  "resting_hr": 60.0,
   "vo2_max": 45.3,
   "steps": 10525,
   "active_calories": 1444.0,
