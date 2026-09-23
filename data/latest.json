@@ -1,75 +1,75 @@
 {
-  "sync_date": "2026-09-22",
-  "data_date": "2026-09-22",
+  "sync_date": "2026-09-23",
+  "data_date": "2026-09-23",
   "sleep": {
-    "date": "2026-09-22",
-    "score": 90,
-    "duration_seconds": 34620,
-    "deep_seconds": 3480,
-    "light_seconds": 22380,
-    "rem_seconds": 8760,
-    "awake_seconds": 60,
+    "date": "2026-09-23",
+    "score": 83,
+    "duration_seconds": 26640,
+    "deep_seconds": 3900,
+    "light_seconds": 18840,
+    "rem_seconds": 3900,
+    "awake_seconds": 240,
     "stages": [],
-    "source_date": "2026-09-22",
+    "source_date": "2026-09-23",
     "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 45,
-    "last_night": 48,
-    "last_night_5min": 73,
+    "weekly_avg": 46,
+    "last_night": 54,
+    "last_night_5min": 78,
     "status": "BALANCED",
-    "source_date": "2026-09-22",
+    "source_date": "2026-09-23",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 92,
+    "morning": 88,
     "values": [
       [
-        1790024400000,
-        22
+        1790114940000,
+        15
       ],
       [
-        1790040600000,
-        52
+        1790122500000,
+        26
       ],
       [
-        1790040960000,
-        53
+        1790122680000,
+        26
       ],
       [
-        1790057340000,
-        89
-      ],
-      [
-        1790060040000,
-        92
-      ],
-      [
-        1790073720000,
+        1790134200000,
         65
+      ],
+      [
+        1790134560000,
+        66
+      ],
+      [
+        1790143740000,
+        88
       ]
     ],
-    "source_date": "2026-09-22"
+    "source_date": "2026-09-23"
   },
   "training_readiness": {
-    "score": 96,
-    "level": "PRIME",
-    "feedback_long": "PRIME_RT_HIGHEST_SS_AVAILABLE_ACWR_POS",
-    "sleep_score": 90,
-    "hrv_factor": 77,
+    "score": 88,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_HIGHEST_SS_AVAILABLE_ACWR_POS",
+    "sleep_score": 83,
+    "hrv_factor": 72,
     "recovery_time_factor": 100,
     "acwr_factor": null,
-    "sleep_history_factor": 91
+    "sleep_history_factor": 88
   },
   "stress": {
-    "avg": 23
+    "avg": 16
   },
   "resting_hr": 48.0,
   "vo2_max": 45.3,
-  "steps": 8402,
-  "active_calories": 772.0,
-  "total_calories": 3209.0,
-  "spo2_avg": 96.0,
+  "steps": 8202,
+  "active_calories": 708.0,
+  "total_calories": 3145.0,
+  "spo2_avg": 95.0,
   "last_activity": {},
   "activities": []
 }
