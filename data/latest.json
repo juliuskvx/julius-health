@@ -1,75 +1,75 @@
 {
-  "sync_date": "2026-09-23",
-  "data_date": "2026-09-23",
+  "sync_date": "2026-09-24",
+  "data_date": "2026-09-24",
   "sleep": {
-    "date": "2026-09-23",
-    "score": 83,
-    "duration_seconds": 26640,
-    "deep_seconds": 3900,
-    "light_seconds": 18840,
-    "rem_seconds": 3900,
-    "awake_seconds": 240,
+    "date": "2026-09-24",
+    "score": 85,
+    "duration_seconds": 25380,
+    "deep_seconds": 3660,
+    "light_seconds": 17640,
+    "rem_seconds": 4080,
+    "awake_seconds": 720,
     "stages": [],
-    "source_date": "2026-09-23",
+    "source_date": "2026-09-24",
     "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 46,
-    "last_night": 54,
-    "last_night_5min": 78,
+    "weekly_avg": 45,
+    "last_night": 42,
+    "last_night_5min": 70,
     "status": "BALANCED",
-    "source_date": "2026-09-23",
+    "source_date": "2026-09-24",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 88,
+    "morning": 51,
     "values": [
       [
-        1790114940000,
-        15
+        1790197200000,
+        5
       ],
       [
-        1790126460000,
-        40
+        1790197200000,
+        5
       ],
       [
-        1790126640000,
-        40
+        1790209080000,
+        5
       ],
       [
-        1790141580000,
-        85
+        1790220780000,
+        27
       ],
       [
-        1790143740000,
-        88
+        1790220960000,
+        28
       ],
       [
-        1790157780000,
-        53
+        1790232120000,
+        51
       ]
     ],
-    "source_date": "2026-09-23"
+    "source_date": "2026-09-24"
   },
   "training_readiness": {
-    "score": 88,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_HIGHEST_SS_AVAILABLE_ACWR_POS",
-    "sleep_score": 83,
-    "hrv_factor": 72,
-    "recovery_time_factor": 100,
+    "score": 55,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_MOD_OR_LOW_SS_GOOD_STRESS_HISTORY_NEG",
+    "sleep_score": 85,
+    "hrv_factor": 83,
+    "recovery_time_factor": 68,
     "acwr_factor": null,
-    "sleep_history_factor": 88
+    "sleep_history_factor": 80
   },
   "stress": {
-    "avg": 17
+    "avg": 31
   },
-  "resting_hr": 48.0,
-  "vo2_max": 45.3,
-  "steps": 8202,
-  "active_calories": 708.0,
-  "total_calories": 3145.0,
-  "spo2_avg": 95.0,
+  "resting_hr": 53.0,
+  "vo2_max": 44.7,
+  "steps": 14549,
+  "active_calories": 1667.0,
+  "total_calories": 4104.0,
+  "spo2_avg": 96.0,
   "last_activity": {
     "type": "running",
     "name": "Vilnius Running",
