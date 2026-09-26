@@ -70,6 +70,32 @@
   "active_calories": 921.0,
   "total_calories": 3459.0,
   "spo2_avg": 96.0,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "hiit",
+    "name": "HIIT",
+    "start_time": "2026-09-26 16:06:35",
+    "duration_seconds": 4488.55419921875,
+    "distance_meters": 0.0,
+    "avg_hr": 136.0,
+    "max_hr": 198.0,
+    "calories": 777.0,
+    "training_load": 168.13319396972656,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-09-26 16:06:35",
+      "duration_seconds": 4488.55419921875,
+      "distance_meters": 0.0,
+      "avg_hr": 136.0,
+      "max_hr": 198.0,
+      "calories": 777.0,
+      "training_load": 168.13319396972656,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
 }
