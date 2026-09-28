@@ -1,101 +1,75 @@
 {
-  "sync_date": "2026-09-27",
-  "data_date": "2026-09-27",
+  "sync_date": "2026-09-28",
+  "data_date": "2026-09-28",
   "sleep": {
-    "date": "2026-09-27",
-    "score": 75,
-    "duration_seconds": 35940,
-    "deep_seconds": 7740,
-    "light_seconds": 22740,
-    "rem_seconds": 5460,
-    "awake_seconds": 3600,
+    "date": "2026-09-28",
+    "score": 91,
+    "duration_seconds": 26940,
+    "deep_seconds": 4740,
+    "light_seconds": 15300,
+    "rem_seconds": 6900,
+    "awake_seconds": 540,
     "stages": [],
-    "source_date": "2026-09-27",
+    "source_date": "2026-09-28",
     "is_stale": false
   },
   "hrv": {
     "weekly_avg": 45,
-    "last_night": 59,
-    "last_night_5min": 81,
+    "last_night": 58,
+    "last_night_5min": 83,
     "status": "BALANCED",
-    "source_date": "2026-09-27",
+    "source_date": "2026-09-28",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 87,
+    "morning": 94,
     "values": [
       [
-        1790442000000,
-        12
+        1790533800000,
+        18
       ],
       [
-        1790461980000,
-        58
+        1790543160000,
+        32
       ],
       [
-        1790462160000,
-        58
+        1790543520000,
+        33
       ],
       [
-        1790476020000,
-        87
+        1790558100000,
+        80
       ],
       [
-        1790482320000,
-        73
+        1790564580000,
+        94
       ],
       [
-        1790501940000,
-        46
+        1790572140000,
+        72
       ]
     ],
-    "source_date": "2026-09-27"
+    "source_date": "2026-09-28"
   },
   "training_readiness": {
-    "score": 1,
-    "level": "POOR",
-    "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
-    "sleep_score": 75,
-    "hrv_factor": 82,
-    "recovery_time_factor": 30,
+    "score": 53,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_MOD_SS_GOOD_ACWR_NEG",
+    "sleep_score": 91,
+    "hrv_factor": 87,
+    "recovery_time_factor": 64,
     "acwr_factor": null,
-    "sleep_history_factor": 36
+    "sleep_history_factor": 57
   },
   "stress": {
-    "avg": 23
+    "avg": 19
   },
-  "resting_hr": 52.0,
+  "resting_hr": 51.0,
   "vo2_max": 44.7,
-  "steps": 10556,
-  "active_calories": 1285.0,
-  "total_calories": 3722.0,
-  "spo2_avg": 95.0,
-  "last_activity": {
-    "type": "boxing",
-    "name": "HIIT",
-    "start_time": "2026-09-26 16:06:35",
-    "duration_seconds": 4488.55419921875,
-    "distance_meters": 0.0,
-    "avg_hr": 136.0,
-    "max_hr": 198.0,
-    "calories": 777.0,
-    "training_load": 168.13319396972656,
-    "avg_pace": 0.0,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "boxing",
-      "name": "HIIT",
-      "start_time": "2026-09-26 16:06:35",
-      "duration_seconds": 4488.55419921875,
-      "distance_meters": 0.0,
-      "avg_hr": 136.0,
-      "max_hr": 198.0,
-      "calories": 777.0,
-      "training_load": 168.13319396972656,
-      "avg_pace": 0.0,
-      "hr_zones": []
-    }
-  ]
+  "steps": 9955,
+  "active_calories": 517.0,
+  "total_calories": 2954.0,
+  "spo2_avg": 97.0,
+  "last_activity": {},
+  "activities": []
 }
