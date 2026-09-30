@@ -1,89 +1,102 @@
 {
-  "sync_date": "2026-09-29",
-  "data_date": "2026-09-29",
+  "sync_date": "2026-09-30",
+  "data_date": "2026-09-30",
   "sleep": {
-    "date": "2026-09-29",
-    "score": 73,
-    "duration_seconds": 21731,
-    "deep_seconds": 1620,
-    "light_seconds": 12120,
-    "rem_seconds": 8040,
-    "awake_seconds": 0,
+    "date": "2026-09-30",
+    "score": 84,
+    "duration_seconds": 41280,
+    "deep_seconds": 2340,
+    "light_seconds": 24900,
+    "rem_seconds": 14040,
+    "awake_seconds": 420,
     "stages": [],
-    "source_date": "2026-09-29",
+    "source_date": "2026-09-30",
     "is_stale": false
   },
   "hrv": {
-    "weekly_avg": 46,
+    "weekly_avg": 47,
     "last_night": 57,
-    "last_night_5min": 103,
+    "last_night_5min": 77,
     "status": "BALANCED",
-    "source_date": "2026-09-29",
+    "source_date": "2026-09-30",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 86,
+    "morning": 100,
     "values": [
       [
-        1790614800000,
-        14
-      ],
-      [
-        1790633520000,
-        60
-      ],
-      [
-        1790633880000,
+        1790701200000,
         61
       ],
       [
-        1790645940000,
-        86
+        1790714520000,
+        97
       ],
       [
-        1790652960000,
-        75
+        1790715060000,
+        98
       ],
       [
-        1790668440000,
-        45
+        1790716140000,
+        100
+      ],
+      [
+        1790728920000,
+        100
+      ],
+      [
+        1790741700000,
+        82
       ]
     ],
-    "source_date": "2026-09-29"
+    "source_date": "2026-09-30"
   },
   "training_readiness": {
-    "score": 1,
+    "score": 23,
     "level": "POOR",
     "feedback_long": "POOR_RT_HIGH_SS_GOOD_OR_MOD",
-    "sleep_score": 73,
-    "hrv_factor": 85,
-    "recovery_time_factor": 10,
+    "sleep_score": 84,
+    "hrv_factor": 87,
+    "recovery_time_factor": 32,
     "acwr_factor": null,
-    "sleep_history_factor": 81
+    "sleep_history_factor": 68
   },
   "stress": {
-    "avg": 17
+    "avg": 13
   },
-  "resting_hr": 51.0,
+  "resting_hr": 48.0,
   "vo2_max": 44.7,
-  "steps": 13976,
-  "active_calories": 1728.0,
-  "total_calories": 4165.0,
-  "spo2_avg": 94.0,
+  "steps": 7961,
+  "active_calories": 656.0,
+  "total_calories": 3093.0,
+  "spo2_avg": 97.0,
   "last_activity": {
     "type": "hiit",
     "name": "HIIT",
-    "start_time": "2026-09-29 11:04:18",
-    "duration_seconds": 2506.49609375,
+    "start_time": "2026-09-30 10:18:22",
+    "duration_seconds": 1.5759999752044678,
     "distance_meters": 0.0,
-    "avg_hr": 131.0,
-    "max_hr": 181.0,
-    "calories": 403.0,
-    "training_load": 66.95623779296875,
+    "avg_hr": 71.0,
+    "max_hr": 71.0,
+    "calories": 0.0,
+    "training_load": null,
     "avg_pace": 0.0,
     "hr_zones": []
   },
   "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-09-30 10:18:22",
+      "duration_seconds": 1.5759999752044678,
+      "distance_meters": 0.0,
+      "avg_hr": 71.0,
+      "max_hr": 71.0,
+      "calories": 0.0,
+      "training_load": null,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    },
     {
       "type": "hiit",
       "name": "HIIT",
@@ -94,19 +107,6 @@
       "max_hr": 181.0,
       "calories": 403.0,
       "training_load": 66.95623779296875,
-      "avg_pace": 0.0,
-      "hr_zones": []
-    },
-    {
-      "type": "hiit",
-      "name": "HIIT",
-      "start_time": "2026-09-28 15:59:47",
-      "duration_seconds": 7155.18310546875,
-      "distance_meters": 0.0,
-      "avg_hr": 156.0,
-      "max_hr": 193.0,
-      "calories": 1377.0,
-      "training_load": 230.7596893310547,
       "avg_pace": 0.0,
       "hr_zones": []
     }
