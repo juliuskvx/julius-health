@@ -29,24 +29,24 @@
         61
       ],
       [
-        1790714520000,
-        97
-      ],
-      [
-        1790715060000,
-        98
-      ],
-      [
         1790716140000,
         100
       ],
       [
-        1790728920000,
+        1790723700000,
         100
       ],
       [
-        1790741700000,
-        82
+        1790744400000,
+        78
+      ],
+      [
+        1790746200000,
+        77
+      ],
+      [
+        1790768160000,
+        39
       ]
     ],
     "source_date": "2026-09-30"
@@ -62,7 +62,7 @@
     "sleep_history_factor": 68
   },
   "stress": {
-    "avg": 13
+    "avg": 17
   },
   "resting_hr": 48.0,
   "vo2_max": 44.7,
@@ -71,29 +71,29 @@
   "total_calories": 3093.0,
   "spo2_avg": 97.0,
   "last_activity": {
-    "type": "hiit",
-    "name": "HIIT",
-    "start_time": "2026-09-30 10:18:22",
-    "duration_seconds": 1.5759999752044678,
+    "type": "boxing",
+    "name": "Thai",
+    "start_time": "2026-09-30 16:06:13",
+    "duration_seconds": 7732.20703125,
     "distance_meters": 0.0,
-    "avg_hr": 71.0,
-    "max_hr": 71.0,
-    "calories": 0.0,
-    "training_load": null,
+    "avg_hr": 155.0,
+    "max_hr": 196.0,
+    "calories": 1286.0,
+    "training_load": 272.262451171875,
     "avg_pace": 0.0,
     "hr_zones": []
   },
   "activities": [
     {
-      "type": "hiit",
-      "name": "HIIT",
-      "start_time": "2026-09-30 10:18:22",
-      "duration_seconds": 1.5759999752044678,
+      "type": "boxing",
+      "name": "Thai",
+      "start_time": "2026-09-30 16:06:13",
+      "duration_seconds": 7732.20703125,
       "distance_meters": 0.0,
-      "avg_hr": 71.0,
-      "max_hr": 71.0,
-      "calories": 0.0,
-      "training_load": null,
+      "avg_hr": 155.0,
+      "max_hr": 196.0,
+      "calories": 1286.0,
+      "training_load": 272.262451171875,
       "avg_pace": 0.0,
       "hr_zones": []
     },
