@@ -29,24 +29,24 @@
         24
       ],
       [
-        1791322380000,
-        79
-      ],
-      [
-        1791322560000,
-        80
+        1791327960000,
+        93
       ],
       [
         1791331380000,
         100
       ],
       [
-        1791339120000,
-        97
+        1791348300000,
+        78
       ],
       [
-        1791355320000,
-        67
+        1791350640000,
+        77
+      ],
+      [
+        1791370980000,
+        39
       ]
     ],
     "source_date": "2026-10-07"
@@ -62,7 +62,7 @@
     "sleep_history_factor": 68
   },
   "stress": {
-    "avg": 16
+    "avg": 17
   },
   "resting_hr": 46.0,
   "vo2_max": 44.7,
@@ -71,19 +71,32 @@
   "total_calories": 2892.0,
   "spo2_avg": 97.0,
   "last_activity": {
-    "type": "boxing",
+    "type": "hiit",
     "name": "HIIT",
-    "start_time": "2026-10-06 11:02:50",
-    "duration_seconds": 3047.98388671875,
+    "start_time": "2026-10-07 16:01:02",
+    "duration_seconds": 7087.3671875,
     "distance_meters": 0.0,
-    "avg_hr": 119.0,
-    "max_hr": 166.0,
-    "calories": 401.0,
-    "training_load": 58.28007507324219,
+    "avg_hr": 141.0,
+    "max_hr": 184.0,
+    "calories": 1201.0,
+    "training_load": 159.78623962402344,
     "avg_pace": 0.0,
     "hr_zones": []
   },
   "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-10-07 16:01:02",
+      "duration_seconds": 7087.3671875,
+      "distance_meters": 0.0,
+      "avg_hr": 141.0,
+      "max_hr": 184.0,
+      "calories": 1201.0,
+      "training_load": 159.78623962402344,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    },
     {
       "type": "boxing",
       "name": "HIIT",
