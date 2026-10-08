@@ -1,0 +1,114 @@
+{
+  "sync_date": "2026-10-08",
+  "data_date": "2026-10-08",
+  "sleep": {
+    "date": "2026-10-08",
+    "score": 92,
+    "duration_seconds": 26160,
+    "deep_seconds": 4380,
+    "light_seconds": 15540,
+    "rem_seconds": 6240,
+    "awake_seconds": 660,
+    "stages": [],
+    "source_date": "2026-10-08",
+    "is_stale": false
+  },
+  "hrv": {
+    "weekly_avg": 57,
+    "last_night": 54,
+    "last_night_5min": 68,
+    "status": "BALANCED",
+    "source_date": "2026-10-08",
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": 98,
+    "values": [
+      [
+        1791392400000,
+        29
+      ],
+      [
+        1791408780000,
+        73
+      ],
+      [
+        1791409140000,
+        73
+      ],
+      [
+        1791424080000,
+        98
+      ],
+      [
+        1791425880000,
+        98
+      ],
+      [
+        1791439380000,
+        66
+      ]
+    ],
+    "source_date": "2026-10-08"
+  },
+  "training_readiness": {
+    "score": 64,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_GOOD_ACWR_NEG",
+    "sleep_score": 92,
+    "hrv_factor": 79,
+    "recovery_time_factor": 76,
+    "acwr_factor": null,
+    "sleep_history_factor": 81
+  },
+  "stress": {
+    "avg": 17
+  },
+  "resting_hr": 47.0,
+  "vo2_max": 44.7,
+  "steps": 15913,
+  "active_calories": 1224.0,
+  "total_calories": 3661.0,
+  "spo2_avg": 97.0,
+  "last_activity": {
+    "type": "hiit",
+    "name": "HIIT",
+    "start_time": "2026-10-08 11:03:28",
+    "duration_seconds": 1966.81201171875,
+    "distance_meters": 0.0,
+    "avg_hr": 112.0,
+    "max_hr": 178.0,
+    "calories": 240.0,
+    "training_load": 61.88777160644531,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-10-08 11:03:28",
+      "duration_seconds": 1966.81201171875,
+      "distance_meters": 0.0,
+      "avg_hr": 112.0,
+      "max_hr": 178.0,
+      "calories": 240.0,
+      "training_load": 61.88777160644531,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    },
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-10-07 16:01:02",
+      "duration_seconds": 7087.3671875,
+      "distance_meters": 0.0,
+      "avg_hr": 141.0,
+      "max_hr": 184.0,
+      "calories": 1201.0,
+      "training_load": 159.78623962402344,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
+}
