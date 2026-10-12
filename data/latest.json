@@ -1,75 +1,75 @@
 {
-  "sync_date": "2026-10-11",
-  "data_date": "2026-10-11",
+  "sync_date": "2026-10-12",
+  "data_date": "2026-10-12",
   "sleep": {
-    "date": "2026-10-11",
-    "score": 44,
-    "duration_seconds": 19980,
-    "deep_seconds": 3540,
-    "light_seconds": 15840,
-    "rem_seconds": 600,
-    "awake_seconds": 7500,
+    "date": "2026-10-12",
+    "score": 94,
+    "duration_seconds": 30480,
+    "deep_seconds": 8220,
+    "light_seconds": 15600,
+    "rem_seconds": 6660,
+    "awake_seconds": 540,
     "stages": [],
-    "source_date": "2026-10-11",
+    "source_date": "2026-10-12",
     "is_stale": false
   },
   "hrv": {
     "weekly_avg": 56,
-    "last_night": 45,
-    "last_night_5min": 82,
+    "last_night": 58,
+    "last_night_5min": 83,
     "status": "BALANCED",
-    "source_date": "2026-10-11",
+    "source_date": "2026-10-12",
     "is_stale": false
   },
   "body_battery": {
-    "morning": 60,
+    "morning": 99,
     "values": [
       [
-        1791651600000,
-        33
+        1791738000000,
+        30
       ],
       [
-        1791666900000,
-        51
+        1791754560000,
+        71
       ],
       [
-        1791668700000,
-        51
+        1791754740000,
+        72
       ],
       [
-        1791684000000,
-        60
+        1791767340000,
+        99
       ],
       [
-        1791685800000,
-        60
+        1791771480000,
+        99
       ],
       [
-        1791696420000,
-        48
+        1791779940000,
+        87
       ]
     ],
-    "source_date": "2026-10-11"
+    "source_date": "2026-10-12"
   },
   "training_readiness": {
-    "score": 44,
-    "level": "LOW",
-    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_POOR",
-    "sleep_score": 44,
-    "hrv_factor": 83,
-    "recovery_time_factor": 93,
+    "score": 75,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_HIGHEST",
+    "sleep_score": 94,
+    "hrv_factor": 86,
+    "recovery_time_factor": 100,
     "acwr_factor": null,
-    "sleep_history_factor": 86
+    "sleep_history_factor": 39
   },
   "stress": {
-    "avg": 34
+    "avg": 13
   },
-  "resting_hr": 51.0,
+  "resting_hr": 47.0,
   "vo2_max": 44.7,
-  "steps": 8923,
-  "active_calories": 354.0,
-  "total_calories": 2791.0,
-  "spo2_avg": 94.0,
+  "steps": 1141,
+  "active_calories": 55.0,
+  "total_calories": 2492.0,
+  "spo2_avg": 97.0,
   "last_activity": {},
   "activities": []
 }
