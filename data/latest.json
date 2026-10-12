@@ -29,24 +29,24 @@
         30
       ],
       [
-        1791754560000,
-        71
-      ],
-      [
-        1791754740000,
-        72
+        1791761760000,
+        90
       ],
       [
         1791767340000,
         99
       ],
       [
-        1791771480000,
-        99
+        1791785340000,
+        76
       ],
       [
-        1791779940000,
-        87
+        1791785880000,
+        75
+      ],
+      [
+        1791808740000,
+        41
       ]
     ],
     "source_date": "2026-10-12"
@@ -62,7 +62,7 @@
     "sleep_history_factor": 39
   },
   "stress": {
-    "avg": 13
+    "avg": 17
   },
   "resting_hr": 47.0,
   "vo2_max": 44.7,
@@ -70,6 +70,32 @@
   "active_calories": 55.0,
   "total_calories": 2492.0,
   "spo2_avg": 97.0,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "hiit",
+    "name": "HIIT",
+    "start_time": "2026-10-12 16:19:32",
+    "duration_seconds": 5940.49609375,
+    "distance_meters": 0.0,
+    "avg_hr": 132.0,
+    "max_hr": 182.0,
+    "calories": 952.0,
+    "training_load": 84.46037292480469,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-10-12 16:19:32",
+      "duration_seconds": 5940.49609375,
+      "distance_meters": 0.0,
+      "avg_hr": 132.0,
+      "max_hr": 182.0,
+      "calories": 952.0,
+      "training_load": 84.46037292480469,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
 }
