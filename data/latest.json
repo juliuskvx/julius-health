@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-10-14",
-  "data_date": "2026-10-14",
+  "sync_date": "2026-10-15",
+  "data_date": "2026-10-15",
   "sleep": {
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "score": 81,
     "duration_seconds": 22920,
     "deep_seconds": 3480,
@@ -11,7 +11,7 @@
     "awake_seconds": 60,
     "stages": [],
     "source_date": "2026-10-14",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": 56,
@@ -19,37 +19,37 @@
     "last_night_5min": 75,
     "status": "BALANCED",
     "source_date": "2026-10-14",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 100,
+    "morning": 38,
     "values": [
       [
-        1791910800000,
-        42
+        1791997200000,
+        38
       ],
       [
-        1791932400000,
-        86
+        1792008180000,
+        32
       ],
       [
-        1791932940000,
-        86
+        1792008360000,
+        32
       ],
       [
-        1791942300000,
-        100
+        1792018800000,
+        27
       ],
       [
-        1791968400000,
-        58
+        1792019520000,
+        27
       ],
       [
-        1791975960000,
-        52
+        1792027440000,
+        23
       ]
     ],
-    "source_date": "2026-10-14"
+    "source_date": "2026-10-15"
   },
   "training_readiness": {
     "score": 65,
@@ -64,38 +64,12 @@
   "stress": {
     "avg": 15
   },
-  "resting_hr": 48.0,
+  "resting_hr": 49.0,
   "vo2_max": 44.7,
-  "steps": 14943,
-  "active_calories": 1308.0,
-  "total_calories": 3745.0,
-  "spo2_avg": 95.0,
-  "last_activity": {
-    "type": "hiit",
-    "name": "HIIT",
-    "start_time": "2026-10-13 16:05:22",
-    "duration_seconds": 6778.90087890625,
-    "distance_meters": 0.0,
-    "avg_hr": 145.0,
-    "max_hr": 199.0,
-    "calories": 1254.0,
-    "training_load": 222.77249145507812,
-    "avg_pace": 0.0,
-    "hr_zones": []
-  },
-  "activities": [
-    {
-      "type": "hiit",
-      "name": "HIIT",
-      "start_time": "2026-10-13 16:05:22",
-      "duration_seconds": 6778.90087890625,
-      "distance_meters": 0.0,
-      "avg_hr": 145.0,
-      "max_hr": 199.0,
-      "calories": 1254.0,
-      "training_load": 222.77249145507812,
-      "avg_pace": 0.0,
-      "hr_zones": []
-    }
-  ]
+  "steps": 5512,
+  "active_calories": 223.0,
+  "total_calories": 2660.0,
+  "spo2_avg": 97.0,
+  "last_activity": {},
+  "activities": []
 }
