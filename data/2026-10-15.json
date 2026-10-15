@@ -29,24 +29,24 @@
         38
       ],
       [
-        1792008180000,
-        32
+        1792016460000,
+        28
       ],
       [
-        1792008360000,
-        32
+        1792017900000,
+        28
       ],
       [
-        1792018800000,
-        27
+        1792037700000,
+        17
       ],
       [
-        1792019520000,
-        27
+        1792038600000,
+        17
       ],
       [
-        1792027440000,
-        23
+        1792052460000,
+        9
       ]
     ],
     "source_date": "2026-10-15"
@@ -70,6 +70,32 @@
   "active_calories": 223.0,
   "total_calories": 2660.0,
   "spo2_avg": 97.0,
-  "last_activity": {},
-  "activities": []
+  "last_activity": {
+    "type": "hiit",
+    "name": "HIIT",
+    "start_time": "2026-10-15 16:01:22",
+    "duration_seconds": 6956.48681640625,
+    "distance_meters": 0.0,
+    "avg_hr": 151.0,
+    "max_hr": 189.0,
+    "calories": 0.0,
+    "training_load": 218.79006958007812,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-10-15 16:01:22",
+      "duration_seconds": 6956.48681640625,
+      "distance_meters": 0.0,
+      "avg_hr": 151.0,
+      "max_hr": 189.0,
+      "calories": 0.0,
+      "training_load": 218.79006958007812,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
 }
