@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-10-16",
+  "data_date": "2026-10-16",
+  "sleep": {
+    "date": "2026-10-16",
+    "score": 61,
+    "duration_seconds": 22680,
+    "deep_seconds": 3120,
+    "light_seconds": 17220,
+    "rem_seconds": 2340,
+    "awake_seconds": 3480,
+    "stages": [],
+    "source_date": "2026-10-16",
+    "is_stale": false
+  },
+  "hrv": {
+    "weekly_avg": 56,
+    "last_night": 55,
+    "last_night_5min": 77,
+    "status": "BALANCED",
+    "source_date": "2026-10-16",
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": 55,
+    "values": [
+      [
+        1792083600000,
+        5
+      ],
+      [
+        1792100160000,
+        29
+      ],
+      [
+        1792100340000,
+        29
+      ],
+      [
+        1792115460000,
+        53
+      ],
+      [
+        1792117980000,
+        55
+      ],
+      [
+        1792133460000,
+        34
+      ]
+    ],
+    "source_date": "2026-10-16"
+  },
+  "training_readiness": {
+    "score": 56,
+    "level": "MODERATE",
+    "feedback_long": "MOD_RT_LOW_SS_MOD",
+    "sleep_score": 61,
+    "hrv_factor": 91,
+    "recovery_time_factor": 72,
+    "acwr_factor": null,
+    "sleep_history_factor": 72
+  },
+  "stress": {
+    "avg": 28
+  },
+  "resting_hr": 52.0,
+  "vo2_max": 44.7,
+  "steps": 15178,
+  "active_calories": 2068.0,
+  "total_calories": 4505.0,
+  "spo2_avg": 96.0,
+  "last_activity": {
+    "type": "hiit",
+    "name": "HIIT",
+    "start_time": "2026-10-15 16:01:22",
+    "duration_seconds": 6956.48681640625,
+    "distance_meters": 0.0,
+    "avg_hr": 151.0,
+    "max_hr": 189.0,
+    "calories": 0.0,
+    "training_load": 218.79006958007812,
+    "avg_pace": 0.0,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "hiit",
+      "name": "HIIT",
+      "start_time": "2026-10-15 16:01:22",
+      "duration_seconds": 6956.48681640625,
+      "distance_meters": 0.0,
+      "avg_hr": 151.0,
+      "max_hr": 189.0,
+      "calories": 0.0,
+      "training_load": 218.79006958007812,
+      "avg_pace": 0.0,
+      "hr_zones": []
+    }
+  ]
+}
