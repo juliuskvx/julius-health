@@ -1,0 +1,101 @@
+{
+  "sync_date": "2026-11-08",
+  "data_date": "2026-11-08",
+  "sleep": {
+    "date": "2026-11-08",
+    "score": null,
+    "duration_seconds": null,
+    "deep_seconds": null,
+    "light_seconds": null,
+    "rem_seconds": null,
+    "awake_seconds": null,
+    "stages": [],
+    "source_date": "2026-11-07",
+    "is_stale": true
+  },
+  "hrv": {
+    "weekly_avg": null,
+    "last_night": null,
+    "last_night_5min": null,
+    "status": null,
+    "source_date": null,
+    "is_stale": false
+  },
+  "body_battery": {
+    "morning": 71,
+    "values": [
+      [
+        1794063600000,
+        null
+      ],
+      [
+        1794063600001,
+        null
+      ],
+      [
+        1794099240000,
+        71
+      ],
+      [
+        1794101580000,
+        65
+      ],
+      [
+        1794102120000,
+        64
+      ],
+      [
+        1794120840000,
+        36
+      ]
+    ],
+    "source_date": "2026-11-08"
+  },
+  "training_readiness": {
+    "score": 92,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_ACWR_POS",
+    "sleep_score": null,
+    "hrv_factor": 0,
+    "recovery_time_factor": 95,
+    "acwr_factor": null,
+    "sleep_history_factor": 0
+  },
+  "stress": {
+    "avg": 54
+  },
+  "resting_hr": 69.0,
+  "vo2_max": null,
+  "steps": 6771,
+  "active_calories": 114.0,
+  "total_calories": 2551.0,
+  "spo2_avg": null,
+  "last_activity": {
+    "type": "cycling",
+    "name": "Fujikawaguchiko Town Cycling",
+    "start_time": "2026-11-08 14:48:45",
+    "duration_seconds": 1311.9339599609375,
+    "distance_meters": 4661.10009765625,
+    "avg_hr": 114.0,
+    "max_hr": 150.0,
+    "calories": 184.0,
+    "training_load": 11.279678344726562,
+    "avg_pace": 3.5529999732971196,
+    "hr_zones": []
+  },
+  "activities": [
+    {
+      "type": "cycling",
+      "name": "Fujikawaguchiko Town Cycling",
+      "start_time": "2026-11-08 14:48:45",
+      "duration_seconds": 1311.9339599609375,
+      "distance_meters": 4661.10009765625,
+      "avg_hr": 114.0,
+      "max_hr": 150.0,
+      "calories": 184.0,
+      "training_load": 11.279678344726562,
+      "avg_pace": 3.5529999732971196,
+      "hr_zones": []
+    }
+  ]
+}
