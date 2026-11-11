@@ -45,8 +45,8 @@
         51
       ],
       [
-        1794370680000,
-        51
+        1794386160000,
+        32
       ]
     ],
     "source_date": "2026-11-11"
@@ -62,9 +62,9 @@
     "sleep_history_factor": 0
   },
   "stress": {
-    "avg": 49
+    "avg": 51
   },
-  "resting_hr": 95.0,
+  "resting_hr": 62.0,
   "vo2_max": null,
   "steps": 15406,
   "active_calories": 485.0,
