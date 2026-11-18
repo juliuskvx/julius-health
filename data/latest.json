@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-11-17",
-  "data_date": "2026-11-17",
+  "sync_date": "2026-11-18",
+  "data_date": "2026-11-18",
   "sleep": {
-    "date": "2026-11-17",
+    "date": "2026-11-18",
     "score": 21,
     "duration_seconds": 10200,
     "deep_seconds": 3660,
@@ -11,7 +11,7 @@
     "awake_seconds": 2280,
     "stages": [],
     "source_date": "2026-11-17",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": null,
@@ -19,56 +19,56 @@
     "last_night_5min": 73,
     "status": "NONE",
     "source_date": "2026-11-17",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 9,
+    "morning": null,
     "values": [
       [
-        1794841200000,
-        5
+        1794960000001,
+        null
       ],
       [
-        1794841200000,
-        5
+        1794960000002,
+        null
       ],
       [
-        1794858300000,
-        5
+        1794960000003,
+        null
       ],
       [
-        1794871800000,
-        9
+        1794960000004,
+        null
       ],
       [
-        1794875400000,
-        9
+        1794960000005,
+        null
       ],
       [
-        1794881880000,
-        5
+        1794960000006,
+        null
       ]
     ],
-    "source_date": "2026-11-17"
+    "source_date": "2026-11-18"
   },
   "training_readiness": {
-    "score": 44,
-    "level": "LOW",
-    "feedback_long": "LOW_RT_MOD_OR_LOW_SS_POOR",
-    "sleep_score": 21,
+    "score": 65,
+    "level": "MODERATE",
+    "feedback_long": "UNKNOWN",
+    "sleep_score": null,
     "hrv_factor": 0,
-    "recovery_time_factor": 85,
+    "recovery_time_factor": 100,
     "acwr_factor": null,
-    "sleep_history_factor": 0
+    "sleep_history_factor": 20
   },
   "stress": {
-    "avg": 52
+    "avg": 47
   },
   "resting_hr": 64.0,
   "vo2_max": null,
-  "steps": 21863,
-  "active_calories": 938.0,
-  "total_calories": 3375.0,
+  "steps": 6512,
+  "active_calories": 340.0,
+  "total_calories": 3487.0,
   "spo2_avg": null,
   "last_activity": {},
   "activities": []
