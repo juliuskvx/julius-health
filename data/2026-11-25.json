@@ -3,23 +3,23 @@
   "data_date": "2026-11-25",
   "sleep": {
     "date": "2026-11-25",
-    "score": 93,
-    "duration_seconds": 28500,
-    "deep_seconds": 3900,
-    "light_seconds": 18060,
-    "rem_seconds": 6540,
-    "awake_seconds": 120,
+    "score": 77,
+    "duration_seconds": 22740,
+    "deep_seconds": 3600,
+    "light_seconds": 15000,
+    "rem_seconds": 4140,
+    "awake_seconds": 1020,
     "stages": [],
-    "source_date": "2026-11-24",
-    "is_stale": true
+    "source_date": "2026-11-25",
+    "is_stale": false
   },
   "hrv": {
     "weekly_avg": null,
-    "last_night": 67,
-    "last_night_5min": 91,
+    "last_night": 54,
+    "last_night_5min": 75,
     "status": "NONE",
-    "source_date": "2026-11-24",
-    "is_stale": true
+    "source_date": "2026-11-25",
+    "is_stale": false
   },
   "body_battery": {
     "morning": 34,
@@ -33,36 +33,36 @@
         15
       ],
       [
-        1795559760000,
-        null
-      ],
-      [
-        1795559760001,
-        null
-      ],
-      [
         1795587840000,
         34
       ],
       [
         1795587840000,
         34
+      ],
+      [
+        1795588200000,
+        33
+      ],
+      [
+        1795602240000,
+        27
       ]
     ],
     "source_date": "2026-11-25"
   },
   "training_readiness": {
-    "score": 94,
-    "level": "HIGH",
-    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_ACWR_POS",
-    "sleep_score": null,
+    "score": 99,
+    "level": "PRIME",
+    "feedback_long": "PRIME_RT_HIGHEST_SS_AVAILABLE_ACWR_POS",
+    "sleep_score": 77,
     "hrv_factor": 0,
     "recovery_time_factor": 100,
     "acwr_factor": null,
     "sleep_history_factor": 93
   },
   "stress": {
-    "avg": 29
+    "avg": 34
   },
   "resting_hr": 67.0,
   "vo2_max": null,
