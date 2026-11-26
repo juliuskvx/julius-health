@@ -1,8 +1,8 @@
 {
-  "sync_date": "2026-11-25",
-  "data_date": "2026-11-25",
+  "sync_date": "2026-11-26",
+  "data_date": "2026-11-26",
   "sleep": {
-    "date": "2026-11-25",
+    "date": "2026-11-26",
     "score": 77,
     "duration_seconds": 22740,
     "deep_seconds": 3600,
@@ -11,7 +11,7 @@
     "awake_seconds": 1020,
     "stages": [],
     "source_date": "2026-11-25",
-    "is_stale": false
+    "is_stale": true
   },
   "hrv": {
     "weekly_avg": null,
@@ -19,57 +19,57 @@
     "last_night_5min": 75,
     "status": "NONE",
     "source_date": "2026-11-25",
-    "is_stale": false
+    "is_stale": true
   },
   "body_battery": {
-    "morning": 34,
+    "morning": 100,
     "values": [
       [
-        1795557600000,
-        17
+        1795647960000,
+        56
       ],
       [
-        1795559760000,
-        15
+        1795654080000,
+        68
       ],
       [
-        1795587840000,
-        34
+        1795654260000,
+        69
       ],
       [
-        1795587840000,
-        34
+        1795662360000,
+        100
       ],
       [
-        1795588200000,
-        33
+        1795664520000,
+        100
       ],
       [
-        1795602240000,
-        27
+        1795664520000,
+        100
       ]
     ],
-    "source_date": "2026-11-25"
+    "source_date": "2026-11-26"
   },
   "training_readiness": {
-    "score": 99,
-    "level": "PRIME",
-    "feedback_long": "PRIME_RT_HIGHEST_SS_AVAILABLE_ACWR_POS",
-    "sleep_score": 77,
+    "score": 88,
+    "level": "HIGH",
+    "feedback_long": "HIGH_RT_AVAILABLE_SS_UNKNOWN_ACWR_POS",
+    "sleep_score": null,
     "hrv_factor": 0,
     "recovery_time_factor": 100,
     "acwr_factor": null,
-    "sleep_history_factor": 93
+    "sleep_history_factor": 74
   },
   "stress": {
-    "avg": 34
+    "avg": 16
   },
-  "resting_hr": 67.0,
+  "resting_hr": 51.0,
   "vo2_max": null,
-  "steps": 6778,
-  "active_calories": 375.0,
-  "total_calories": 2812.0,
-  "spo2_avg": 96.0,
+  "steps": 8064,
+  "active_calories": 360.0,
+  "total_calories": 2797.0,
+  "spo2_avg": 97.0,
   "last_activity": {},
   "activities": []
 }
